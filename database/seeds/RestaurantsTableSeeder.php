@@ -23,8 +23,6 @@ class RestaurantsTableSeeder extends Seeder
             $newRestaurant->address_restaurant = $faker->address();
             $newRestaurant->vat_number = $faker->numerify('p.iva-###########');
             $newRestaurant->save();
-
-
         }
     }
 }
