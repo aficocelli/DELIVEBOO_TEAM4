@@ -15,13 +15,13 @@ class RestaurantsTableSeeder extends Seeder
     {
 
 
-        for($i = 0; $i <= 10; $i++){
+        for($i = 0; $i <= 9; $i++){
 
             $newRestaurant = new Restaurant();
             $newRestaurant->name_restaurant = $faker->company();
             $newRestaurant->phone_restaurant = $faker->phoneNumber();
-            $newRestaurant->address_restaurant = $faker->city();
-            $newRestaurant->vat_number = $faker->phoneNUmber();
+            $newRestaurant->address_restaurant = $faker->address();
+            $newRestaurant->vat_number = $faker->numerify('p.iva-###########');
             $newRestaurant->save();
 
 
