@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Route::resource('/', 'FoodController');
 
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
