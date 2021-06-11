@@ -11,6 +11,12 @@ use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
+    protected $validation = [
+        'name_restaurant' => 'required|string|unique:restaurants',
+        'phone_restaurant' => 'required|string|unique:restaurants',
+        'address_restaurant' => 'required|string|unique:restaurants',
+        'vat_number' => 'required|string|unique:restaurants'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +48,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
         return view('admin.restaurants.create');
     }
 
@@ -52,8 +59,20 @@ class RestaurantController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+        //validazione
+        $validation = $this->validation;
+        $request->validate($validation);
+
+        //prendo i dati inseriti dall'utente
+        $data = $request->all();
+        $data['user_id'] = Auth::id();
+
+        // Insert
+        $newRestaurant = Restaurant::create($data);
+
+
+        return redirect()->route('admin.restaurants.create')->with('message', 'Il ristorante è stato creato!');
     }
 
     /**
