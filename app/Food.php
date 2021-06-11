@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model
 {
+    public $table = "foods";
     protected $guarded = [];
 
     public function restaurant(){
