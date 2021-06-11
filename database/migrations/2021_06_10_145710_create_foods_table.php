@@ -17,6 +17,8 @@ class CreateFoodsTable extends Migration
             $table->id();
             $table->foreignId('restaurant_id')->constrained()->onDelete('cascade');
             $table->string('name_food', 150);
+            $table->boolean('available')->default(1);
+            $table->string('image')->nullable();
             $table->string('ingredients');
             $table->float('price', 5, 2);
             $table->boolean('vegan')->default(0);
