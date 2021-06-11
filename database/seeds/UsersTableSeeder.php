@@ -27,7 +27,6 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'id' => 2,
-                'restaurant_id' => 2,
                 'name' => 'Giuliano',
                 'email' => 'giuliano@gmail.com',
                 'password' => 'passwordGiuliano' 
@@ -35,7 +34,6 @@ class UsersTableSeeder extends Seeder
 
             [
                 'id' => 3,
-                'restaurant_id' => 3,
                 'name' => 'Antonello',
                 'email' => 'antonello@gmail.com',
                 'password' => 'passwordAntonello'
@@ -53,7 +51,6 @@ class UsersTableSeeder extends Seeder
         foreach ($users as $user) {
             $newUser = new User();
             $newUser->id = $user['id'];
-            $newUser->restaurant_id = $user['restaurant_id'];
             $newUser->name = $user['name'];
             $newUser->email = $user['email'] ;
             $newUser->password = Hash::make($user['password']);
