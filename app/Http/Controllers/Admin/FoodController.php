@@ -8,6 +8,8 @@ use App\User;
 use App\Food;
 use App\Type;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
+
 
 class FoodController extends Controller
 {
@@ -18,7 +20,10 @@ class FoodController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $foods = Food::where('restaurant_id', $user->id)->get();
+
+        return view('admin.foods.index ', compact('foods'));
     }
 
     /**
