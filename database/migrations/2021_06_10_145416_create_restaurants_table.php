@@ -15,6 +15,7 @@ class CreateRestaurantsTable extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name_restaurant', 100)->unique();
             $table->string('phone_restaurant', 100)->unique();
             $table->string('address_restaurant')->unique();
