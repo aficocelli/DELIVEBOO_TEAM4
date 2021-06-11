@@ -18,8 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
+    Route::resource('restaurants', 'RestaurantController');
 });
+
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
