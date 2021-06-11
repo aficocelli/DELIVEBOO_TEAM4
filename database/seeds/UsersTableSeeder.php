@@ -13,15 +13,45 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {   
-   
+        $users = [
+            [
+                'id' => 2,
+                'restaurant_id' => 2,
+                'name' => 'Giuliano',
+                'email' => 'giuliano@gmail.com',
+                'password' => 'passwordGiuliano' 
+            ],
+
+            [
+                'id' => 3,
+                'restaurant_id' => 3,
+                'name' => 'Antonello',
+                'email' => 'antonello@gmail.com',
+                'password' => 'passwordAntonello'
+            ]
+        ];
+
         // $newUser = new User();
+        // $newUser->id = 1;
         // $newUser->restaurant_id = 1;
-        // $newUser->name = $faker->name();
-        // $newUser->email = $faker->email();
-        // $newUser->password = Hash::make('12345678');
-        // $newUser->save();
+        // $newUser->name = 'Piero';
+        // $newUser->email = 'piero@gmail.com';
+        // $newUser->password = Hash::make('password');
+        // $newUser->save(); 
+
+        foreach ($users as $user) {
+            $newUser = new User();
+            $newUser->id = $user['id'];
+            $newUser->restaurant_id = $user['restaurant_id'];
+            $newUser->name = $user['name'];
+            $newUser->email = $user['email'] ;
+            $newUser->password = Hash::make($user['password']);
+            $newUser->save(); 
+        }
+
 
     }
+
 }
