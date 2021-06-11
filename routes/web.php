@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+// Route::resource('/', 'FoodController');
+
+
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+    Route::resource('foods', 'FoodController');
 });
 
 Auth::routes();
