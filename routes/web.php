@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +18,10 @@ use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
-    Route::resource('user', 'UserController');
+    Route::resource('users', 'UserController');
 
 });
 
-// Route::post('/admin/users', 'Auth\RegisterController@create')->name('admin.users');
 
 Route::get('/', function () {
     return view('welcome');

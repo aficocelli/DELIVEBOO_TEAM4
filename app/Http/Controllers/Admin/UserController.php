@@ -36,7 +36,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -67,9 +67,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        $user_id = Auth::id();
+
+        
+
+        if ($user->id != $user_id) {
+            abort('403');
+        }
+
+        return view('admin.users.edit', compact('user'));
     }
 
     /**
