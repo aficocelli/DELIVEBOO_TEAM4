@@ -18,9 +18,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
-    Route::resource('users', 'UserController');
 });
 
+// Route::post('/admin/users', 'Auth\RegisterController@create')->name('admin.users');
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,5 +28,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/login', 'HomeController@index')->name('login');
+Route::get('/home', 'HomeController@index')->name('home');
 
