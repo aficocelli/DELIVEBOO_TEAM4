@@ -70,6 +70,8 @@ class RegisterController extends Controller
             'image_restaurant' => $data['image_restaurant']
         ]);
     }
+
+  
 }
 
 
