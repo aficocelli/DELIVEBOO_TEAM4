@@ -80,6 +80,14 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
+        
+
+        if ($user->id != $user_id) {
+            abort('403');
+        }
+
+        return view('admin.users.edit', compact('user'));
+
     /**
      * Update the specified resource in storage.
      *
