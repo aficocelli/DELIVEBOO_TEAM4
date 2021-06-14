@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
+    Route::resource('user', 'UserController');
+
 });
 
 // Route::post('/admin/users', 'Auth\RegisterController@create')->name('admin.users');
@@ -30,3 +32,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
