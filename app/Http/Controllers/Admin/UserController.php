@@ -68,11 +68,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
-    {
+    {   
+        // controllo se utente è autorizzato a modifica
         $user_id = Auth::id();
 
-        
-
+        //errore autenticazione
         if ($user->id != $user_id) {
             abort('403');
         }
@@ -80,24 +80,30 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-        
-
-        if ($user->id != $user_id) {
-            abort('403');
-        }
-
-        return view('admin.users.edit', compact('user'));
-
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, User $user)
+    {   
+        // controllo se utente è autorizzato a modifica
+        $user_id = Auth::id();
+
+        //errore autenticazione
+        if ($user->id != $user_id) {
+            abort('403');
+        }
+
+        //prendo tutti i dati del form
+        $data = $request->all();
+
+        //salvo le modifiche
+        $user->update($data);
+
+        return redirect()->route('home', $user)->with('message', 'Il ristorante ' . $user->name_restaurant . ' è stato modificato!');
     }
 
     /**
