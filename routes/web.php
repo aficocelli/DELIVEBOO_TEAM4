@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->group(function () {
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
-    Route::resource('restaurants', 'RestaurantController');
+    Route::resource('users', 'UserController');
 });
 
 
