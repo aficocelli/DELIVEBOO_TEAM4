@@ -14,8 +14,7 @@ class FoodsTableSeeder extends Seeder
     {
         $foods = [
             [
-                'id' => 1,
-                'restaurant_id' => 2,
+                
                 'name_food' => 'pizza',
                 'image' => 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.buttalapasta.it%2Fricette%2Fricetta-hamburger-americano-tradizionale%2F25325%2F&psig=AOvVaw1SyweUS3xqFYgbu6j6xV7-&ust=1623488307418000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOjN_rGbj_ECFQAAAAAdAAAAABAD',
                 'ingredients' => 'acqua, farina, pomodoro, mozzarella, basilico',
@@ -25,8 +24,7 @@ class FoodsTableSeeder extends Seeder
                 'available' => 1
             ],
             [
-                'id' => 2,
-                'restaurant_id' => 3,
+               
                 'name_food' => 'hamburger',
                 'image' => 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fcookidoo.it%2Frecipes%2Frecipe%2Fit-IT%2Fr652170&psig=AOvVaw3xsJgv-0KenGLyO_DcSTb-&ust=1623488286374000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiaraibj_ECFQAAAAAdAAAAABAD',
                 'ingredients' => 'pane, cipolla, lattuga, pomodoro, carne',
@@ -38,7 +36,6 @@ class FoodsTableSeeder extends Seeder
         ];
         foreach ($foods as $food) {
             $newFood = new Food();
-            $newFood->id = $food['id'];
             $newFood->restaurant_id = $food['restaurant_id'];
             $newFood->name_food = $food['name_food'];
             $newFood->image = $food['image'];
