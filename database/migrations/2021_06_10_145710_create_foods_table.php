@@ -15,10 +15,10 @@ class CreateFoodsTable extends Migration
     {
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('restaurant_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('name_food', 150);
             $table->boolean('available')->default(1);
-            $table->string('image')->nullable();
+            $table->string('food_image')->nullable();
             $table->string('ingredients');
             $table->float('price', 5, 2);
             $table->boolean('vegan')->default(0);

@@ -8,9 +8,9 @@ class Type extends Model
 {
     protected $guarded = [];
 
-    public function restaurants(){
+    public function users(){
 
-        return $this->belongsToMany('App\Restaurant');
+        return $this->belongsToMany('App\User');
 
     }
 }

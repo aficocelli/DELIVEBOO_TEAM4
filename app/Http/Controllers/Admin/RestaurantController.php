@@ -73,7 +73,7 @@ class RestaurantController extends Controller
         $newRestaurant = Restaurant::create($data);
 
 
-        return redirect()->route('admin.restaurants.create')->with('message', 'Il ristorante è stato creato!');
+        return redirect()->route('admin.restaurants.show')->with('message', 'Il ristorante è stato creato!');
     }
 
     /**
@@ -82,9 +82,15 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
+    public function show(Restaurant $restaurant)
+    {   
+
+        
+
+        $user_id = Auth::id();
+
+
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**

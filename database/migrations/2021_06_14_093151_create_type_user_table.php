@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeRestaurantTable extends Migration
+class CreateTypeUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTypeRestaurantTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_restaurant', function (Blueprint $table) {
+        Schema::create('type_user', function (Blueprint $table) {
             $table->id();
             $table->foreignId('type_id')->references('id')->on('types')->onDelete('cascade');
-            $table->foreignId('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
+            $table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateTypeRestaurantTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_restaurant');
+        Schema::dropIfExists('type_user');
     }
 }
