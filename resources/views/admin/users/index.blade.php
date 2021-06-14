@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-sm">
 
-      <h1>{{Auth::user()->restaurant_name }} ciao</h1>
+      <h1>{{Auth::user()->name_restaurant}}</h1>
 
     </div>
     
