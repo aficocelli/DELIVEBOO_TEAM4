@@ -82,6 +82,10 @@
                             <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva">
                         </div>
 
+                        <div class="form-group">
+                            <label for="image_restaurant">Immagine</label>
+                            <input type="text" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="Image">
+                        </div>
                         {{-- /form registrazione ristorante --}}
 
                         <div class="form-group row mb-0">
