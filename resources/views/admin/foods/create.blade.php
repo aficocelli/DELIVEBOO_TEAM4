@@ -1,4 +1,4 @@
-<h1>ciao</h1>
+
 @extends('layouts.app')
 
 @section('pageTitle')

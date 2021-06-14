@@ -33,6 +33,7 @@
 
         <button type="submit" class="btn btn-danger d-inline">Elimina</button>
       </a>
+      <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Aggiungi un nuovo menu</button></a>
      </form>
     
         @if ($foods->isNotEmpty())
