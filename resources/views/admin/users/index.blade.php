@@ -26,27 +26,25 @@
       <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
         <button type="button" class="btn btn-success ">Modifica</button>
       </a>
-          <div class="mt-4 d-inline-block">
-        <form action="{{route('admin.users.destroy', [ 'user' => $user->id ])}}" method="POST">
-          @csrf
-          @method('DELETE')
+      <div class="mt-4 d-inline-block">
+          <form action="{{route('admin.users.destroy', [ 'user' => $user->id ])}}" method="POST">
+            @csrf
+            @method('DELETE')
 
-        <button type="submit" class="btn btn-danger d-inline">Elimina</button>
-      </a>
-      <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Aggiungi un nuovo menu</button></a>
-     </form>
-    
+          <button type="submit" class="btn btn-danger d-inline">Elimina</button>
+          <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Aggiungi un nuovo menu</button></a>
+        </form>
+        
+        @dd($foods)
+
+        @dd($foods->isNotEmpty())
         @if ($foods->isNotEmpty())
-        <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
-          <button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
-        </a>
-            
+          <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
+            <button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
+          </a>
         @endif
-    
-         
-    
 
-     </div>
+      </div>
     </div>
     
 @endsection

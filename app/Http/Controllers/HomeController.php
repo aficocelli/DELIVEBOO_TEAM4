@@ -28,8 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $foods = Food::all()->where('id');
 
+       
+        $foods = Food::where('id', $user)->get();
     
         $data = User::all()->where('id');
 
