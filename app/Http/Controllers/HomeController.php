@@ -35,7 +35,6 @@ class HomeController extends Controller
     
         $data = User::all()->where('id');
 
-        
         return view('admin.users.index', compact('data', 'user', 'foods'));
     }
 }
