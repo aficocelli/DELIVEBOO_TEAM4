@@ -35,15 +35,13 @@
           <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Aggiungi un nuovo menu</button></a>
         </form>
         
-        @dd($foods)
+        
 
-        @dd($foods->isNotEmpty())
         @if ($foods->isNotEmpty())
           <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
             <button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
           </a>
-        @endif
-
+        @endif 
       </div>
     </div>
     

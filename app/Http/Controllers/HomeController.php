@@ -29,12 +29,13 @@ class HomeController extends Controller
     {
         $user = Auth::user();
 
+        $user_id = Auth::id();
        
-        $foods = Food::where('id', $user)->get();
+        $foods = Food::where('user_id', $user_id)->get();
     
         $data = User::all()->where('id');
 
-
+        
         return view('admin.users.index', compact('data', 'user', 'foods'));
     }
 }
