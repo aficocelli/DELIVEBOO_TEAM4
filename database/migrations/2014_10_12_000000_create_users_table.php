@@ -19,6 +19,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('name_restaurant', 100)->unique();
+            $table->string('phone_restaurant', 100)->unique();
+            $table->string('address_restaurant')->unique();
+            $table->string('vat_number')->unique();
+            $table->string('image_restaurant')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

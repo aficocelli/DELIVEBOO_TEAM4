@@ -37,10 +37,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function restaurant(){
+    public function types(){
 
-        return $this->hasOne('App\Restaurant');
+        return $this->belongsToMany('App\Type');
 
+    }
+
+    public function foods(){
+
+        return $this->hasMany('App\Food');
     }
     
     

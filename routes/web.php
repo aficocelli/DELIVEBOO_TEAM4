@@ -22,8 +22,11 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->middleware('auth')->
 });
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', 'HomeController@index')->name('login');
 

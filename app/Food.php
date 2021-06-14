@@ -10,9 +10,9 @@ class Food extends Model
     public $table = "foods";
     protected $guarded = [];
 
-    public function restaurant(){
+    public function user(){
 
-        return $this->belongsTo('App\Restaurant');
+        return $this->belongsTo('App\User');
 
     }
 
