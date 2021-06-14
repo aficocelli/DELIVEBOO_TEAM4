@@ -66,7 +66,7 @@ class RestaurantController extends Controller
 
         //prendo i dati inseriti dall'utente
         $data = $request->all();
-        $data['user_id'] = Auth::id();
+        $data['user_id'] = Auth::id(); 
 
         // Insert
         $newRestaurant = Restaurant::create($data);

@@ -14,16 +14,7 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        // fakers
-        // $newUser = new User();
-        // $newUser->restaurant_id = 1;
-        // $newUser->name = $faker->name();
-        // $newUser->email = $faker->email();
-        // $newUser->password = Hash::make('12345678');
-        // $newUser->save();
-
-
+    {   
         $users = [
             [
                 'name' => 'Giuliano',
@@ -53,6 +44,8 @@ class UsersTableSeeder extends Seeder
             $newUser->password = Hash::make($user['password']);
             $newUser->save(); 
         }
+
+
     }
 
 }
