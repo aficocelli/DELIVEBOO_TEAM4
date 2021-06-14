@@ -69,6 +69,10 @@
 			<button type="submit" class="btn btn-primary">Crea</button>
 		</div>
 	</form>
+		<a href="{{route('admin.foods.index')}}">
+			<button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
+		</a>
 </div>
+
 	
 @endsection

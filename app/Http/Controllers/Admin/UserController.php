@@ -98,6 +98,7 @@ class UserController extends Controller
         $data = $request->all();
         //salvo le modifiche
         $user->update($data);
+        
         return redirect()->route('home', $user)->with('message', 'Il ristorante ' . $user->name_restaurant . ' è stato modificato!');
     }
 

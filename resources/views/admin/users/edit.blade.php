@@ -52,6 +52,9 @@
 			<button type="submit" class="btn btn-primary">Modifica</button>
 		</div>
 	</form>
+    <a href="{{route('home', [ 'user' => $user->id ])}}">
+        <button type="button" class="btn btn-primary ">Torna alla dashboard</button>
+    </a>
 </div>
 
 
