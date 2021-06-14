@@ -13,21 +13,21 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {   
-        $users = [
-            [
-                'name' => 'Giuliano',
-                'email' => 'giuliano@gmail.com',
-                'password' => 'passwordGiuliano' 
-            ],
+        // $users = [
+        //     [
+        //         'name' => 'Giuliano',
+        //         'email' => 'giuliano@gmail.com',
+        //         'password' => 'passwordGiuliano' 
+        //     ],
 
-            [
-                'name' => 'Antonello',
-                'email' => 'antonello@gmail.com',
-                'password' => 'passwordAntonello'
-            ]
-        ];
+        //     [
+        //         'name' => 'Antonello',
+        //         'email' => 'antonello@gmail.com',
+        //         'password' => 'passwordAntonello'
+        //     ]
+        // ];
 
         // $newUser = new User();
         // $newUser->id = 1;
@@ -37,11 +37,16 @@ class UsersTableSeeder extends Seeder
         // $newUser->password = Hash::make('password');
         // $newUser->save(); 
 
-        foreach ($users as $user) {
+        for ($i = 0; $i < 5; $i++) {
             $newUser = new User();
-            $newUser->name = $user['name'];
-            $newUser->email = $user['email'] ;
-            $newUser->password = Hash::make($user['password']);
+            $newUser->name = $faker->name();
+            $newUser->email = $faker->email();
+            $newUser->password = Hash::make($faker->password(8, 10));
+            $newUser->name_restaurant = $faker->company();
+            $newUser->phone_restaurant = $faker->phoneNumber();
+            $newUser->address_restaurant = $faker->address();
+            $newUser->vat_number = $faker->numerify('p.iva-###########');
+            $newUser->image_restaurant = $faker->imageUrl(360, 360, 'animals', true);
             $newUser->save(); 
         }
 
