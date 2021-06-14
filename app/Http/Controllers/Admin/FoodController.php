@@ -24,9 +24,9 @@ class FoodController extends Controller
 
         
         
-        $foods = Food::all()->where('user_id', $user_id)->first();
+        $foods = Food::where('user_id', $user_id)->get();
 
-        dd($foods);
+        
 
         return view('admin.foods.index', compact('foods'));
     }
