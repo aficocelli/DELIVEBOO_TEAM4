@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Middleware\Authenticate;
 use App\User;
+use App\Food;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,12 +28,12 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-
+        $foods = Food::all()->where('id');
 
     
         $data = User::all()->where('id');
 
 
-        return view('admin.users.index', compact('data', 'user'));
+        return view('admin.users.index', compact('data', 'user', 'foods'));
     }
 }
