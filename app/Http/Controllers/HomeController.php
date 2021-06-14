@@ -26,13 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $id = Auth::user();
+        $user = Auth::user();
 
 
     
         $data = User::all()->where('id');
 
 
-        return view('admin.users.index', compact('data'));
+        return view('admin.users.index', compact('data', 'user'));
     }
 }
