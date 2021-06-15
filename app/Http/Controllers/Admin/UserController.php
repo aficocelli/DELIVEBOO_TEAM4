@@ -71,12 +71,13 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $user_id = Auth::id();
+        $types = Type::all();
 
         if ($user->id != $user_id) {
             abort('403');
         }
 
-        return view('admin.users.edit', compact('user'));
+        return view('admin.users.edit', compact('user', 'types'));
     }
 
 
@@ -99,6 +100,13 @@ class UserController extends Controller
         $data = $request->all();
         //salvo le modifiche
         $user->update($data);
+
+        // controllo types
+
+        if (!isset($data['types'])) {
+            $data['types'] = [];
+        }
+        $user->types()->sync($data['types']);
         
         return redirect()->route('home', $user)->with('message', 'Il ristorante ' . $user->name_restaurant . ' è stato modificato!');
     }
