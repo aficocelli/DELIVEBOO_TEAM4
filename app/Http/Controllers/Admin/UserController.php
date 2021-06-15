@@ -41,7 +41,7 @@ class UserController extends Controller
 
         
 
-        return view('register', compact('types'));
+        return view('auth.register', compact('types'));
     }
 
     /**
