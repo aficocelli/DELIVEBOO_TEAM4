@@ -8,7 +8,7 @@
 @section('content')
 
 <div class="container">
-	{{-- @if ($errors->any())
+	@if ($errors->any())
 		<div class="alert alert-danger">
 			<ul>
 				@foreach ($errors->all() as $error)
@@ -16,7 +16,7 @@
 				@endforeach
 			</ul>
 		</div>
-	@endif --}}
+	@endif
 
 	<form action="{{route('admin.foods.store')}}" method="POST" enctype="multipart/form-data">
 		@csrf
