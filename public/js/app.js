@@ -1903,11 +1903,15 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app',
   data: {
-    mainSelect: ''
+    mainSelect: '',
+    ordine: 0
   },
   methods: {
-    test: function test() {
-      alert('ciao');
+    incrementa: function incrementa() {
+      this.ordine++;
+    },
+    decrementa: function decrementa() {
+      this.ordine--;
     }
   }
 });

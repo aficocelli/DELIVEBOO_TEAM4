@@ -37,18 +37,19 @@
                 <li class="menu-item">
                   <p>{{$food->name_food}}</p>
 
-                  <form action="">
-                    <span><button @click="" >+</button></span> 
-
+                  <span><button @@click="incrementa">+</button></span> 
+                  <span><button @@click="decrementa">-</button></span> 
+                  <span> @{{ordine}} </span>
+                  {{-- <form action="">
                     <span>
-                      <select name="" id="">
+                      <select name="" id="" v-model="mainSelect" v-on:change="">
                         @for ($i = 0; $i <= 5; $i++)
                         <option value="">{{$i}}</option>
                         @endfor
                       </select>
                     </span>
 
-                  </form>
+                  </form> --}}
                   
                 </li>
             @endforeach

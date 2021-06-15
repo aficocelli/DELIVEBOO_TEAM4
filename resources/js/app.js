@@ -30,11 +30,15 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
     data: {
-        mainSelect: ''
+        mainSelect: '',
+        ordine : 0
     },
     methods: {
-        test: function () {
-            alert('ciao');
+        incrementa: function () {
+            this.ordine ++;
+        },
+        decrementa: function() {
+            this.ordine--;
         }
     }
 });
