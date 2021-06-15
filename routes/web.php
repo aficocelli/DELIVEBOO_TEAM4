@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Auth;
 
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
+//area privata
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
     Route::resource('users', 'UserController');
@@ -24,9 +28,6 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 });
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
