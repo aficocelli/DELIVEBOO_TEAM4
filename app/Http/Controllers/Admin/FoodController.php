@@ -13,16 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
-
-    protected $validation = [
-
-        'name_food' => 'required|string',
-        'food_image'=> 'nullable|url',
-        'ingredients'=> 'required|string',
-        'description'=> 'required|string',
-        'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|max:5'
-
-    ];
     /**
      * Display a listing of the resource.
      *
@@ -61,33 +51,19 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-
         $user = Auth::user();
-
         // validation
         $validation = $this->validation;
-
         $request->validate($validation);
-
         $data = $request->all();
-
-        
-
         // checkbox
-        $data['available'] = !isset($data['available'])? 0 : 1;
-
+        $data['available'] = !isset($data['available']) ? 0 : 1;
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
-
         // verificata autenticazione
-
         $data['user_id'] = $user->id;
-
         // insert
-
-        $newFood = Food::create($data); 
-
+        $newFood = Food::create($data);
         // redirect
-
         return redirect()->route('admin.foods.index')->with('message', 'Il menu è stato creato!');
     }
 
@@ -120,21 +96,15 @@ class FoodController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Food $food)
+    public function update(Request $request, Food $food )
     {
         $validation = $this->validation;
-
         $request->validate($validation);
-
         $data = $request->all();
-
         // checkbox
         $data['available'] = !isset($data['available']) ? 0 : 1;
-
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
-
         $food->update($data);
-
         return redirect()->route('admin.foods.index');
     }
 
@@ -147,7 +117,6 @@ class FoodController extends Controller
     public function destroy(Food $food)
     {
         $food->delete();
-
         return redirect()->route('admin.foods.index');
     }
 }
