@@ -64,36 +64,34 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $types = Type::all()->toArray();
-        
-        $newUser = new User();
-
-        $newUser->name = $data['name'];
-        $newUser->email = $data['email'];
-        $newUser->password = Hash::make($data['password']);
-        $newUser->name_restaurant = $data['name_restaurant'];
-        $newUser->phone_restaurant = $data['phone_restaurant'];
-        $newUser->address_restaurant = $data['address_restaurant'];
-        $newUser->vat_number = $data['vat_number'];
-        $newUser->image_restaurant = $data['image_restaurant'];
-        $newUser->save();
-        
-        $newUser->save();
-        
-        dd($newUser->types()->attach([$type->id]));
-
     
-        foreach($types as $type){
-            
-            $newUser->types()->attach($type['id']);
-        }
 
+        $newUser = User::Create([
+            'name'=> $data['name'],
+            'email'=> $data['email'],
+            'password' => Hash::make($data['password']),
+            'name_restaurant' => $data['name_restaurant'],
+            'phone_restaurant' => $data['phone_restaurant'],
+            'address_restaurant' => $data['address_restaurant'],
+            'vat_number' => $data['vat_number'],
+            'image_restaurant' => $data['image_restaurant'],
+        ]);
         
-    
-        
-        return view('register', compact('types'));
+        $newUser->types()->attach($data['type']);
 
-        
-        
+        return $newUser;
+    }
+
+    // stampo i types
+    public function showRegistrationForm()
+    {
+        $types = Type::all();
+
+        return view('auth.register', compact('types'));
     }
 }
+
+
+
+
+

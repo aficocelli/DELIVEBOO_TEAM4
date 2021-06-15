@@ -88,15 +88,15 @@
                         </div>
                         {{-- type --}}
                         
-                        @dd($types)
-                        {{-- @foreach ($type as $item)
+                        
+                        @foreach ($types as $item)
 			                <div class="form-check">
 				                <input class="form-check-input" type="checkbox" value="{{$item->id}}" id="{{$item->origin}}" name="type[]">
 				                <label class="form-check-label" for="{{$item->origin}}">
 					                {{$item->origin}}
 				                </label>
 			                </div>
-		                @endforeach --}}
+		                @endforeach
                        
 
                         <div class="form-group row mb-0">
