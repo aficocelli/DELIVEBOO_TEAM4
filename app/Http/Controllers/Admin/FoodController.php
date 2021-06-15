@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
+
+    protected $validation = [
+
+        'name_food' => 'required',
+        'price' => 'required|regex:/^\d+(\.\d{1,2})?$/'
+
+
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -51,7 +59,20 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validation
+        $validation = $this->validation;
+
+        $request->validate($validation);
+
+        $data = $request->all();
+
+        dd($data);
+
+        // checkbox
+        
+        // redirect
+
+        return redirect()->route('admin.foods.index')->with('message', 'Il menu è stato creato!');
     }
 
     /**

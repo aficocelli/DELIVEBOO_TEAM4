@@ -56,7 +56,12 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-
+    public function storeTypes()
+    {
+        $types = Type::all();
+        dd($types);
+        return view('register', compact('types'));
+    }
     /**
      * Create a new user instance after a valid registration.
      *
@@ -65,19 +70,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $types = Type::all();
-        $newUser =  User::all([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'name_restaurant'=>$data['name_restaurant'],
-            'phone_restaurant' => $data['phone_restaurant'],
-            'address_restaurant' => $data['address_restaurant'],
-            'vat_number' => $data['vat_number'],
-            'image_restaurant' => $data['image_restaurant']
-        ]);
+        
+        $newUser = new User();
 
-        return view('register');
+        $newUser->name = $data['name'];
+        $newUser->email = $data['email'];
+        $newUser->password = Hash::make($data['password']);
+        $newUser->name_restaurant = $data['name_restaurant'];
+        $newUser->phone_restaurant = $data['phone_restaurant'];
+        $newUser->address_restaurant = $data['address_restaurant'];
+        $newUser->vat_number = $data['vat_number'];
+        $newUser->image_restaurant = $data['image_restaurant'];
+        
+        $newUser->save();
+
+        $newUser->types()->attach($data['types']);
+
+        return $newUser;
+
+        
     }
   
 }
