@@ -86,6 +86,15 @@
                             <label for="image_restaurant">Immagine</label>
                             <input type="text" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="Image">
                         </div>
+                        {{-- type --}}
+                        @foreach ($types as $type)
+			                <div class="form-check">
+				                <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="{{$type->origin}}" name="types[]">
+				                <label class="form-check-label" for="{{$type->origin}}">
+					                {{$type->origin}}
+				                </label>
+			                </div>
+		                @endforeach
                         {{-- /form registrazione ristorante --}}
 
                         <div class="form-group row mb-0">
