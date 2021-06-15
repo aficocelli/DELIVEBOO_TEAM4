@@ -87,9 +87,9 @@ class RegisterController extends Controller
         
         dd($newUser->types()->attach([$type->id]));
 
-       for($i = 0; $i > 7; $i++){
+        for($i = 0; $i > 7; $i++){
 
-        $newUser->types()->attach();
+        // $newUser->types()->attach();
 
        }
         
@@ -98,12 +98,4 @@ class RegisterController extends Controller
 
         
     }
-
-    public function storeTypes()
-    {
-        $types = Type::all();
-
-        return view('register', compact('types'));
-    }
-  
 }
