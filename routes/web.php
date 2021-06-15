@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Auth;
 //     return view('welcome');
 // });
 
+// area pubblica
 Route::get('/', 'GuestController@index')->name('guest.index');
 Route::get('users/{user}', 'GuestController@showRestaurant')->name('guest.show');
 
@@ -28,13 +29,8 @@ Route::get('users/{user}', 'GuestController@showRestaurant')->name('guest.show')
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
     Route::resource('users', 'UserController');
-
 });
-
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('guest', 'Guest\OrderController@showOrder')->name('guest.order.show');
+
