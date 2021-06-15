@@ -82,6 +82,7 @@ class RegisterController extends Controller
         return $newUser;
     }
 
+    // stampo i types
     public function showRegistrationForm()
     {
         $types = Type::all();
