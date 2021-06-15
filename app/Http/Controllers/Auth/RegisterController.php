@@ -84,7 +84,7 @@ class RegisterController extends Controller
         
         $newUser->save();
         
-        dd($newUser->types()->attach([$type->id]]));
+        dd($newUser->types()->attach([$type->id]));
 
        for($i = 0; $i > 7; $i++){
 

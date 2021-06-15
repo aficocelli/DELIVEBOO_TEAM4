@@ -7,12 +7,12 @@ use App\User;
 use Illuminate\Http\Request;
 
 
-class ApiController extends Controller
-{
-    public function search(Request $request) 
-    {
+// class ApiController extends Controller
+// {
+//     public function search(Request $request) 
+//     {
     
-        $user = User::where('name', 'like', '%' . $request->name . '%' );
+//         $user = User::where('name', 'like', '%' . $request->name . '%' );
     
-    }
-}
+//     }
+// }
