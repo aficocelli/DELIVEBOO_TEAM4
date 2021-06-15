@@ -88,15 +88,16 @@
                         </div>
                         {{-- type --}}
                         
-                        {{-- @foreach ($types as $type)
+                        @dd($types)
+                        {{-- @foreach ($type as $item)
 			                <div class="form-check">
-				                <input class="form-check-input" type="checkbox" value="{{$type->id}}" id="{{$type->origin}}" name="types[]">
-				                <label class="form-check-label" for="{{$type->origin}}">
-					                {{$type->origin}}
+				                <input class="form-check-input" type="checkbox" value="{{$item->id}}" id="{{$item->origin}}" name="type[]">
+				                <label class="form-check-label" for="{{$item->origin}}">
+					                {{$item->origin}}
 				                </label>
 			                </div>
 		                @endforeach --}}
-                        {{-- /form registrazione ristorante --}}
+                       
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
