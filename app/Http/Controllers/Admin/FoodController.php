@@ -15,7 +15,7 @@ class FoodController extends Controller
 {
     protected $validation = [
         'name_food' => 'required|string|max:150',
-        'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+        'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|max:5',
         'food_image' => 'nullable|string',
         'ingredients'=> 'required|string',
         'description'=> 'required'
