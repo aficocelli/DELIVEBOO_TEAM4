@@ -82,6 +82,7 @@ class RegisterController extends Controller
         return $newUser;
     }
 
+    
     // stampo
 
     public function showRegistrationForm()
