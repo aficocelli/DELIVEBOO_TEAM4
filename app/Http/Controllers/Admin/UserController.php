@@ -12,14 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-    protected $validation = [
-        'name_restaurant' => 'required|string|unique:restaurants',
-        'phone_restaurant' => 'required|string|unique:restaurants',
-        'address_restaurant' => 'required|string|unique:restaurants',
-        'vat_number' => 'required|string|unique:restaurants'
-    ];
-
-    
+   
     /**
      * Display a listing of the resource.
      *
