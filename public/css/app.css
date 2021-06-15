@@ -10026,3 +10026,9 @@ main .wrapper-header .info-restaurant .info-text {
   flex-direction: column;
   justify-content: center;
 }
+main .restaurant-menu .menu-item {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}

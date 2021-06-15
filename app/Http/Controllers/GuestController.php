@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Type;
 use App\Food;
 class GuestController extends Controller
 {
@@ -16,17 +17,21 @@ class GuestController extends Controller
 
     public function showRestaurant($id)
     {
+        $types = Type::all();
+
         $users = User::where('id', $id)->first();
+        
+        $foods = Food::where('available', 1)->where('user_id', $id)->get();
 
-        return view('guest.show', compact('users'));
+        return view('guest.show', compact('users', 'foods', 'types'));
     }
 
-    public function showFood(Food $food) 
-    {
-        $foods = Food::where('available', 1)->get();
+    // public function showFood(Food $food) 
+    // {
+    //     $foods = Food::where('available', 1)->get();
 
-        dd($foods);
+    //     dd($foods);
 
-        return view('guest.show', compact('foods'));
-    }
+    //     return view('guest.show', compact('foods'));
+    // }
 }

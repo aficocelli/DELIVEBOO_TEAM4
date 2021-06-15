@@ -26,6 +26,16 @@ main {
             }
         }
     }
+
+    .restaurant-menu {
+        .menu-item {
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+
+        }
+    }
     
 
 
