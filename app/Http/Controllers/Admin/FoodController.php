@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Auth;
 
 class FoodController extends Controller
 {
+    protected $validation = [
+        'name_food' => 'required|string|max:150',
+        'price' => 'required|regex:/^\d+(\.\d{1,2})?$/',
+        'food_image' => 'nullable|string',
+        'ingredients'=> 'required|string',
+        'description'=> 'required'
+ 
+    ];
     /**
      * Display a listing of the resource.
      *
