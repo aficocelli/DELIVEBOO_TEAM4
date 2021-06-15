@@ -6,27 +6,56 @@
     
       <div class="wrapper-header">
         <div class="container">
+
+          <!-- info restaurant -->
           <div class="info-restaurant">
             @if(isset($users->image_restaurant))
               <div class="restaurant-image mr-5">
                 <img src="{{$users->image_restaurant}}" class="card-img-top" alt="{{$users->name_restaurant}}">
               </div>
             @endif
+
             <div class="info-text">
                 <h3>{{$users->name_restaurant}}</h3>
                 <p><span><i class="fas fa-user"></i> </span> {{$users->name}}</p>
                 <p><span><i class="fas fa-map-marker-alt"></i> </span> {{$users->address_restaurant}}</p>
                 <p><span><i class="fas fa-phone"></i> </span> {{$users->phone_restaurant}}</p>
+                @foreach ($users->types as $type)
+			            <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
+		            @endforeach
             </div>
+
           </div>
+
+        </div>
+      </div>
+      <div class="container mt-5">
+
+        <div class="restaurant-menu">
+          <ul class="list-inline">
+            @foreach ($foods as $food)
+                <li class="menu-item">
+                  <p>{{$food->name_food}}</p>
+
+                  <form action="">
+                    <span><button @click="" >+</button></span> 
+
+                    <span>
+                      <select name="" id="">
+                        @for ($i = 0; $i <= 5; $i++)
+                        <option value="">{{$i}}</option>
+                        @endfor
+                      </select>
+                    </span>
+
+                  </form>
+                  
+                </li>
+            @endforeach
+          </ul>
         </div>
       </div>
 
-      {{-- <div class="menu">
-        @foreach ($foods as $food)
-            
-        @endforeach
-      </div> --}}
 
 
 

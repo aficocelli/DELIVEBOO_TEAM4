@@ -12,10 +12,12 @@
         <!-- fontawesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-         <!-- Styles -->
+        <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- Vue.js -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+         
         
     </head>
     <body>
@@ -82,6 +84,7 @@
        
         
        
-        
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </body>
 </html>
