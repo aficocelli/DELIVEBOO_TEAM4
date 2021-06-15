@@ -56,20 +56,15 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
-    public function storeTypes()
-    {
-        $types = Type::all();
-        
-        return $types ;
-    }
     /**
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data, Type $type)
+    protected function create(array $data)
     {
+        $types = Type::all()->toArray();
         
         $newUser = new User();
 
@@ -84,17 +79,20 @@ class RegisterController extends Controller
         
         $newUser->save();
         
-        dd($newUser->types()->attach([$type->id]]));
+       
 
-       for($i = 0; $i > 7; $i++){
+    
+        foreach($types as $type){
+            
+            $newUser->types()->attach($type['id']);
+        }
 
-        $newUser->types()->attach();
-
-       }
         
+    
+        
+        return view('register', compact('types'));
 
-        return $newUser;
-
+        
         
     }
   
