@@ -48,6 +48,17 @@
             <input type="text" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="Image" value="{{$user->image_restaurant}}">
         </div>
 
+        {{-- stampo i checkbox --}}
+
+        @foreach ($types as $type)
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" value="{{$type->id}}" id="{{$type->origin}}" name="types[]" {{ $user->types->contains($type) ? 'checked' : '' }}>
+				<label class="form-check-label" for="{{$type->origin}}">
+					{{$type->origin}}
+				</label>
+			</div>
+		@endforeach
+
 		<div class="mt-3">
 			<button type="submit" class="btn btn-primary">Modifica</button>
 		</div>
