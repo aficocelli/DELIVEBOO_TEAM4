@@ -73,6 +73,7 @@
         </main>
 
         <h1>Pagina principale - Lista dei ristoranti</h1>
+        <a href="{{route('home')}}"><button type="button" class="btn btn-success">HOME</button></a>
     </div> 
      
        
