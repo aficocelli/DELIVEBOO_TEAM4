@@ -60,7 +60,7 @@ class RegisterController extends Controller
     {
         $types = Type::all();
         
-        return view('register', compact('types'));
+        return $types ;
     }
     /**
      * Create a new user instance after a valid registration.
@@ -68,7 +68,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $data, Type $type)
     {
         
         $newUser = new User();
@@ -83,8 +83,15 @@ class RegisterController extends Controller
         $newUser->image_restaurant = $data['image_restaurant'];
         
         $newUser->save();
+        
+        dd($newUser->types()->attach([$type->id]]));
 
-        $newUser->types()->attach($data['types']);
+       for($i = 0; $i > 7; $i++){
+
+        $newUser->types()->attach();
+
+       }
+        
 
         return $newUser;
 
