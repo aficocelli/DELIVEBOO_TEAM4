@@ -36,3 +36,5 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('guest', 'Guest\OrderController@showOrder')->name('guest.order.show');
