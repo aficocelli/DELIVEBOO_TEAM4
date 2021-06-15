@@ -16,7 +16,7 @@
         <p>Prezzo: {{$food->price}}</p>
         <p>Vegano:{{$food->vegan}}</p>
         @endforeach
-    <a href="{{route('admin.foods.edit', [ 'food' => $food->id ])}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i></button></a>
+    {{-- <a href="{{route('admin.foods.edit', [ 'food' => $food->id ])}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i></button></a> --}}
     <a href="{{route('home')}}">
             <button type="button" class="btn btn-primary ">Home Dashboard</button>
           </a></div>
