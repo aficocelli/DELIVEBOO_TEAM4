@@ -10002,3 +10002,27 @@ h3 {
     border-color: #dee2e6;
   }
 }
+main .wrapper-header {
+  background-color: #D3D3D3;
+  padding: 20px 0;
+}
+main .wrapper-header .info-restaurant {
+  display: flex;
+  width: 100%;
+}
+main .wrapper-header .info-restaurant .restaurant-image {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 20px;
+  overflow: hidden;
+}
+main .wrapper-header .info-restaurant .restaurant-image img {
+  width: 100%;
+}
+main .wrapper-header .info-restaurant .info-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
