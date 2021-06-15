@@ -37,11 +37,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $types = Type::all();
-
-        
-
-        return view('register', compact('types'));
+       
     }
 
     /**
@@ -52,14 +48,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
         
-        $newUser = User::create($data);
-        $newUser->types()->attach($data['types']);
-
-        
-
-        return redirect()->route('home');
     }
 
     /**
