@@ -59,7 +59,7 @@ class RegisterController extends Controller
     public function storeTypes()
     {
         $types = Type::all();
-        dd($types);
+        
         return view('register', compact('types'));
     }
     /**
