@@ -81,14 +81,22 @@ class RegisterController extends Controller
         $newUser->address_restaurant = $data['address_restaurant'];
         $newUser->vat_number = $data['vat_number'];
         $newUser->image_restaurant = $data['image_restaurant'];
-        
         $newUser->save();
-
+        
         $newUser->types()->attach($data['types']);
+        
+        dd($data['type']);
 
         return $newUser;
 
         
+    }
+
+    public function storeTypes()
+    {
+        $types = Type::all();
+
+        return view('register', compact('types'));
     }
   
 }
