@@ -63,15 +63,18 @@
 						{{$tag->name}}
 					</label>
 				</div>
-			@endforeach
-		</div> --}}
+			@endforeach --}}
+		</div>
 		<div class="mt-3">
 			<button type="submit" class="btn btn-primary">Crea</button>
 		</div>
 	</form>
-		<a href="{{route('admin.foods.index')}}">
-			<button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
-		</a>
+		@if ($foods->isNotEmpty())
+			<a href="{{route('admin.foods.index')}}">
+				<button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
+			</a> 
+		@endif 	  
+		<a href="{{route('home')}}">Torna alla home ristorante</a>
 </div>
 
 	

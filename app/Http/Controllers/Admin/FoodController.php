@@ -38,7 +38,11 @@ class FoodController extends Controller
      */
     public function create()
     {
-        return view('admin.foods.create');
+        $user_id = Auth::id();
+        
+        $foods = Food::where('user_id', $user_id)->get();
+
+        return view('admin.foods.create', compact('foods'));
     }
 
     /**
