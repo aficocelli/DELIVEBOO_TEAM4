@@ -64,33 +64,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // $types = Type::all()->toArray();
-        
-        // $newUser = new User();
-
-        // $newUser->name = $data['name'];
-        // $newUser->email = $data['email'];
-        // $newUser->password = Hash::make($data['password']);
-        // $newUser->name_restaurant = $data['name_restaurant'];
-        // $newUser->phone_restaurant = $data['phone_restaurant'];
-        // $newUser->address_restaurant = $data['address_restaurant'];
-        // $newUser->vat_number = $data['vat_number'];
-        // $newUser->image_restaurant = $data['image_restaurant'];
-        
-        // $newUser->save();
-        
-       
-
     
-        // foreach($types as $type){
-            
-        //     $newUser->types()->attach($type['id']);
-        // }
-
-        
-    
-        
-        // return view('register', compact('types'));
 
         $newUser = User::Create([
             'name'=> $data['name'],
@@ -103,7 +77,7 @@ class RegisterController extends Controller
             'image_restaurant' => $data['image_restaurant'],
         ]);
         
-        $newUser->types()->attach($data['types'][0]);
+        $newUser->types()->attach($data['type']);
 
         return $newUser;
     }
