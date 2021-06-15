@@ -16,9 +16,13 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'GuestController@index')->name('guest.index');
+Route::get('users/{user}', 'GuestController@showRestaurant')->name('guest.show');
+
 
 //area privata
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
