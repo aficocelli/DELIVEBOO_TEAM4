@@ -14,5 +14,6 @@ new Vue({
             this.ordine--;
         },
 
+        
     }
 });
