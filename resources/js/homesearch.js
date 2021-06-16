@@ -5,7 +5,8 @@ new Vue({
   data: {
     mainSelect: '',
     ordine: 0,
-    types:[]
+    types:[],
+    users: []
 
   },
 
@@ -14,6 +15,12 @@ new Vue({
     axios.get('http://localhost:8000/api/search/types')
       .then((result) => {
         this.types = result.data;
+        console.log(result.data);
+      });
+
+    axios.get('http://localhost:8000/api/search/users')
+      .then((result) => {
+        this.users = result.data;
         console.log(result.data);
       });
 
@@ -28,7 +35,20 @@ new Vue({
     },
 
     filterType: function() {
-     
+
+      axios.get('http://localhost:8000/api/search/types')
+        .then((result) => {
+          this.types = result.data;
+          console.log(result.data);
+        });
     }
   },
+
+  computed: {
+    filteredTypes: function () {
+      return this.users.filter((users) => {
+        return users.name_restaurant.toLowerCase().match(this.mainSelect.toLowerCase());
+      });
+    }
+  }
 });

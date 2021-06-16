@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\User;
-use App\type;
+use App\Type;
 use Illuminate\Http\Request;
 
 
@@ -27,6 +27,23 @@ class ApiController extends Controller
       $users = User::all();
       return response()->json($users);
 
+    }
+
+    public function selectTypes (Request $request)
+    {
+      $users = User::all();
+
+      $selectTypes = collect();
+
+      foreach ($users as $user) {
+
+        if ($user->types->contains('id', $request->types)) {
+          
+          $selectTypes->add($user);
+        }
+      }
+
+      return response()->json($selectTypes);
     }
 
 

@@ -22,3 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/search/types', 'Api\ApiController@searchTypes');
 
 Route::get('/search/users', 'Api\ApiController@searchUsers');
+
+Route::get('/select/types', 'Api\ApiController@selectTypes');
+
