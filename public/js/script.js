@@ -7,8 +7,7 @@ new Vue({
   el: '#root',
   data: {
     mainSelect: '',
-    ordine: 0,
-    test: 'hello world'
+    ordine: 0
   },
   methods: {
     incrementa: function incrementa() {
