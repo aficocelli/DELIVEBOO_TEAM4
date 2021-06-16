@@ -25,7 +25,8 @@ Route::get('/', 'GuestController@index')->name('guest.index');
 Route::get('users/{user}', 'GuestController@showRestaurant')->name('guest.show');
 
 
-//area privata
+
+//area privat
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
     Route::resource('users', 'UserController');

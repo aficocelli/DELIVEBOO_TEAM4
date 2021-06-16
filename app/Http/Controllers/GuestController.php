@@ -34,4 +34,5 @@ class GuestController extends Controller
 
     //     return view('guest.show', compact('foods'));
     // }
+
 }
