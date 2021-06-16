@@ -1,5 +1,4 @@
 @extends('layouts.welcome')
-
 @section('content')
 <div>@{{test}}</div>
 <div class="container-sm">
@@ -23,7 +22,5 @@
     </a>
   @endforeach
  </div>
-
 </div>
-
 @endsection

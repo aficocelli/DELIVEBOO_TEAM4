@@ -3,7 +3,6 @@ var __webpack_exports__ = {};
 /*!********************************!*\
   !*** ./resources/js/script.js ***!
   \********************************/
-// vuejs senza componenti
 new Vue({
   el: '#root',
   data: {
