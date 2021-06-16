@@ -113,6 +113,7 @@ class FoodController extends Controller
         $data['available'] = !isset($data['available']) ? 0 : 1;
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
         $food->update($data);
+        
         return redirect()->route('admin.foods.index');
     }
 
