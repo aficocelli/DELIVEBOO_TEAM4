@@ -1,9 +1,8 @@
 /******/ (() => { // webpackBootstrap
-<<<<<<< refs/remotes/DELIVEBOO_TEAM4/main
     var __webpack_exports__ = {};
     /*!********************************!*\
-      !*** ./resources/js/script.js ***!
-      \********************************/
+  !*** ./resources/js/script.js ***!
+  \********************************/
     new Vue({
         el: '#root',
         data: {
@@ -20,13 +19,7 @@
             }
         }
     });
+
     /******/
 })()
     ;
-=======
-/******/ 	"use strict";
-/******/ 	
-/******/ 	
-/******/ })()
-;
->>>>>>> aggiunta cdn vueJs
