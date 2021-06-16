@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+
 });
+
+Route::get('/search/types', 'Api\ApiController@searchTypes');
+
+Route::get('/search/users', 'Api\ApiController@searchUsers');

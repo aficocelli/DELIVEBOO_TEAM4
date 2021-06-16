@@ -8,8 +8,6 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
          <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
        <div id="root">
@@ -63,8 +61,8 @@
         </main>
     </div> 
     <!-- vue.js -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- Scripts -->
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ asset('js/homesearch.js') }}"></script>
     </body>
 </html>
