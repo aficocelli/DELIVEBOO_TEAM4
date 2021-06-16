@@ -1,4 +1,5 @@
 /******/ (() => { // webpackBootstrap
+<<<<<<< refs/remotes/DELIVEBOO_TEAM4/main
     var __webpack_exports__ = {};
     /*!********************************!*\
       !*** ./resources/js/script.js ***!
@@ -22,3 +23,10 @@
     /******/
 })()
     ;
+=======
+/******/ 	"use strict";
+/******/ 	
+/******/ 	
+/******/ })()
+;
+>>>>>>> aggiunta cdn vueJs
