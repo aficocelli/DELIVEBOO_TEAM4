@@ -3,7 +3,6 @@ new Vue({
     data: {
         mainSelect: '',
         ordine: 0,
-        test: 'hello world',
 
     },
     methods: {
@@ -14,6 +13,6 @@ new Vue({
             this.ordine--;
         },
 
-        
+
     }
 });
