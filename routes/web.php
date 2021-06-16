@@ -24,7 +24,6 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'GuestController@index')->name('guest.index');
 Route::get('users/{user}', 'GuestController@showRestaurant')->name('guest.show');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 //area privata
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
