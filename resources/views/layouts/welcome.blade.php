@@ -10,6 +10,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
+
        <div id="root">
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
@@ -64,5 +65,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/homesearch.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
     </body>
 </html>
