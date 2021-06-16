@@ -30,6 +30,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::resource('foods', 'FoodController');
     Route::resource('users', 'UserController');
 });
+// home e order controller
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('guest', 'Guest\OrderController@showOrder')->name('guest.order.show');
