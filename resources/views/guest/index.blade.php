@@ -1,11 +1,11 @@
 @extends('layouts.welcome')
-
 @section('content')
+<div>@{{test}}</div>
 <div class="container-sm">
   <h1>Pagina principale - Lista dei ristoranti</h1>
   <a href="{{route('home')}}"><button type="button" class="btn btn-success">HOME</button></a>
   <form action="">
-    <input type="text" placeholder="Cerca Ristorante">
+    <input type="text" placeholder="Cerca Ristorante" v-model="mainSelect">
   </form>
  <div class="container-big d-flex flex-wrap">
   @foreach ($users as $user)
@@ -22,7 +22,6 @@
     </a>
   @endforeach
  </div>
-
 </div>
-
 @endsection
+

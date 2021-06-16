@@ -10026,3 +10026,7 @@ main .wrapper-header .info-restaurant .info-text {
   flex-direction: column;
   justify-content: center;
 }
+main .restaurant-menu .menu-item {
+  display: flex;
+  align-items: center;
+}

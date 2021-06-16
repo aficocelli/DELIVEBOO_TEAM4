@@ -10,8 +10,10 @@
 
 // partials pagine
 @import 'partials/common';
-@import 'partials/footer';
-@import 'partials/header';
+@import 'partials/guest/footer';
+@import 'partials/guest/header';
+@import 'partials/user/footer';
+@import 'partials/user/header';
 @import 'partials/main';
 
 

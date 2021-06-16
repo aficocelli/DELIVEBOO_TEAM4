@@ -1,5 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
+<<<<<<< HEAD
     "/js/newScript.js": "/js/newScript.js",
+=======
+<<<<<<< refs/remotes/DELIVEBOO_TEAM4/main
+    "/js/script.js": "/js/script.js",
+=======
+    "/js/newScript.js": "/js/newScript.js",
+>>>>>>> aggiunta cdn vueJs
+>>>>>>> alfredo_test_
     "/css/app.css": "/css/app.css"
 }
