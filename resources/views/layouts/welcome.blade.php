@@ -16,7 +16,7 @@
         
     </head>
     <body>
-       <div id="app">
+       <div id="root">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -76,6 +76,9 @@
        
         
        
-        
+    <!-- vue.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

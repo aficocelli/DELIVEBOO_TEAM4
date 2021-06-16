@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+    <div>@{{test}}</div>
+
     <div class="container-sm">
 
       
