@@ -6,7 +6,6 @@ new Vue({
         ordine: 0,
         test: 'hello world',
         
-
     },
     methods: {
         incrementa: function () {
