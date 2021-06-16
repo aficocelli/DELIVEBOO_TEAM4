@@ -1,9 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-sm">
-
-      
-      
+           
 	    @if (session('message'))
         <div class="alert alert-success" style="position: fixed; bottom: 30px; right: 30px">
           {{ session('message') }}
