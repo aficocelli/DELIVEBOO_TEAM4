@@ -11,8 +11,8 @@ new Vue({
     selectType:[],
     type:"",
     usersNew:[],
-    users:[],
-    search:""
+    userRestaurants:[],
+    filter:""
   },
 
   mounted: function () {
@@ -40,17 +40,13 @@ new Vue({
     },
 
     
-    filterGenre: function () {
+    filterTypes: function () {
 
-      axios.get('http://localhost:8000/api/filterapi/' + this.search, {
-        // params: {
-        //   search: this.search
-        // }
+      axios.get('http://localhost:8000/api/filterapi/' + this.filter, {
       }).then((result) => {
 
         console.log(result.data);
-        this.users = result.data;
-        //console.log(this.restaurants);
+        this.userRestaurants = result.data;
       });
 
     },
