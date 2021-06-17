@@ -3,13 +3,14 @@
 
   {{-- Carousel jumbotron --}}
 
-  <div class="jumbotron">
+  {{-- <div class="jumbotron">
     <div v-for='image in carousel' class="carouse-image">
       <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt="">
     </div>
     
+  </div> --}}
      {{-- <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt=""> --}}
-  </div>
+  
   
   
   
@@ -32,7 +33,7 @@
   <div class="container-small d-flex flex-wrap">
       <div v-for="element in userRestaurants" class="card mt-3 mr-3" style="width: 15rem;">
           <a :href="'http://127.0.0.1:8000/users/'+ element.id">
-            <img :src="element.image_restaurant" class="card-img-top" :alt="element.name_restaurant">
+            <img :src="element.image_restaurant ? 'element.image_restaurant' : 'http://lorempixel.com/400/200/food'" :alt="element.name_restaurant" style="width: 100px">
             <div class="card-body">
               <h3>@{{element.name_restaurant}}</h3>
               <p>@{{element.name}}</p>
@@ -42,6 +43,7 @@
           </a>
       </div>
   </div>
+    
     
 
  
