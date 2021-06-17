@@ -41,8 +41,6 @@
         <label for="vat_number">p.Iva</label>
         <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva">
     </div>
-
-    
     <div class="mt-3">
     <button type="submit" class="btn btn-primary">Crea ristorante</button>
     </div>
