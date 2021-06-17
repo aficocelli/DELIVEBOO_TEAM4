@@ -20,11 +20,12 @@ class GuestController extends Controller
         $types = Type::all();
 
         $users = User::where('id', $id)->first();
-        
+
         $foods = Food::where('available', 1)->where('user_id', $id)->get();
 
         return view('guest.show', compact('users', 'foods', 'types'));
     }
+
 
     // public function showFood(Food $food) 
     // {
