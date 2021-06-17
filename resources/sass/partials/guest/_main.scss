@@ -1,4 +1,21 @@
+
+// index totale dei guest
+
 main {
+
+
+    .guest-jumbotron {
+        
+
+        .carousel-image{
+            height: 100vh;
+            min-height: 800px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
     .wrapper-header {
         background-color: #D3D3D3;
         padding: 20px 0;
