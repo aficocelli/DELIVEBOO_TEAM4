@@ -31,19 +31,26 @@ class ApiController extends Controller
 
     public function selectTypes (Request $request)
     {
-      $users = User::all();
 
-      $selectTypes = collect();
 
-      foreach ($users as $user) {
+    $restaurants = User::all();
 
-        if ($user->types->contains('id', $request->types)) {
-          
-          $selectTypes->add($user);
-        }
+
+    $restaurantsFind = collect();
+    // aggiungiamo il campo categories ad ogni ristorante nel file json
+    foreach ($restaurants as $restaurant) {
+      
+
+      if ($restaurant->types->contains('id', $request->type)) {
+
+        $restaurantsFind->add($restaurant);
       }
+    }
 
-      return response()->json($selectTypes);
+    // $restaurants->categories->contains($request->category);
+    //Response in Json
+
+    return response()->json($restaurantsFind);
     }
 
 
