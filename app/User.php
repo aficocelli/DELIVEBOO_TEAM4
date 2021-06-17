@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function types(){
 
-        return $this->belongsToMany('App\Type', 'type_user', 'user_id', 'type_id')->withPivot('id');
+        return $this->belongsToMany('App\Type', 'type_user');
 
     }
 

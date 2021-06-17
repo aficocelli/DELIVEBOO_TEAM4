@@ -1,4 +1,5 @@
 import { default as axios } from "axios";
+import { defaultsDeep } from "lodash";
 
 new Vue({
   el: '#root',
@@ -6,8 +7,10 @@ new Vue({
     mainSelect: '',
     ordine: 0,
     types:[],
-    users: []
-
+    users: [],
+    selectType:[],
+    type:"",
+    usersNew:[]
   },
 
   mounted: function () {
@@ -34,6 +37,22 @@ new Vue({
       this.ordine--;
     },
 
+    // onChange: function(){
+    //   console.log(this.selectType);
+    //   if()
+    // },
+    searchTypes: function (index) {
+
+      let link = 'http://localhost:8000/api/select/types'
+      axios.get(link, {
+        params: {
+          type: index + 1
+        }
+      }).then((result) => {
+        console.log(result.data);
+        this.usersNew = result.data;
+      });
+    },
     filterType: function() {
 
       axios.get('http://localhost:8000/api/search/types')

@@ -11,7 +11,7 @@ class Type extends Model
 
     public function users(){
 
-        return $this->belongsToMany('App\User', 'type_user','user_id', 'type_id')->withPivot('id');
+        return $this->belongsToMany('App\User', 'type_user');
 
     }
 }
