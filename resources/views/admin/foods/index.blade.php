@@ -12,11 +12,11 @@
             @foreach ($foods as $food)
             <img src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}" alt="{{$food->name_food}}" style="width: 100px">
             <h1>{{$food->name_food}}</h1>    
-            <p>Disponibile: {{$food->available}}</p>
+            <p>Disponibile: {!! $food->available ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times-circle"></i>'!!}</p>
             <p>Descrizione: {{$food->description}}</p>
             <p>Ingredienti: {{$food->ingredients}}</p>
-            <p>Prezzo: {{$food->price}}</p>
-            <p>Vegano:{{$food->vegan}}</p>
+            <p>Prezzo: {{$food->price}} euro </p>
+            <p>Vegano: {!! $food->vegan ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times-circle"></i>'!!}</p>
             <a href="{{route('admin.foods.edit', [ 'food' => $food->id ])}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i></button></a>
             <form action="{{route('admin.foods.destroy', [ 'food' => $food->id ])}}" method="POST">
                         @csrf
