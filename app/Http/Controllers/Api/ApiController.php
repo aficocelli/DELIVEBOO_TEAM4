@@ -24,11 +24,12 @@ class ApiController extends Controller
     public function searchUsers(Request $request)
     {
 
-      $users = User::all();
+      $users = User::with(['types'])->get();
+
       return response()->json($users);
 
     }
-
+    // seleziona le tipologie di cibo
     public function selectTypes (Request $request)
     {
 
@@ -38,20 +39,43 @@ class ApiController extends Controller
 
     $restaurantsFind = collect();
     // aggiungiamo il campo categories ad ogni ristorante nel file json
-    foreach ($restaurants as $restaurant) {
-      
+      foreach ($restaurants as $restaurant) {
+        
 
-      if ($restaurant->types->contains('id', $request->type)) {
+        if ($restaurant->types->contains('id', $request->type)) {
 
-        $restaurantsFind->add($restaurant);
+          $restaurantsFind->add($restaurant);
+        }
       }
+
+      // $restaurants->categories->contains($request->category);
+      //Response in Json
+
+      return response()->json($restaurantsFind);
     }
 
-    // $restaurants->categories->contains($request->category);
-    //Response in Json
+  //Api che filtra i ristoranti per categoria
+  public function filteredApi($type)
+  {
 
-    return response()->json($restaurantsFind);
+    
+    if ($type != "All") {
+      $restaurants = User::whereHas('types', function ($query) use ($type) {
+        $query->where('origin', $type);
+      })->get();
+    } else {
+      $restaurants = User::all();
     }
+
+
+    foreach ($restaurants as $restaurant) {
+      $types = [];
+      $types = $restaurant->types;
+      $restaurant->types = $types;
+    };
+
+    return response()->json($restaurants);
+  }
 
 
 }
