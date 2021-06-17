@@ -19,7 +19,7 @@ class FoodController extends Controller
         'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|max:5',
         'ingredients'=> 'required|string',
         'description'=> 'required',
-        'food_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        'food_image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
  
     ];
     /**

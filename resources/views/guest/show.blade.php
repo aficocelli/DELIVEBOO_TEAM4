@@ -39,7 +39,6 @@
           @foreach ($foods as $food)
               <li class="menu-item">
                 <p>{{$food->name_food}}</p>
-
                 <span><button @@click="incrementa">+</button></span> 
                 <span><button @@click="decrementa">-</button></span> 
                 <span> @{{ordine}} </span>
