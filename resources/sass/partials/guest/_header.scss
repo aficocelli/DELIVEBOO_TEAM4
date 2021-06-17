@@ -1,0 +1,72 @@
+
+//navbar
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+
+    nav {
+    
+        .logo-link {
+            color: $logoColor;
+            text-decoration: none;
+    
+            .logo {
+                width: 120px;
+                
+                img {
+                    width: 100%;
+                }
+    
+            }
+    
+            .dropfood {
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+// jumbotron
+.guest-jumbotron {
+    
+    .carousel-image{
+        height: 100vh;
+        min-height: 800px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+}
+.wrapper-header {
+    background-color: #D3D3D3;
+    padding: 20px 0;
+
+    .info-restaurant  {
+        display: flex;
+        width: 100%;
+
+        .restaurant-image {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 20px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .info-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}

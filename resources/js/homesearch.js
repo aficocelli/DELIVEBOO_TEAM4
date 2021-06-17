@@ -13,9 +13,9 @@ new Vue({
     userRestaurants:[],
     filter:"",
     carousel: [
+      'http://127.0.0.1:8000/img-carousel/sushi-6.jpg',
+      'http://127.0.0.1:8000/img-carousel/hamburger-1.jpg',
       'http://127.0.0.1:8000/img-carousel/pizza-7.jpg', 
-      'http://127.0.0.1:8000/img-carousel/hamburger-1.jpg', 
-      'http://127.0.0.1:8000/img-carousel/sushi-6.jpg'
     ],
     slideIndex: 0,
     url: '{{asset(img-carousel/)}}',   
