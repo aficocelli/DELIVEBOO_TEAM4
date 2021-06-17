@@ -11,8 +11,16 @@ new Vue({
     selectType:[],
     type:"",
     usersNew:[],
-    restaurants:[],
-    search:""
+    userRestaurants:[],
+    filter:"",
+    carousel: ['pizza-7.jpg', 'hamburger-1.jpg', 'sushi-6.jpg' ],
+    slideIndex: 0,
+    url: '{{asset(img-carousel/)}}'
+    
+
+    
+    
+    
   },
 
   mounted: function () {
@@ -28,8 +36,13 @@ new Vue({
         this.users = result.data;
         console.log(result.data);
       });
-
+      
   },
+
+  coverUri() {
+    return require('./src/assets/images');
+  },
+
 
   methods: {
     incrementa: function () {
@@ -38,52 +51,31 @@ new Vue({
     decrementa: function () {
       this.ordine--;
     },
+    
+    filterTypes: function () {
 
-    // onChange: function(){
-    //   console.log(this.selectType);
-    //   if()
-    // },
-    // searchTypes: function (index) {
-
-    //   let link = 'http://localhost:8000/api/select/types'
-    //   axios.get(link, {
-    //     params: {
-    //       type: index + 1
-    //     }
-    //   }).then((result) => {
-    //     console.log(result.data);
-    //     this.usersNew = result.data;
-    //   });
-    // },
-    // filterType: function() {
-
-    //   axios.get('http://localhost:8000/api/search/types')
-    //     .then((result) => {
-    //       this.types = result.data;
-    //       console.log(result.data);
-    //     });
-    // }
-    filterGenre: function () {
-
-      axios.get('http://localhost:8000/api/filterapi/' + this.search, {
-        // params: {
-        //   search: this.search
-        // }
+      axios.get('http://localhost:8000/api/filterapi/' + this.filter, {
       }).then((result) => {
 
         console.log(result.data);
-        this.restaurants = result.data;
-        //console.log(this.restaurants);
+        this.userRestaurants = result.data;
       });
 
     },
+
+    prev: function() {
+      this.slideIndex--;
+      if(this.slideIndex < 0) {
+        this.slideIndex = this.carousel.length - 1;
+      }
+    },
+
+    next: function () {
+      this.slideIndex++;
+      if (this.slideIndex == this.carousel.length) {
+        this.slideIndex = 0;
+      }
+    }
   },
 
-  computed: {
-    // filteredTypes: function () {
-    //   return this.users.filter((users) => {
-    //     return users.name_restaurant.toLowerCase().match(this.mainSelect.toLowerCase());
-    //   });
-    // }
-  }
 });
