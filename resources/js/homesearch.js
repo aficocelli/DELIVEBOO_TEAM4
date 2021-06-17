@@ -12,7 +12,15 @@ new Vue({
     type:"",
     usersNew:[],
     userRestaurants:[],
-    filter:""
+    filter:"",
+    carousel: ['pizza-7.jpg', 'hamburger-1.jpg', 'sushi-6.jpg' ],
+    slideIndex: 0,
+    url: '{{asset(img-carousel/)}}'
+    
+
+    
+    
+    
   },
 
   mounted: function () {
@@ -28,8 +36,13 @@ new Vue({
         this.users = result.data;
         console.log(result.data);
       });
-
+      
   },
+
+  coverUri() {
+    return require('./src/assets/images');
+  },
+
 
   methods: {
     incrementa: function () {
@@ -38,7 +51,6 @@ new Vue({
     decrementa: function () {
       this.ordine--;
     },
-
     
     filterTypes: function () {
 
@@ -50,6 +62,20 @@ new Vue({
       });
 
     },
+
+    prev: function() {
+      this.slideIndex--;
+      if(this.slideIndex < 0) {
+        this.slideIndex = this.carousel.length - 1;
+      }
+    },
+
+    next: function () {
+      this.slideIndex++;
+      if (this.slideIndex == this.carousel.length) {
+        this.slideIndex = 0;
+      }
+    }
   },
 
 });

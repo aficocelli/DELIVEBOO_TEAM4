@@ -1,10 +1,23 @@
 @extends('layouts.welcome')
 @section('content')
 
+  {{-- Carousel jumbotron --}}
+
+  <div class="jumbotron">
+    <div v-for='image in carousel' class="carouse-image">
+      <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt="">
+    </div>
+    
+     {{-- <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt=""> --}}
+  </div>
+  
+  
+  
+  
+  
   <div class="container-sm">
     <h1>Pagina principale - Lista dei ristoranti</h1>
     <a href="{{route('home')}}"><button type="button" class="btn btn-success">HOME</button></a>
-  </div>
   
    <!-- barra di ricerca per tipologia -->  <div class="d-flex justify-content-center align-items-center search__restaurant">
     <div class="mt-5">
@@ -14,6 +27,7 @@
       <button class="btn btn-outline-light btn-success btn-lg" type="button" name="button" v-on:click="filterTypes()">Search</button>
     </div>
   </div>
+
   <!-- ristoranti -->
   <div class="container-small d-flex flex-wrap">
       <div v-for="element in userRestaurants" class="card mt-3 mr-3" style="width: 15rem;">
