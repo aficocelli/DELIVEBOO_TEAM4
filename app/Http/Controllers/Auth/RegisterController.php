@@ -9,6 +9,8 @@ use App\Type;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
+
 
 class RegisterController extends Controller
 {
@@ -50,6 +52,9 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
+        // Validation
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -57,7 +62,10 @@ class RegisterController extends Controller
             'name_restaurant' => ['required', 'string', 'unique:users'],
             'phone_restaurant' => ['required', 'string', 'unique:users'],
             'address_restaurant' => ['required','string','unique:users'],
-            'vat_number' => ['required','string', 'unique:users']
+            'vat_number' => ['required','string', 'unique:users'],
+            'type'=>['min:1']
+            // 'image_restaurant'=> ['nullable', 'image', "mimes:jpeg,png,jpg,gif,svg", "max:2048"],
+            
         ]);
     }
     /**
@@ -68,8 +76,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-    
-
+        
         $newUser = User::Create([
             'name'=> $data['name'],
             'email'=> $data['email'],
@@ -78,10 +85,22 @@ class RegisterController extends Controller
             'phone_restaurant' => $data['phone_restaurant'],
             'address_restaurant' => $data['address_restaurant'],
             'vat_number' => $data['vat_number'],
-            'image_restaurant' => $data['image_restaurant'],
+            
+            // 'image_restaurant' => $data['image_restaurant'],
         ]);
         
-        $newUser->types()->attach($data['type']);
+        if(!isset($data['type'])){
+
+            $data['type'] = 1;
+
+            $newUser->types()->attach($data['type']);
+
+        }else{
+            $newUser->types()->attach($data['type']);
+
+        }
+        
+
 
         return $newUser;
     }

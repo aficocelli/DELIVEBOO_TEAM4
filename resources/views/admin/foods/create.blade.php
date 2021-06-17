@@ -33,8 +33,9 @@
 		</div>
 		<div class="form-group">
 			<label for="food_image">Immagine</label>
-			<input class="form-control"  name="food_image" id="food_image" placeholder="immagine del cibo">
+			<input type="file" id="food_image" name="food_image">
 		</div>
+
 		<div class="form-group">
 			<label for="ingredients">Ingradienti</label>
 			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti">

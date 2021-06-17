@@ -46,7 +46,7 @@ class UsersTableSeeder extends Seeder
             $newUser->phone_restaurant = $faker->phoneNumber();
             $newUser->address_restaurant = $faker->address();
             $newUser->vat_number = $faker->numerify('p.iva-###########');
-            $newUser->image_restaurant = $faker->imageUrl(360, 360, 'animals', true);
+            // $newUser->image_restaurant = $faker->imageUrl(360, 360, 'animals', true);
             $newUser->save(); 
         }
 

@@ -15,8 +15,10 @@
 
       <div class="mt-3">
         <h1 class="mb-5">{{Auth::user()->name_restaurant}}</h1>
-        <img class="mb-5" src="{{Auth::user()->image_restaurant ? Auth::user()->image_restaurant : 'https://via.placeholder.com/200'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 100px">
+        <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 100px">
+        {{-- <img class="mb-5" src="{{Auth::user()->image_restaurant ? Auth::user()->image_restaurant : 'https://via.placeholder.com/200'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 100px"> --}}
         
+
         {{-- stampo i types --}}
         @foreach ($user->types as $type)
 			    <span class="badge badge-primary">{{$type->origin}}</span>

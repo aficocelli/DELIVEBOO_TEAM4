@@ -8,6 +8,7 @@ use App\Food;
 use App\Type;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -41,7 +42,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // if (isset($newUser['image_restaurant'])) {
+        //     $newUser['image_restaurant'] = Storage::disk('public')->put('images', $newUser['image_restaurant']);
+        // }
     }
 
     /**
@@ -91,8 +94,22 @@ class UserController extends Controller
         }
         //prendo tutti i dati del form
         $data = $request->all();
+
+        // controllo immagine
+       
+
+        if (isset($data['image_restaurant'])) {
+
+            $data['image_restaurant'] = Storage::disk('public')->put('images', $data['image_restaurant']);
+
+        }
+
+        // dd($user->save($data));
+        
         //salvo le modifiche
         $user->update($data);
+
+       
 
         // controllo types
 
