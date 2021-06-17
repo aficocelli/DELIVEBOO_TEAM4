@@ -23,7 +23,7 @@
 		@method('POST')
 		<div class="form-group">
 			<label for="name_food">Nome del menu</label>
-			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Nome del menu">
+			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Nome del menu" value="{{ old('name_food') }}">
 		</div>
 		
 		<div class="form-check form-check-inline">
@@ -38,17 +38,17 @@
 
 		<div class="form-group">
 			<label for="ingredients">Ingradienti</label>
-			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti">
+			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti" value="{{ old('ingredients') }}">
 			
 		</div>
         <div class="form-group">
 			<label for="price">Prezzo</label>
-			<input type="text" class="form_control" id="price" name="price" placeholder="Prezzo">
+			<input type="text" class="form_control" id="price" name="price" placeholder="Prezzo" value="{{ old('price') }}">
 			
 		</div>
          <div class="form-group">
 			<label for="description">Descrizione</label>
-			<textarea class="form_control" id="description" name="description" placeholder="Descrizione"></textarea>
+			<textarea class="form_control" id="description" name="description" placeholder="Descrizione" value="{{ old('description') }}"></textarea>
 			
 		</div>
 		<div class="form-check form-check-inline">

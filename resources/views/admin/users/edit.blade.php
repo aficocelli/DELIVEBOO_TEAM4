@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('pageTitle')
-    edita il ristorante
+    Modifica il ristorante
 @endsection
 
 @section('content')
@@ -26,33 +26,23 @@
 		@method('PUT')
 		<div class="form-group">
             <label for="name_restaurant">Nome del ristorante</label>
-            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="nome del ristorante" value="{{$user->name_restaurant}}">
+            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="nome del ristorante" value="{{old('name_restaurant') ? old('name_restaurant') : $user->name_restaurant}}">
         </div>
 
         <div class="form-group">
             <label for="phone_restaurant">Numero di telefono</label>
-            <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Numero di telefono" value="{{$user->phone_restaurant}}">
+            <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Numero di telefono" value="{{old('phone_restaurant') ? old('phone_restaurant') : $user->phone_restaurant}}">
         </div>
 
         <div class="form-group">
             <label for="address_restaurant">Indirizzo</label>
-            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Indirizzo" value="{{$user->address_restaurant}}">
+            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Indirizzo" value="{{old('address_restaurant') ? old('address_restaurant') : $user->address_restaurant}}">
         </div>
         <div class="form-group">
             <label for="vat_number">p.Iva</label>
-            <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva" value="{{$user->vat_number}}">
+            <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva" value="{{old('vat_number') ? old('vat_number') : $user->vat_number}}">
         </div>
 
-        {{-- <div class="form-group">
-            <label for="image_restaurant">Immagine</label>
-            <input type="text" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="Image" value="{{$user->image_restaurant}}">
-        </div> --}}
-
-        {{-- upload image --}}
-        {{-- <div class="form-group">
-            <label for="image_restaurant">Immagine del ristorante</label>
-            <input type="file" id="image_restaurant" name="image_restaurant">
-        </div> --}}
         <div class="form-group">
 			<label for="image_restaurant">Immagine del ristorante</label>
 			<input type="file" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="image_restaurant">
@@ -77,7 +67,6 @@
         <button type="button" class="btn btn-primary ">Torna alla dashboard</button>
     </a>
 </div>
-{{-- commento --}}
 
 
 @endsection

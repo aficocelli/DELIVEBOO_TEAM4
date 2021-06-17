@@ -22,7 +22,7 @@
 		@method('PUT')
 		<div class="form-group">
 			<label for="name_food">Nome del menu</label>
-			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Nome del menu" value="{{$food->name_food}}">
+			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Nome del menu" value="{{old('name_food') ? old('name_food') : $food->name_food}}">
 		</div>
 		
 		<div class="form-check form-check-inline">
@@ -37,17 +37,17 @@
 		</div>
 		<div class="form-group">
 			<label for="ingredients">Ingradienti</label>
-			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti" value="{{$food->ingredients}}">
+			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti" value="{{old('ingredients') ? old('ingredients') : $food->ingredients}}">
 			
 		</div>
         <div class="form-group">
 			<label for="price">Prezzo</label>
-			<input type="text" class="form_control" id="price" name="price" placeholder="Prezzo" value="{{$food->price}}">
+			<input type="text" class="form_control" id="price" name="price" placeholder="Prezzo" value="{{old('price') ? old('price') : $food->price}}">
 			
 		</div>
          <div class="form-group">
 			<label for="description">Descrizione</label>
-			<textarea class="form_control" id="description" name="description" placeholder="description">{{$food->description}}</textarea>
+			<textarea class="form_control" id="description" name="description" placeholder="description" >{{old('description') ? old('description') : $food->description}}</textarea>
 			
 		</div>
 		<div class="form-check form-check-inline">
