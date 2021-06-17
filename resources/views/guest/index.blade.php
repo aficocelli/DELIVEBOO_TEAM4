@@ -4,21 +4,28 @@
 <div class="container-sm">
   <h1>Pagina principale - Lista dei ristoranti</h1>
   <a href="{{route('home')}}"><button type="button" class="btn btn-success">HOME</button></a>
-  <form action="">
+  {{-- <form action="">
     <input type="text" placeholder="Cerca Ristorante" v-model="mainSelect">
-  </form>
-
+  </form> --}}
+  <div class="d-flex justify-content-center align-items-center ">
+               <div class="mt-5">
+                  <h1 class="mb-3">Benvenuti</h1>
+                  <h4 class="mb-3">cerca</h4>
+                  
+                  <input  type="text" placeholder="cerca categorie" value="" v-model="search">
+                  <button class="btn btn-outline-light btn-success btn-lg" type="button" name="button" v-on:click="filterGenre()">Search</button>
+               </div>
   {{-- select tipologie ristoranti --}}
   
   {{-- <select class="form-select" aria-label="Default select example" v-model="selectType" name="type_id">
     <option></option>
     <option v-for="(type, index) in types" @@click="searchTypes(index)" :value="type.origin">@{{type.origin}}</option>
   </select> --}}
-  <div>
-            <div v-for="(type, index) in types" v-on:click="searchTypes(index)">
+  {{-- <div>
+            <div v-for="(type, index) in types">
             <button> @{{type.origin}} </button> 
             </div>
-  </div>
+  </div> --}}
   
   
   {{-- /select tipologie ristoranti --}}
@@ -27,7 +34,7 @@
 
   
 
-  <div v-for="user in filteredTypes" class="card mt-3 mr-3" style="width: 15rem;">
+  <div v-for="user in restaurants" class="card mt-3 mr-3" style="width: 15rem;">
     <img :src="user.image_restaurant" class="card-img-top" :alt="user.name_restaurant">
     <div class="card-body">
       <h3>@{{user.name_restaurant}}</h3>
