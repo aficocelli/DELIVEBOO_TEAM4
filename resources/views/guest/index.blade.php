@@ -1,15 +1,17 @@
 @extends('layouts.welcome')
 @section('content')
+  
+  <!-- Carousel jumbotron -->
 
-  {{-- Carousel jumbotron --}}
+  <div class="guest-jumbotron">
+    <div v-for='image in carousel' class="carousel-image">
+      
+      <img :src="image" alt="">
 
-  {{-- <div class="jumbotron">
-    <div v-for='image in carousel' class="carouse-image">
-      <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt="">
     </div>
     
-  </div> --}}
-     {{-- <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt=""> --}}
+     <!-- <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt=""> -->
+  </div>
   
   
   
