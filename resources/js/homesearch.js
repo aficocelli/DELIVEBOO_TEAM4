@@ -39,9 +39,7 @@ new Vue({
       
   },
 
-  coverUri() {
-    return require('./src/assets/images');
-  },
+  
 
 
   methods: {

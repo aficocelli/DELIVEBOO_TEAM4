@@ -5,7 +5,7 @@
 
   <div class="jumbotron">
     <div v-for='image in carousel' class="carouse-image">
-      
+      <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt="">
     </div>
     
      {{-- <img src="{{asset('img-carousel/' . 'pizza-7.jpg')}}" alt=""> --}}
