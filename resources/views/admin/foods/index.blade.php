@@ -10,7 +10,7 @@
     <div class="container-sm">
     <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Aggiungi un nuovo menu</button></a>
             @foreach ($foods as $food)
-            <img src="{{$food->food_image ? $food->food_image : 'https://via.placeholder.com/200'}}" alt="{{$food->name_food}}" style="width: 100px">
+            <img src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}" alt="{{$food->name_food}}" style="width: 100px">
             <h1>{{$food->name_food}}</h1>    
             <p>Disponibile: {{$food->available}}</p>
             <p>Descrizione: {{$food->description}}</p>

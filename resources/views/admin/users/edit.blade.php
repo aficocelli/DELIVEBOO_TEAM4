@@ -43,10 +43,20 @@
             <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva" value="{{$user->vat_number}}">
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label for="image_restaurant">Immagine</label>
             <input type="text" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="Image" value="{{$user->image_restaurant}}">
-        </div>
+        </div> --}}
+
+        {{-- upload image --}}
+        {{-- <div class="form-group">
+            <label for="image_restaurant">Immagine del ristorante</label>
+            <input type="file" id="image_restaurant" name="image_restaurant">
+        </div> --}}
+        <div class="form-group">
+			<label for="image_restaurant">Immagine del ristorante</label>
+			<input type="file" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="image_restaurant">
+		</div>
 
         {{-- stampo i checkbox --}}
 

@@ -32,7 +32,8 @@
 		</div>
 		<div class="form-group">
 			<label for="food_image">Immagine</label>
-			<input class="form-control"  name="food_image" id="food_image" placeholder="immagine del cibo" value="{{$food->food_image}}">
+			<img src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}" width="100">
+			<input type="file" class="form-control" id="food_image" name="food_image" placeholder="Image">
 		</div>
 		<div class="form-group">
 			<label for="ingredients">Ingradienti</label>

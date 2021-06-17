@@ -9,6 +9,7 @@ use App\Food;
 use App\Type;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 
 class FoodController extends Controller
@@ -16,9 +17,9 @@ class FoodController extends Controller
     protected $validation = [
         'name_food' => 'required|string|max:150',
         'price' => 'required|regex:/^\d+(\.\d{1,2})?$/|max:5',
-        'food_image' => 'nullable|string',
         'ingredients'=> 'required|string',
-        'description'=> 'required'
+        'description'=> 'required',
+        'food_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
  
     ];
     /**
@@ -69,6 +70,10 @@ class FoodController extends Controller
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
         // verificata autenticazione
         $data['user_id'] = $user->id;
+
+        if (isset($data['food_image'])) {
+            $data['food_image'] = Storage::disk('public')->put('images', $data['food_image']);
+        }
         // insert
         $newFood = Food::create($data);
         // redirect
@@ -112,6 +117,9 @@ class FoodController extends Controller
         // checkbox
         $data['available'] = !isset($data['available']) ? 0 : 1;
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
+        if (isset($data['food_image'])) {
+            $data['food_image'] = Storage::disk('public')->put('images', $data['food_image']);
+        }
         $food->update($data);
         
         return redirect()->route('admin.foods.index');

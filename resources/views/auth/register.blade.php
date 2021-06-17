@@ -7,7 +7,17 @@
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
+
                 <div class="card-body">
+                    @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                    @endif
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -82,11 +92,7 @@
                             <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva">
                         </div>
 
-                        <div class="form-group">
-                            <label for="image_restaurant">Immagine</label>
-                            <input type="text" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="Image">
-                        </div>
-                        {{-- type --}}
+                       
                         
                         
                         @foreach ($types as $item)
@@ -97,6 +103,12 @@
 				                </label>
 			                </div>
 		                @endforeach
+
+                        {{-- @error('type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror --}}
                        
 
                         <div class="form-group row mb-0">
