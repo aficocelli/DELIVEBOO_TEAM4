@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-
+    protected $validation = [
+        'phone_restaurant' => 'required|numeric',
+        'vat_number' => 'required|numeric',
+    ];
    
     /**
      * Display a listing of the resource.
@@ -42,9 +45,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // if (isset($newUser['image_restaurant'])) {
-        //     $newUser['image_restaurant'] = Storage::disk('public')->put('images', $newUser['image_restaurant']);
-        // }
+       
     }
 
     /**
@@ -86,25 +87,27 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        $validation = $this->validation;
+
+        $request->validate($validation);
+
+        $data = $request->all();
         // controllo se utente è autorizzato a modifica
         $user_id = Auth::id();
         //errore autenticazione
         if ($user->id != $user_id) {
             abort('403');
         }
-        //prendo tutti i dati del form
-        $data = $request->all();
-
+        
         // controllo immagine
        
-
         if (isset($data['image_restaurant'])) {
 
             $data['image_restaurant'] = Storage::disk('public')->put('images', $data['image_restaurant']);
 
         }
 
-        // dd($user->save($data));
+        
         
         //salvo le modifiche
         $user->update($data);
@@ -114,7 +117,7 @@ class UserController extends Controller
         // controllo types
 
         if (!isset($data['types'])) {
-            $data['types'] = [];
+            $data['types'] = 9;
         }
         $user->types()->sync($data['types']);
         

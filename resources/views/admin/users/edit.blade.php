@@ -27,27 +27,27 @@
 		@method('PUT')
 		<div class="form-group">
             <label for="name_restaurant">Name</label>
-            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="nome del ristorante" value="{{old('name_restaurant') ? old('name_restaurant') : $user->name_restaurant}}">
+            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="Name" value="{{old('name_restaurant') ? old('name_restaurant') : $user->name_restaurant}}">
         </div>
 
         <div class="form-group">
             <label for="phone_restaurant">Phone</label>
-            <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Numero di telefono" value="{{old('phone_restaurant') ? old('phone_restaurant') : $user->phone_restaurant}}">
+            <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Phone" value="{{old('phone_restaurant') ? old('phone_restaurant') : $user->phone_restaurant}}">
         </div>
 
         <div class="form-group">
             <label for="address_restaurant">Address</label>
-            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Indirizzo" value="{{old('address_restaurant') ? old('address_restaurant') : $user->address_restaurant}}">
+            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Address" value="{{old('address_restaurant') ? old('address_restaurant') : $user->address_restaurant}}">
         </div>
 
         <div class="form-group">
             <label for="vat_number">Vat Number</label>
-            <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva" value="{{old('vat_number') ? old('vat_number') : $user->vat_number}}">
+            <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="Vat Number" value="{{old('vat_number') ? old('vat_number') : $user->vat_number}}">
         </div>
 
         <div class="form-group">
-			<label for="image_restaurant">Immage</label>
-			<input type="file" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="image_restaurant">
+			<label for="image_restaurant">Image</label>
+			<input type="file" id="image_restaurant" name="image_restaurant" placeholder="Image">
 		</div>
 
         {{-- stampo i checkbox --}}

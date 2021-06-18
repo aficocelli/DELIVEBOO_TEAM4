@@ -1,13 +1,17 @@
 
 @extends('layouts.app')
 
-@section('pageTitle')
-	Crea un nuovo menu
-@endsection
 
 @section('content')
 
 <div class="container">
+
+	@if ($foods->isNotEmpty())
+		<a href="{{route('admin.foods.index')}}">
+			<button type="button" class="btn btn-primary mb-3 mt-3">Back To Foods</button>
+		</a> 
+	@endif 
+
 	@if ($errors->any())
 		<div class="alert alert-danger">
 			<ul>
@@ -22,49 +26,46 @@
 		@csrf
 		@method('POST')
 		<div class="form-group">
-			<label for="name_food">Nome del menu</label>
-			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Nome del menu" value="{{ old('name_food') }}">
+			<label for="name_food">Food Name</label>
+			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Food Name" value="{{ old('name_food') }}">
 		</div>
 		
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="checkbox" id="available" name="available">
-			<label class="form-check-label" for="available">Disponibile</label>
-		
-		</div>
 		<div class="form-group">
-			<label for="food_image">Immagine</label>
-			<input type="file" id="food_image" name="food_image">
+			<label for="ingredients">Ingredients</label>
+			<input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Ingredients" value="{{ old('ingredients') }}">		
+		</div>
+
+        <div class="form-group">
+			<label for="price">Price</label>
+			<input type="text" class="form-control" id="price" name="price" placeholder="Price" value="{{ old('price') }}">	
+		</div>
+
+         <div class="form-group">
+			<label for="description">Description</label>
+			<textarea class="form-control" id="description" name="description" placeholder="Description">{{ old('description') }}</textarea>
 		</div>
 
 		<div class="form-group">
-			<label for="ingredients">Ingradienti</label>
-			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti" value="{{ old('ingredients') }}">
-			
+			<label for="food_image">Food Image</label>
+			<input type="file" id="food_image" name="food_image">
 		</div>
-        <div class="form-group">
-			<label for="price">Prezzo</label>
-			<input type="text" class="form_control" id="price" name="price" placeholder="Prezzo" value="{{ old('price') }}">
-			
+
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="checkbox" id="available" name="available">
+			<label class="form-check-label" for="available">Available</label>
 		</div>
-         <div class="form-group">
-			<label for="description">Descrizione</label>
-			<textarea class="form_control" id="description" name="description" placeholder="Descrizione" value="{{ old('description') }}"></textarea>
-			
-		</div>
+
 		<div class="form-check form-check-inline">
 			<input class="form-check-input" type="checkbox" id="vegan" name="vegan">
-			<label class="form-check-label" for="vegan">Vegano</label>
+			<label class="form-check-label" for="vegan">Vegan</label>
 		</div>
-		<div class="mt-3">
-			<button type="submit" class="btn btn-primary">Crea</button>
+		<div class="mt-3 text-center">
+			<button type="submit" class="btn btn-success pl-5 pr-5">Create</button>
 		</div>
 	</form>
-		@if ($foods->isNotEmpty())
-			<a href="{{route('admin.foods.index')}}">
-				<button type="button" class="btn btn-primary ">Visualizza il tuo menu</button>
-			</a> 
-		@endif 	  
-		<a href="{{route('home')}}">Torna alla home ristorante</a>
+			  
+		
+	
 </div>
 
 	

@@ -89,9 +89,10 @@ class RegisterController extends Controller
             // 'image_restaurant' => $data['image_restaurant'],
         ]);
         
+       
         if(!isset($data['type'])){
 
-            $data['type'] = 1;
+            $data['type'] = 9;
 
             $newUser->types()->attach($data['type']);
 
