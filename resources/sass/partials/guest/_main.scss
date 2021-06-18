@@ -1,7 +1,36 @@
 
-// index totale dei guest
-
+// parte guest 
+// show
 main {
+    // show 
+    .wrapper-restaurant {
+        background-color: #D3D3D3;
+        margin-top: 200px;
+        padding: 20px 0;
+
+        .info-restaurant  {
+            display: flex;
+            width: 100%;
+
+            .restaurant-image {
+                width: 200px;
+                height: 200px;
+                object-fit: contain;
+                border-radius: 20px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .info-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
 
     .restaurant-menu {
         .menu-item {  

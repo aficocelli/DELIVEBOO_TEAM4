@@ -1,10 +1,11 @@
 <header>
     <div class="nav-wrapper">
-        <nav class="navbar navbar-expand-md">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-md bg-transparent navbar_index">
             <div class="container">
                 <!-- sezione logo e login -->
                 <a class="navbar-brandm d-flex align-items-center logo-link" href="{{ url('/') }}">
-                    <img class="logo" src="{{asset('img-carousel/dropfood-logo-fuschia.svg')}}" alt="dropfood logo">
+                    <img class="logo" src="{{asset('img-carousel/dropfood-logo-white.svg')}}" alt="dropfood logo">
                     <h1 class="dropfood">dropfood</h1>
                 </a>
 
@@ -53,4 +54,23 @@
             </div>
         </nav>
     </div>
+
+    <!-- hero -->
+    <div class="hero">  
+        <div class="hero__search">
+
+            <!-- barra di ricerca per tipologia -->  
+            <h2 class="index-title mb-5">Cerca un ristorante vicino a te!</h2>
+            <div class="d-flex justify-content-center mb-5">
+                <input  class="main_input" type="text" placeholder="cerca ristorante per tipo" v-model="filter">
+                <button class="btn_primary" type="button" name="button" v-on:click="filterTypes()">Cerca</button>
+            </div>  
+            <div class="types d-flex" >
+                <div class="type_tag" v-for="type in types">
+                    <h2 class="d-inline"><span class="badge badge-pill badge-warning">@{{type.origin}}</span></h2>
+                </div>
+            </div>                    
+        </div>
+    </div>
+    <!-- /hero -->
 </header>

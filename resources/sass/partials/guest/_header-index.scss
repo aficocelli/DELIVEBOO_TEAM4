@@ -1,0 +1,141 @@
+header {
+
+    //navbar
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        z-index: 11;
+
+        .navbar_index {
+            // logo
+            .logo-link {
+                color: $white;
+                text-decoration: none;
+        
+                .logo {
+                    width: 120px;
+                    
+                    img {
+                        width: 100%;
+                    }
+        
+                }
+        
+                .dropfood {
+                    text-decoration: none;
+                    font-weight: $extra-boldWeight;
+                    font-size: 40px;
+                }
+                
+            }
+
+            //login e register
+            .login-navbar-wrapper {
+                .login-navbar {
+                    .nav-item {
+                        
+                        .nav-link {
+                            padding: 10px 20px;
+                            color: $white;
+                            font-size: 18px;
+                            font-weight: $mediumWeight;
+                            transition: all .2s;
+
+                            &:hover {
+                               color: #ccc;
+                            }
+                        }         
+                    }
+                }
+            }
+        }
+    }
+
+    // jumbotron home principale
+    .hero {
+        background-image: url('../img-carousel/pizza-7-min.jpg');
+        background-position: top -320px center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 670px;
+        // height: 100vh;
+        // min-height: 800px;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.2); /* Black background with opacity */
+            z-index: 2;
+        }
+
+
+        
+        &__search {
+            background: rgba(255, 255, 255, 0.8);           
+            padding: 50px;
+            border-radius: 15px;;
+            text-align: center;
+            color: $white;
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);  
+            z-index: 3;
+
+
+            .index-title {
+                color: $black;
+            }
+
+            .main_input {
+                background: transparent;
+                width: 31%;
+                border: 2px solid $black;
+                border-right: none;
+                border-radius: 10px 0 0 10px;
+                padding-left: 20px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    color: $black;
+                    font-weight: $mediumWeight;
+                    font-size:18px;
+
+                }
+
+
+            }
+
+            .btn_primary {
+                background-color: transparent;
+                font-weight: $mediumWeight;
+                font-size:18px;
+                border: 2px solid $logoColor;
+                background: $logoColor;
+                color: $white;
+                border-radius: 0 10px 10px 0;
+                padding: 13px 17px;
+                line-height: 20px;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    color: $logoColor;
+                    background-color: transparent;
+                    border: 2px solid $logoColor;
+                }
+            }
+        }
+    }    
+}
