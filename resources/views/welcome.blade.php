@@ -17,7 +17,9 @@
         
     </head>
 
-    <div id="root">
+    LA INDEX è NELLA GUEST BLADE
+
+    {{-- <div id="root">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -76,7 +78,7 @@
 
         <h1>Pagina principale - Lista dei ristoranti</h1>
         <a href="{{route('home')}}"><button type="button" class="btn btn-success">HOME</button></a>
-    </div> 
+    </div>  --}}
      
        
        
