@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
-@section('pageTitle')
-	Modifica menu
-@endsection
-
 @section('content')
 
 <div class="container">
+	<a href="{{route('home')}}"><button class="btn btn-primary mt-3 mb-3">Back Home</button></a>
+
 	@if ($errors->any())
 		<div class="alert alert-danger">
 			<ul>
@@ -21,45 +19,45 @@
 		@csrf
 		@method('PUT')
 		<div class="form-group">
-			<label for="name_food">Nome del menu</label>
-			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Nome del menu" value="{{old('name_food') ? old('name_food') : $food->name_food}}">
+			<label for="name_food">Food Name</label>
+			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Food Name" value="{{old('name_food') ? old('name_food') : $food->name_food}}">
 		</div>
 		
-		<div class="form-check form-check-inline">
-			<input class="form-check-input" type="checkbox" id="available" name="available" {{$food->available ? 'checked' : ''}}>
-			<label class="form-check-label" for="available">Disponibile</label>
-		
-		</div>
 		<div class="form-group">
-			<label for="food_image">Immagine</label>
-			<img src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}" width="100">
-			<input type="file" class="form-control" id="food_image" name="food_image" placeholder="Image">
-		</div>
-		<div class="form-group">
-			<label for="ingredients">Ingradienti</label>
-			<input type="text" class="form_control" id="ingredients" name="ingredients" placeholder="Ingredienti" value="{{old('ingredients') ? old('ingredients') : $food->ingredients}}">
+			<label for="ingredients">Ingredients</label>
+			<input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Ingredients" value="{{old('ingredients') ? old('ingredients') : $food->ingredients}}">
 			
 		</div>
         <div class="form-group">
-			<label for="price">Prezzo</label>
-			<input type="text" class="form_control" id="price" name="price" placeholder="Prezzo" value="{{old('price') ? old('price') : $food->price}}">
+			<label for="price">Price</label>
+			<input type="text" class="form-control" id="price" name="price" placeholder="Price" value="{{old('price') ? old('price') : $food->price}}">
 			
 		</div>
          <div class="form-group">
-			<label for="description">Descrizione</label>
-			<textarea class="form_control" id="description" name="description" placeholder="description" >{{old('description') ? old('description') : $food->description}}</textarea>
-			
+			<label for="description">Description</label>
+			<textarea class="form-control" id="description" name="description" placeholder="Description"> {{old('description') ? old('description') : $food->description}}</textarea>
+		</div>
+
+		<div class="form-group">
+			<label for="food_image">Food Image</label>
+			<input type="file" id="food_image" name="food_image" placeholder="Food Image">
+		</div>
+
+		<div class="form-check form-check-inline">
+			<input class="form-check-input" type="checkbox" id="available" name="available" {{$food->available ? 'checked' : ''}}>
+			<label class="form-check-label" for="available">Available</label>
+		
 		</div>
 		<div class="form-check form-check-inline">
 			<input class="form-check-input" type="checkbox" id="vegan" name="vegan"  {{$food->vegan ? 'checked' : ''}}>
-			<label class="form-check-label" for="vegan">Vegano</label>
+			<label class="form-check-label" for="vegan">Vegan</label>
 		</div>
-		<div class="mt-3">
-			<button type="submit" class="btn btn-primary">Crea</button>
+		<div class="mt-3 text-center">
+			<button type="submit" class="btn btn-success pl-5 pr-5">Create</button>
 		</div>
 	</form>
 
-		<a href="{{route('home')}}">Torna alla home ristorante</a>
+		
 </div>
 
 	

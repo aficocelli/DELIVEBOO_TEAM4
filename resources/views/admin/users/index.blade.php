@@ -36,6 +36,9 @@
               <button type="button" class="btn btn-success">Edit Info Restaurant</button>
             </a>
             <div class="mt-4 d-inline-block">
+              
+	            <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning">Add Foods</button></a>
+              
               @if ($foods->isNotEmpty())
                 <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
                   <button type="button" class="btn btn-primary ">Show Foods</button>
