@@ -1,72 +1,113 @@
+header {
 
-//navbar
-.nav-wrapper {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
+    //navbar
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        z-index: 11;
 
-    nav {
-    
-        .logo-link {
-            color: $logoColor;
-            text-decoration: none;
-    
-            .logo {
-                width: 120px;
+        nav {
+            // logo
+            .logo-link {
+                color: $logoColor;
+                text-decoration: none;
+        
+                .logo {
+                    width: 120px;
+                    
+                    img {
+                        width: 100%;
+                    }
+        
+                }
+        
+                .dropfood {
+                    text-decoration: none;
+                    font-weight: $extra-boldWeight;
+                    font-size: 40px;
+                }
                 
+            }
+
+            //login e register
+            .login-navbar-wrapper {
+
+                .login-navbar {
+                    .nav-item {
+                        
+                        .nav-link {
+                            padding: 10px 20px;
+                            color: $white;
+                            font-weight: $boldWeight;
+                            transition: all .2s;
+
+                            &:hover {
+                               color: #ccc;
+                            }
+                        }         
+                    }
+                }
+            }
+        }
+    }
+
+    // jumbotron home principale
+    .hero {
+        background-image: url('../img-carousel/sushi-6.jpg');
+        background-position: top center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        min-height: 800px;
+        position: relative;
+
+
+        
+        &__search {
+            text-align: center;
+            color: $white;
+            position: absolute;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            
+        }
+
+    }
+
+    
+
+    // show 
+    .wrapper-header {
+        background-color: #D3D3D3;
+        padding: 20px 0;
+
+        .info-restaurant  {
+            display: flex;
+            width: 100%;
+
+            .restaurant-image {
+                width: 200px;
+                height: 200px;
+                object-fit: contain;
+                border-radius: 20px;
+                overflow: hidden;
+
                 img {
                     width: 100%;
                 }
-    
             }
-    
-            .dropfood {
-                text-decoration: none;
-                font-weight: bold;
-                font-size: 40px;
+
+            .info-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
             }
         }
     }
-}
 
-// jumbotron
-.guest-jumbotron {
+
     
-    .carousel-image{
-        height: 100vh;
-        min-height: 800px;
-
-        img {
-            width: 100%;
-        }
-    }
-
-}
-.wrapper-header {
-    background-color: #D3D3D3;
-    padding: 20px 0;
-
-    .info-restaurant  {
-        display: flex;
-        width: 100%;
-
-        .restaurant-image {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-            border-radius: 20px;
-            overflow: hidden;
-
-            img {
-                width: 100%;
-            }
-        }
-
-        .info-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-    }
 }
