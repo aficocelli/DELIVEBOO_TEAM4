@@ -7,7 +7,7 @@
 @section('content')
   <div id="app">
 
-    <div class="wrapper-header">
+    <div class="wrapper-restaurant">
       <div class="container">
 
         <!-- info restaurant -->

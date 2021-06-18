@@ -7,15 +7,19 @@ header {
         right: 0;
         width: 100%;
         z-index: 11;
+        
 
         nav {
+            background-color: #ff9900;
+           
+
             // logo
             .logo-link {
-                color: $logoColor;
+                color: #fc0fc0;
                 text-decoration: none;
         
                 .logo {
-                    width: 120px;
+                    width: 90px;
                     
                     img {
                         width: 100%;
@@ -26,7 +30,7 @@ header {
                 .dropfood {
                     text-decoration: none;
                     font-weight: $extra-boldWeight;
-                    font-size: 40px;
+                    font-size: 30px;
                 }
                 
             }
@@ -40,7 +44,8 @@ header {
                         .nav-link {
                             padding: 10px 20px;
                             color: $white;
-                            font-weight: $boldWeight;
+                            font-size: 18px;
+                            font-weight: $mediumWeight;
                             transition: all .2s;
 
                             &:hover {
@@ -52,61 +57,13 @@ header {
             }
         }
     }
-
-    // jumbotron home principale
-    .hero {
-        background-image: url('../img-carousel/sushi-6.jpg');
-        background-position: top center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
-        min-height: 800px;
-        position: relative;
-
-
+    
         
-        &__search {
-            text-align: center;
-            color: $white;
-            position: absolute;
-            top: 200px;
-            left: 50%;
-            transform: translateX(-50%);
-            
-        }
 
-    }
 
     
 
-    // show 
-    .wrapper-header {
-        background-color: #D3D3D3;
-        padding: 20px 0;
-
-        .info-restaurant  {
-            display: flex;
-            width: 100%;
-
-            .restaurant-image {
-                width: 200px;
-                height: 200px;
-                object-fit: contain;
-                border-radius: 20px;
-                overflow: hidden;
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            .info-text {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-        }
-    }
+    
 
 
     
