@@ -92,7 +92,7 @@ class RegisterController extends Controller
        
         if(!isset($data['type'])){
 
-            $data['type'] = 9;
+            $data['type'] = 1;
 
             $newUser->types()->attach($data['type']);
 

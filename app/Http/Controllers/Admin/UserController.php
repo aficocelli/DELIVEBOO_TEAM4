@@ -117,7 +117,7 @@ class UserController extends Controller
         // controllo types
 
         if (!isset($data['types'])) {
-            $data['types'] = 9;
+            $data['types'] = 1;
         }
         $user->types()->sync($data['types']);
         
