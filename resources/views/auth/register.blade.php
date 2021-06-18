@@ -7,7 +7,6 @@
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
 
-
                 <div class="card-body">
                     @if ($errors->any())
                                 <div class="alert alert-danger">
@@ -21,11 +20,11 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                        <div class="form-group">
+                            <label for="name" class="">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            <div class="">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -35,11 +34,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <div class="form-group">
+                            <label for="email" class="">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <div class="">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -49,11 +48,11 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                        <div class="form-group">
+                            <label for="password" class="">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                            <div class="">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -63,40 +62,37 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                        <div class="form-group">
+                            <label for="password-confirm" class="">{{ __('Confirm Password') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            <div class="">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                             </div>
                         </div>
                         
                         {{-- form registrazione ristorante --}}
 
                         <div class="form-group">
-                            <label for="name_restaurant">Nome del ristorante</label>
-                            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="nome del ristorante" value="{{ old('name_restaurant') }}">
+                            <label for="name_restaurant">Restaurant Name</label>
+                            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="Restaurant Name" value="{{ old('name_restaurant') }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="phone_restaurant">Numero di telefono</label>
-                            <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Numero di telefono" value="{{ old('phone_restaurant') }}">
+                            <label for="phone_restaurant">Phone Restaurant</label>
+                            <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Phone Restaurant" value="{{ old('phone_restaurant') }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="address_restaurant">Indirizzo</label>
-                            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Indirizzo" value="{{ old('address_restaurant') }}">
+                            <label for="address_restaurant">Address Restaurant</label>
+                            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Address Restaurant" value="{{ old('address_restaurant') }}">
                         </div>
                         <div class="form-group">
-                            <label for="vat_number">p.Iva</label>
-                            <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva" value="{{ old('vat_number') }}">
+                            <label for="vat_number">Vat Number</label>
+                            <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="Vat Number" value="{{ old('vat_number') }}">
                         </div>
 
-                       
-                        
-                        
                         @foreach ($types as $item)
-			                <div class="form-check">
+			                <div class="form-check d-inline mr-3">
 				                <input class="form-check-input" type="checkbox" value="{{$item->id}}" id="{{$item->origin}}" name="type[]">
 				                <label class="form-check-label" for="{{$item->origin}}">
 					                {{$item->origin}}
@@ -104,16 +100,9 @@
 			                </div>
 		                @endforeach
 
-                        {{-- @error('type')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror --}}
-                       
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group">
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary pl-5 pr-5">
                                     {{ __('Register') }}
                                 </button>
                             </div>

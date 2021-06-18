@@ -1,15 +1,16 @@
 @extends('layouts.admin')
 
 @section('pageTitle')
-    Modifica il ristorante
+    {{Auth::user()->name_restaurant}}
 @endsection
 
 @section('content')
 
 <div class="container">
-    <div class="mb-3">
-        <h2>{{Auth::user()->name_restaurant}}</h2>
-    </div>
+
+	<a href="{{route('home', [ 'user' => $user->id ])}}">
+        <button type="button" class="btn btn-primary mb-3 ">Back Home</button>
+    </a>
 
 	@if ($errors->any())
 		<div class="alert alert-danger">
@@ -25,33 +26,34 @@
 		@csrf
 		@method('PUT')
 		<div class="form-group">
-            <label for="name_restaurant">Nome del ristorante</label>
+            <label for="name_restaurant">Name</label>
             <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="nome del ristorante" value="{{old('name_restaurant') ? old('name_restaurant') : $user->name_restaurant}}">
         </div>
 
         <div class="form-group">
-            <label for="phone_restaurant">Numero di telefono</label>
+            <label for="phone_restaurant">Phone</label>
             <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Numero di telefono" value="{{old('phone_restaurant') ? old('phone_restaurant') : $user->phone_restaurant}}">
         </div>
 
         <div class="form-group">
-            <label for="address_restaurant">Indirizzo</label>
+            <label for="address_restaurant">Address</label>
             <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Indirizzo" value="{{old('address_restaurant') ? old('address_restaurant') : $user->address_restaurant}}">
         </div>
+
         <div class="form-group">
-            <label for="vat_number">p.Iva</label>
+            <label for="vat_number">Vat Number</label>
             <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="p.Iva" value="{{old('vat_number') ? old('vat_number') : $user->vat_number}}">
         </div>
 
         <div class="form-group">
-			<label for="image_restaurant">Immagine del ristorante</label>
+			<label for="image_restaurant">Immage</label>
 			<input type="file" class="form-control" id="image_restaurant" name="image_restaurant" placeholder="image_restaurant">
 		</div>
 
         {{-- stampo i checkbox --}}
 
         @foreach ($types as $type)
-			<div class="form-check">
+			<div class="form-check d-inline mr-5">
 				<input class="form-check-input" type="checkbox" value="{{$type->id}}" id="{{$type->origin}}" name="types[]" {{ $user->types->contains($type) ? 'checked' : '' }}>
 				<label class="form-check-label" for="{{$type->origin}}">
 					{{$type->origin}}
@@ -59,13 +61,10 @@
 			</div>
 		@endforeach
 
-		<div class="mt-3">
-			<button type="submit" class="btn btn-primary">Modifica</button>
+		<div class="mt-3 text-center p-3">
+			<button type="submit" class="btn btn-success pl-5 pr-5">Edit</button>
 		</div>
 	</form>
-    <a href="{{route('home', [ 'user' => $user->id ])}}">
-        <button type="button" class="btn btn-primary ">Torna alla dashboard</button>
-    </a>
 </div>
 
 
