@@ -1,0 +1,59 @@
+header {
+    margin-bottom: 40px;
+
+    //navbar
+    .nav-wrapper-user {
+        
+        nav.navbar-user {
+            background-color: #ff9900;
+           
+
+            // logo
+            .logo-link {
+                color: #fc0fc0;
+                text-decoration: none;
+        
+                .logo {
+                    width: 90px;
+                    
+                    img {
+                        width: 100%;
+                    }
+        
+                }
+        
+                .dropfood {
+                    text-decoration: none;
+                    font-weight: $extra-boldWeight;
+                    font-size: 30px;
+                }
+                
+            }
+
+            //login e register
+            .login-navbar-wrapper-user {
+
+                .login-navbar-user {
+                    display: flex;
+                    align-items: center;
+                    
+                    .nav-item {
+                        
+                        .nav-link {
+                            padding: 10px 20px;
+                            color: $white;
+                            font-size: 18px;
+                            font-weight: $mediumWeight;
+                            transition: all .2s;
+
+                            &:hover {
+                               color: #ccc;
+                            }
+                        }         
+                    }
+                }
+            }
+        }
+    }
+  
+}

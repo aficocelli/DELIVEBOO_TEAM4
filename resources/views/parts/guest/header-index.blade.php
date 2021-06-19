@@ -1,5 +1,5 @@
 <header class="mb-5">
-    <div class="nav-wrapper">
+    <div :class="headerTopSticky == false ? 'nav-wrapper--scroll_nav' : 'nav-wrapper' ">
         <!-- navbar -->
         <nav class="navbar navbar-expand-md bg-transparent navbar_index">
             <div class="container">
@@ -67,7 +67,9 @@
             </div>  
             <div class="types d-flex types_search">
                 <div class="type_tag" v-for="type in types">
-                    <h2 class="d-inline mr-2 type_text"><button @@change="buttonTypes()" type="button" name="button" ref="yourRef" class="btn_types">@{{type.origin}}</button></h2>
+                    <form action="">
+                        <button v-on:click="buttonTypes()" type="text" :value="type.origin" class="btn_types d-inline mr-2">@{{type.origin}}</button>
+                    </form>
                 </div>
             </div>                    
         </div>
