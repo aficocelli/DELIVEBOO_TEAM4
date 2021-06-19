@@ -1,4 +1,4 @@
-#root {
+
 
   *{
     margin: 0;
@@ -51,7 +51,7 @@ html {
     }
 }
 
-.row {
+.row_cart {
   display: flex;
   align-items: center;
   max-width: 100%;;
@@ -91,7 +91,7 @@ html {
 }
 
 
-.col-qnt >input {
+.col-qnt >input.input_cart {
     max-width: 50px ;
 }
 
@@ -147,4 +147,3 @@ button.qty:hover {
 }
 
 
-}
