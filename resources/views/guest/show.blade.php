@@ -57,7 +57,7 @@
           @endforeach
         </ul>
       </div>
-      <section id="cart">
+      <section>
         <div class="container-cart">
             {{-- corpo del carrello --}}
             <div class="cart-body">

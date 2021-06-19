@@ -18,25 +18,25 @@ new Vue({
     //   'http://127.0.0.1:8000/img-carousel/pizza-7.jpg', 
     // ],
     slideIndex: 0,
-    url: '{{asset(img-carousel/)}}',   
+    url: '{{asset(img-carousel/)}}', 
+    qty: 1,
+    basePrice: 10,
+    total: 10,
   },
 
   mounted: function () {
 
     axios.get('http://localhost:8000/api/search/types')
-      .then((result) => {
-        this.types = result.data;
-        console.log(result.data);
-      });
+    .then((result) => {
+      this.types = result.data;
+      console.log(result.data);
+    });
 
     axios.get('http://localhost:8000/api/search/users')
-      .then((result) => {
-        this.users = result.data;
-        console.log(result.data);
-      });
-
-      
-      
+    .then((result) => {
+      this.users = result.data;
+      console.log(result.data);
+    });    
   },
 
   
@@ -52,13 +52,11 @@ new Vue({
     
     filterTypes: function () {
 
-      axios.get('http://localhost:8000/api/filterapi/' + this.filter, {
+      axios.get('http://localhost:8000/api/filterapi/' + this.filter.toLowerCase().toUpperCase(), {
       }).then((result) => {
-
         console.log(result.data);
         this.userRestaurants = result.data;
       });
-
     },
 
     prev: function() {
@@ -75,7 +73,15 @@ new Vue({
       }
     },
 
-    
+    takeOne: function () {
+      this.qty -= 1;
+    },
+    addOne: function () {
+      this.qty += 1;
+    },
+    calc: function () {
+      this.total = this.qty * this.basePrice;
+    }  
   },
 
 });
