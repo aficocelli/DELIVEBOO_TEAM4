@@ -54,8 +54,16 @@ new Vue({
 
       axios.get('http://localhost:8000/api/filterapi/' + this.filter.toLowerCase().toUpperCase(), {
       }).then((result) => {
+        this.userRestaurants = result.data;
+      });
+    },
+
+    buttonTypes: function(value) {
+      axios.get('http://localhost:8000/api/filterapi/' + value, {
+      }).then((result) => {
         console.log(result.data);
         this.userRestaurants = result.data;
+        console.log(this.userRestaurants);
       });
     },
 

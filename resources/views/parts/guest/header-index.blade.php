@@ -1,4 +1,4 @@
-<header>
+<header class="mb-5">
     <div class="nav-wrapper">
         <!-- navbar -->
         <nav class="navbar navbar-expand-md bg-transparent navbar_index">
@@ -65,9 +65,9 @@
                 <input  class="main_input" type="text" placeholder="cerca ristorante per tipo" v-model="filter" @@keyup.enter="filterTypes()">
                 <button class="btn_primary" type="button" name="button" v-on:click="filterTypes()">Cerca</button>
             </div>  
-            <div class="types d-flex" >
+            <div class="types d-flex types_search">
                 <div class="type_tag" v-for="type in types">
-                    <h2 class="d-inline"><span class="badge badge-pill badge-warning">@{{type.origin}}</span></h2>
+                    <h2 class="d-inline mr-2 type_text"><button @@change="buttonTypes()" type="button" name="button" ref="yourRef" class="btn_types">@{{type.origin}}</button></h2>
                 </div>
             </div>                    
         </div>
