@@ -57,6 +57,9 @@
           @endforeach
         </ul>
       </div>
+      {{-- carrello --}}
+        
+      {{-- /carrello --}}
     </div>
 
 
@@ -76,6 +79,7 @@
       </div>
     </div>   --}}
   
+
   </div>
 
 

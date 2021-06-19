@@ -1,244 +1,150 @@
-// #root {
+#root {
 
-//   *{
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-// }
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-// html {
-//     background: #bbc3c6;
-//     font: 62.5%/1.5em "Trebuchet Ms", helvetica;
-// }
-
-// .shopper {
-//     text-transform: lowercase;
-//     font: 2em 'Shopper', sans-serif;
-//     line-height: 0.5em;
-//     display: inline-block;
-// }
+html {
+    background: #bbc3c6;
+    font: 62.5%/1.5em "Trebuchet Ms", helvetica;
+}
 
 
-
-// h1 {
-//     text-transform: uppercase;
-//     font-weight: bold;
-//     font-size: 2.5em;
-// }
-
-// p {
-//     font-size: 1.5em;
-//     color: #8a8a8a;
-// }
-
-// input {
-//     border: 0.3em solid #bbc3c6;
-//     padding: 0.5em 0.3em;
-//     font-size: 1.4em;
-//     color: #8a8a8a;
-//     text-align: center;
-// }
-
-// img {
-//     max-width: 9em;
-//     width: 100%;
-//     overflow: hidden;
-//     margin-right: 1em;
-// }
-
-// a {
-//     text-decoration: none;
-// }
-
-// .container {
-//     max-width: 75em;
-//     width: 95%;
-//     margin: 40px auto;
-//     overflow: hidden;
-//     position: relative;
-
-//     border-radius: 0.6em;
-//     background: #ecf0f1;
-//     box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
-// }
-
-// .heading {
-//     padding: 1em;
-//     position: relative;
-//     z-index: 1;
-//     color: #f7f7f7;
-//     background: #f34d35;
-// }
-
-// .cart {
-//     margin: 2.5em;
-//     overflow: hidden;
-// }
-
-// .cart.is-closed {
-//     height: 0;
-//     margin-top: -2.5em;
-// }
-
-// .table {
-//     background: #ffffff;
-//     border-radius: 0.6em;
-//     overflow: hidden;
-//     clear: both;
-//     margin-bottom: 1.8em;
-// }
-// .menu{
-//     display: flex;
-//     justify-content: space-between;
-// }
-
-// .layout-inline>* {
-//     display: inline-block;
-// }
-
-// .align-center {
-//     text-align: center;
-// }
-
-// .th {
-//     background: #f34d35;
-//     color: #fff;
-//     text-transform: uppercase;
-//     font-weight: bold;
-//     font-size: 1.5em;
-// }
-
-// .tf {
-//     background: #f34d35;
-//     text-transform: uppercase;
-//     text-align: right;
-//     font-size: 1.2em;
-// }
-
-// .tf p {
-//     color: #fff;
-//     font-weight: bold;
-// }
-
-// .col {
-//     padding: 1em;
-//     width: 12%;
-// }
-
-// .col-pro {
-//     width: 44%;
-// }
-
-// .col-pro>* {
-//     vertical-align: middle;
-// }
-
-// .col-qty {
-//     text-align: center;
-//     width: 17%;
-// }
-
-// .col-numeric p {
-//     font: bold 1.8em helvetica;
-// }
-
-// .col-total p {
-//     color: #12c8b1;
-// }
-
-// .tf .col {
-//     width: 20%;
-// }
-
-// .row>div {
-//     vertical-align: middle;
-// }
-
-// .row-bg2 {
-//     background: #f7f7f7;
-// }
-
-// .visibility-cart {
-//     position: absolute;
-//     color: #fff;
-//     top: 0.5em;
-//     right: 0.5em;
-//     font: bold 2em arial;
-//     border: 0.16em solid #fff;
-//     border-radius: 2.5em;
-//     padding: 0 0.22em 0 0.25em;
-// }
-
-// .col-qty>* {
-//     vertical-align: middle;
-// }
-
-// .col-qty>input {
-//     max-width: 2.6em;
-// }
+.container-cart {
+   max-width: 75em;
+    width: 95%;
+    margin: 40px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.6em;
+    background: #ecf0f1;
+    box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+    padding-bottom: 20px;
+}
 
 
-// a.qty {
-//     width: 1em;
-//     line-height: 1em;
-//     border-radius: 2em;
-//     font-size: 2.5em;
-//     font-weight: bold;
-//     text-align: center;
-//     background: #43ace3;
-//     color: #fff;
-// }
+.cart-main {
+  width: 80%;
+  margin: auto;
+  border-radius: 0.6em;
+}
 
-// a.qty:hover {
-//     background: #3b9ac6;
-// }
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1em;
+  background-color: red;
+  color: #ecf0f1;
 
-// .btn {
-//     padding: 10px 30px;
-//     border-radius: 0.3em;
-//     font-size: 1.4em;
-//     font-weight: bold;
-//     background: #43ace3;
-//     color: #fff;
-//     box-shadow: 0 3px 0 rgba(59, 154, 198, 1)
-// }
+    .main__title {
+      width: 50%;
+    
+    }
+    
+    .show__hide {
+      width: 50%;
+      text-align: right;
+      font-size: 30px;
+    }
+}
 
-// .btn:hover {
-//     box-shadow: 0 3px 0 rgba(59, 154, 198, 0)
-// }
+.row {
+  display: flex;
+  align-items: center;
+  max-width: 100%;;
+  margin-top: 50px;
+  padding: 1em;
+}
 
-// .btn-update {
-//     float: right;
-//     margin: 0 0 1.5em 0;
-// }
+.row-names {
+  background-color: red;
+  color: #fff;
+  
+}
 
-// .transition {
-//     transition: all 0.3s ease-in-out;
-// }
+  .col__name {
+    padding: 1em;
+    width: 12%;
+    font-size: 18px;
+  }
+  
+  .col-product {
+    width: 44%;
+    display: flex;
+    align-items: center;
+  }
+  .product__image {
+    margin-right: 10px;
+  }
+  .col-qnt {
+    text-align: center;
+    width: 30%;
+  }
 
-// @media screen and (max-width: 755px) {
-//     .container {
-//         width: 98%;
-//     }
 
-//     .col-pro {
-//         width: 35%;
-//     }
+.col-numeric {
+  display: flex;
+  font: bold 18px helvetica;
+}
 
-//     .col-qty {
-//         width: 22%;
-//     }
 
-//     img {
-//         max-width: 100%;
-//         margin-bottom: 1em;
-//     }
-// }
+.col-qnt >input {
+    max-width: 50px ;
+}
+
+button.qty {
+    width: 1.5em;
+    line-height: 1.5em;
+    border: none;
+    border-radius: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    background: #43ace3;
+    color: #fff;
+}
+
+button.qty:hover {
+    background: #3b9ac6;
+}
+
+.row-total {
+  background-color: red;
+  color: #fff;
+  text-align: right;
+  padding: 1%;
+  font-size: 30px;
+}
+
+.actions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.cart__btn {
+  padding: 10px 30px;
+  border-radius: 0.3em;
+  border: none;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: #43ace3;
+  color: #fff;
+  box-shadow: 0 3px 0 rgba(59, 154, 198, 1)
+}
+
+.btn:hover {
+    box-shadow: 0 3px 0 rgba(59, 154, 198, 0)
+}
 
 
 
+.transition {
+    transition: all 0.3s ease-in-out;
+}
 
 
-
-
-// }
+}

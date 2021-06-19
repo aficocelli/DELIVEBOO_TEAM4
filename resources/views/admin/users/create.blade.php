@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+        </div>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{{asset('css/app.css')}}">
@@ -9,85 +10,54 @@
   <title>Document</title>
 </head>
 <body>
-    <section id="root">
-    <div class="pre-checkout">
-     <div class="container">
-  <div class="heading">
-    <h1>
-      <span class="shopper">s</span> Shopping Cart
-    </h1>
-    
-    <a href="#" class="visibility-cart transition is-open">X</a>    
-  </div>
-  
-  <div class="cart transition is-open">
-  
-  
-    
-    <div class="table">
-      
-      <div class="layout-inline row th">
-        <div class="col col-pro">Product</div>
-        <div class="col col-price align-center "> 
-          Price
+<section id="root">
+   <div class="container-cart">
+      {{-- corpo del carrello --}}
+      <div class="cart-body">
+        <div class="cart-header">
+          <h1 class="main__title">Dropfood</h1>
+          <div class="show__hide">X</div>
         </div>
-        <div class="col col-qty align-center">QTY</div>
-    
+        <div class="cart-main">
+          <div class="row row-names">
+            <div class="col__name col-product">Prodotto</div>
+            <div class="col__name col-price">Prezzo</div>
+            <div class="col__name col-qnt">Quantità</div>
+          </div>
+
+          <div class="row row-operations">
+            <div class="col__name col-product product_image">
+              <img class="product__image" src="https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.comC/O https://placeholder.com/"  alt="" />
+              <p class="cart__par">Pizza</p>
+            </div>
+            
+            <div class="col__name col-price col-numeric">@{{basePrice}}$</div>
+            
+            <div class="col__name col-qnt">
+              <button class="qty qty-minus" @@click="takeOne">-</button>
+              <input type="numeric" value="" v-model="qty"/>
+              <button class="qty qty-plus" @@click="addOne">+</button>
+            </div>
+
+          </div>
+          <div class="row-total">
+              <div class="total">
+                  <p>Total: @{{total}} $</p>
+              </div>
+          </div>
+          {{-- bottoni --}}
+          <div class="actions">
+          <a href="#"><button class="cart__btn">Procedi al checkout</button></a>
+          <a href="#"><button class="cart__btn " @@click="calc">Update cart</button></a>
+          </div>
       </div>
-      
-      <div class="layout-inline row">
+    </div>
+
+
         
-        <div class="col col-pro layout-inline">
-          <img src="https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.comC/O https://placeholder.com/" alt="" />
-          <p>Pizza</p>
-        </div>
-        
-        <div class="col col-price col-numeric align-center ">
-          <p>@{{basePrice}} $</p>
-        </div>
-
-        <div class="col col-qty layout-inline">
-          <a href="#" class="qty qty-minus" @click="takeOne">-</a>
-            <input type="numeric" value="" v-model="qty"/>
-          <a href="#" class="qty qty-plus" @click="addOne">+</a>
-        </div>
-       <div class="col col-total col-numeric"><p></p>
-        </div>
-      </div> 
-  
-  
-       <div class="tf">
-         <div class="row layout-inline">
-          <div class="col"></div>
-         </div>
-          <div class="row layout-inline">
-           <div class="col">
-             <p>Total: @{{total}} $</p>
-           </div>
-           <div class="col"></div>
-         </div>
-       </div>         
-  </div>
-  <div class="menu">
-
-    <div>
-      <a href="#" class="btn btn-update" @@click="calc">Update cart</a> 
-    </div>
-     <div>
-      <a href='http://localhost:3000/' class="btn btn-primary">Proceed to checkout</a>
-    </div>
-    <div>
       
-    </div>
-    
-  </div>
-  
-</div>
-
-
-
-  </div>
-  </section>
+   </div>
+</section>
    <script src="{{asset('js/myScript.js')}}"></script>
 </body>
 </html>
