@@ -22,6 +22,7 @@ new Vue({
     qty: 1,
     basePrice: 10,
     total: 10,
+    show: 'false',
   },
 
   mounted: function () {

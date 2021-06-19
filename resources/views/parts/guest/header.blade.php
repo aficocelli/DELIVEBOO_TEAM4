@@ -7,7 +7,7 @@
                     <img class="logo" src="{{asset('img-carousel/dropfood-logo-fuschia.svg')}}" alt="dropfood logo">
                     <h1 class="dropfood">dropfood</h1>
                 </a>
-
+                
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -49,6 +49,9 @@
                             </li>
                         @endguest
                     </ul>
+                    <div class="cart" @@click="show = !show">
+                        <i class="fas fa-cart-plus" style="font-size:20px"></i>
+                    </div>
                 </div>
             </div>
         </nav>

@@ -32,7 +32,7 @@
 
       </div>
     </div>
-
+    
     <div class="container mt-5">
       <div class="restaurant-menu">
         <ul class="list-inline">
@@ -57,8 +57,11 @@
           @endforeach
         </ul>
       </div>
+      
       <section>
-        <div class="container-cart">
+        
+      <aside v-if="!show">
+        <div class="container-cart >
             {{-- corpo del carrello --}}
             <div class="cart-body">
               <div class="cart-header">
@@ -98,14 +101,11 @@
                 <a href=""><button class="cart__btn " @@click="calc">Update cart</button></a>
                 </div>
             </div>
-          </div>
-
-
-              
-            
+          </div>    
         </div>
       </section>
     </div>
+    </aside>
 
 
 
