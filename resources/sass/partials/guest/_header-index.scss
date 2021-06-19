@@ -53,6 +53,60 @@ header {
         }
     }
 
+    .nav-wrapper--scroll_nav {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        right: 0;
+        z-index: 15;
+        background-color: #ccc;
+        box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, .2);
+
+        .navbar_index {
+            // logo
+            .logo-link {
+                color: $white;
+                text-decoration: none;
+        
+                .logo {
+                    width: 120px;
+                    
+                    img {
+                        width: 100%;
+                    }
+        
+                }
+        
+                .dropfood {
+                    text-decoration: none;
+                    font-weight: $extra-boldWeight;
+                    font-size: 40px;
+                }
+                
+            }
+
+            //login e register
+            .login-navbar-wrapper {
+                .login-navbar {
+                    .nav-item {
+                        
+                        .nav-link {
+                            padding: 10px 20px;
+                            color: $white;
+                            font-size: 18px;
+                            font-weight: $mediumWeight;
+                            transition: all .2s;
+
+                            &:hover {
+                               color: #ccc;
+                            }
+                        }         
+                    }
+                }
+            }
+        }
+    }
+
     // jumbotron home principale
     .hero {
         background-image: url('../img-carousel/pizza-7-min.jpg');
@@ -138,23 +192,21 @@ header {
             }
 
             .types_search {
-                .type_text {
-                    font-size: 18px;
-                    
-                    .btn_types {
-                        color: $white;
-                        background-color: $logoColor;
-                        border: none;
-                        border: 2px solid $logoColor;
-                        padding: 8px 10px;
-                        border-radius: 20px;
-                        transition: all .2s ease-in-out;
+                .btn_types {
+                    font-size: 16px;
+                    font-weight: $mediumWeight;
+                    color: $white;
+                    background-color: $logoColor;
+                    border: none;
+                    border: 2px solid $logoColor;
+                    padding: 10px 15px;
+                    border-radius: 20px;
+                    transition: all .2s ease-in-out;
 
-                        &:hover {
-                            background-color: transparent;
-                            color: $logoColor;
-                            border: 2px solid $logoColor;
-                        }
+                    &:hover {
+                        background-color: transparent;
+                        color: $logoColor;
+                        border: 2px solid $logoColor;
                     }
                 }
             }

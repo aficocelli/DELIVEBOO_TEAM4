@@ -23,9 +23,16 @@ new Vue({
     basePrice: 10,
     total: 10,
     show: 'false',
+    headerTopSticky: true,
   },
 
   mounted: function () {
+
+    
+
+    // event listener sulla scroll
+    document.addEventListener('scroll', this.scrollHandler);
+    
 
     axios.get('http://localhost:8000/api/search/types')
     .then((result) => {
@@ -52,17 +59,17 @@ new Vue({
     },
     
     filterTypes: function () {
-
       axios.get('http://localhost:8000/api/filterapi/' + this.filter.toLowerCase().toUpperCase(), {
       }).then((result) => {
         this.userRestaurants = result.data;
       });
     },
 
-    buttonTypes: function(value) {
-      axios.get('http://localhost:8000/api/filterapi/' + value, {
+    buttonTypes: function() {
+      axios.get('http://localhost:8000/api/filterapi/' , {
       }).then((result) => {
         console.log(result.data);
+        console.log(value);
         this.userRestaurants = result.data;
         console.log(this.userRestaurants);
       });
@@ -91,6 +98,29 @@ new Vue({
     calc: function () {
       this.total = this.qty * this.basePrice;
     }  
+  },
+
+  //scroll back to top with chevron
+  // backToTop: function () {
+  //   window.scrollTo({
+  //     top: 0,
+  //   })
+  // },
+
+  scrollHandler: function () {
+    if (window.scrollY >150) {
+      this.headerTopSticky = false;
+      console.log(this.headerTopSticky);
+    } else {
+      this.headerTopSticky = true;
+    }
+
+    //chevron
+    // if (window.scrollY > 150) {
+    //   this.chevronBackToTop = true;
+    // } else {
+    //   this.chevronBackToTop = false;
+    // }
   },
 
 });
