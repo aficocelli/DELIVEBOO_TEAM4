@@ -33,9 +33,9 @@ class OrderController extends Controller
         $newOrder = Order::create($data);
         // dd($newOrder);
      
-        // $newOrder->foods()->attach($data['foods']);
+        //$newOrder->foods()->attach($data['foods']);
 
-        // Mail::to($newOrder->email_guest)->send(new Model($newOrder));
+        //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
 
         return redirect()->route('guest.order.success',$newOrder);
