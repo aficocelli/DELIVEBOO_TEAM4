@@ -1,6 +1,6 @@
 var app = new Vue(
     {
-        el: '#root',
+        el: '#cart',
         data: {
             qty: 1,
             basePrice: 10,

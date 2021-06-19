@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div id="app">
+  <div id="">
 
     <div class="wrapper-restaurant">
       <div class="container">
@@ -57,7 +57,7 @@
           @endforeach
         </ul>
       </div>
-      <section id="root">
+      <section id="cart">
         <div class="container-cart">
             {{-- corpo del carrello --}}
             <div class="cart-body">
