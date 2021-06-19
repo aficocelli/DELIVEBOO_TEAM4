@@ -5,38 +5,47 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
+use App\Food;
+use App\User;
 use Braintree;
 
 class OrderController extends Controller
 {
-    // public function showOrder(){
-    //     $orders = Order::all();
+    public function createOrder(){
 
-    //     return view('guest.order', compact('orders'));
-    // }
+        $order = Order::all();
 
-    // public function storeOrder(){
+        // $order_id = Order::id();
 
-    //     $gateway = new Braintree\Gateway([
-    //         'environment' => 'sandbox',
-    //         'merchantId' => '3f58gf44rjwx3cz4',
-    //         'publicKey' => 'xkyy5gnc8czp7f9z',
-    //         'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
-    //     ]);
+        // $orders = Order::where('order_id', $order_id)->get();
+        
 
-    //     $clientToken = $gateway->clientToken()->generate();
+        return view('guest.order.create', compact('order'));
+    }
 
-    //     $nonceFromTheClient = $_POST["payment_method_nonce"];
+    public function storeOrder(Request $request){
 
-    //     $result = $gateway->transaction()->sale([
-    //         'amount' => '10.00',
-    //         'paymentMethodNonce' => $nonceFromTheClient,
-    //         'deviceData' => $deviceDataFromTheClient,
-    //         'options' => [
-    //             'submitForSettlement' => True
-    //         ]
-    //     ]);
-    //     dd($nonceFromTheClient);
-    //     return view('guest.order.store', compact('clientToken'));
-    // }
+        // $foods = Food::all();
+
+        $data = $request->all();
+        $data['total'] = 20;
+
+        $newOrder = Order::create($data);
+        // dd($newOrder);
+     
+        // $newOrder->foods()->attach($data['foods']);
+
+        // Mail::to($newOrder->email_guest)->send(new Model($newOrder));
+       
+
+        return redirect()->route('guest.order.success',$newOrder);
+    }
+
+    public function successOrder(Order $order)
+    {
+        
+        return view('guest.order.success', compact('order'));
+    }
+    
 }
+    
