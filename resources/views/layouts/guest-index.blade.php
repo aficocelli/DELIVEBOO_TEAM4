@@ -18,7 +18,6 @@
     <body>
         <!-- root wrapper -->
         <div id="root">
-
             <!-- header -->
             @include('parts.guest.header-index')
               
