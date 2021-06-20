@@ -4,7 +4,7 @@
         <nav class="navbar navbar-expand-md bg-transparent navbar_index">
             <div class="container">
                 <!-- sezione logo e login -->
-                <a class="navbar-brandm d-flex align-items-center logo-link" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex align-items-center logo-link" href="{{ url('/') }}">
                     <img class="logo" src="{{asset('img-carousel/dropfood-logo-white.svg')}}" alt="dropfood logo">
                     <h1 class="dropfood">dropfood</h1>
                 </a>
@@ -34,21 +34,22 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-                                    
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-
                                     <a class="dropdown-item" href="{{ route('home') }}">{{Auth::user()->name_restaurant}}</a>
                                 </div>
                             </li>
                         @endguest
+                            
                     </ul>
                 </div>
             </div>
