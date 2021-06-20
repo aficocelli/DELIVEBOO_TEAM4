@@ -24,7 +24,8 @@ new Vue({
     total: 10,
     show: 'false',
     headerTopSticky: true,
-    foodsRetaurant: []
+    foodsRetaurant: [],
+    
   },
 
   mounted: function () {
@@ -72,11 +73,14 @@ new Vue({
       });
     },
 
-    buttonTypes: function() {
-      axios.get('http://localhost:8000/api/filterapi/' , {
+    buttonTypes: function(e) {
+
+      
+      
+      axios.get('http://localhost:8000/api/filterapi/' + e , {
       }).then((result) => {
         console.log(result.data);
-        console.log(value);
+        
         this.userRestaurants = result.data;
         console.log(this.userRestaurants);
       });
