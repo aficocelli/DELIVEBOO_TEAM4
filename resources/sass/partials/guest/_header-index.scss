@@ -52,59 +52,8 @@ header {
             }
         }
     }
-
     .nav-wrapper--scroll_nav {
-        position: fixed;
-        width: 100%;
-        left: 0;
-        right: 0;
-        z-index: 15;
-        background-color: #ccc;
-        box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, .2);
-
-        .navbar_index {
-            // logo
-            .logo-link {
-                color: $white;
-                text-decoration: none;
-        
-                .logo {
-                    width: 120px;
-                    
-                    img {
-                        width: 100%;
-                    }
-        
-                }
-        
-                .dropfood {
-                    text-decoration: none;
-                    font-weight: $extra-boldWeight;
-                    font-size: 40px;
-                }
-                
-            }
-
-            //login e register
-            .login-navbar-wrapper {
-                .login-navbar {
-                    .nav-item {
-                        
-                        .nav-link {
-                            padding: 10px 20px;
-                            color: $white;
-                            font-size: 18px;
-                            font-weight: $mediumWeight;
-                            transition: all .2s;
-
-                            &:hover {
-                               color: #ccc;
-                            }
-                        }         
-                    }
-                }
-            }
-        }
+        background-color: $logoColor;
     }
 
     // jumbotron home principale

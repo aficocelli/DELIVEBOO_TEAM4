@@ -1,5 +1,5 @@
 <header class="mb-5">
-    <div :class="headerTopSticky == false ? 'nav-wrapper--scroll_nav' : 'nav-wrapper' ">
+    <div class="nav-wrapper" :class="headerTopSticky == false ? 'nav-wrapper--scroll_nav' : '' ">
         <!-- navbar -->
         <nav class="navbar navbar-expand-md bg-transparent navbar_index">
             <div class="container">
@@ -58,7 +58,6 @@
     <!-- hero -->
     <div class="hero">  
         <div class="hero__search">
-
             <!-- barra di ricerca per tipologia -->  
             <h2 class="index-title mb-5">Cerca un ristorante vicino a te!</h2>
             <div class="d-flex justify-content-center mb-5">
@@ -66,10 +65,8 @@
                 <button class="btn_primary" type="button" name="button" v-on:click="filterTypes()">Cerca</button>
             </div>  
             <div class="types d-flex types_search">
-                <div class="type_tag" v-for="type in types">
-                    
-                    <button v-on:click="buttonTypes(type.origin)" type="text"  class="btn_types d-inline mr-2">@{{type.origin}}</button>
-                    
+                <div class="type_tag" v-for="type in types">    
+                    <button v-on:click="buttonTypes(type.origin)" type="text"  class="btn_types d-inline mr-2">@{{type.origin}}</button>    
                 </div>
             </div>                    
         </div>
