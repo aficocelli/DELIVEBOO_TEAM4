@@ -48,19 +48,18 @@ main {
     }
 // parte guest 
     .card_container{
-        border-radius: 20px;
+        border-radius: 50px;
         overflow: hidden;  
     }
     .card_image {
         width: 400px;
         height: 300px;
-        object-fit: contain;
-        
 
         img {
             width: 100%;
+            height: 100%;
+            object-fit: cover
         }
-        
     }
 // show
 }
