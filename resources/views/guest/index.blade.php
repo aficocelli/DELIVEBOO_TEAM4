@@ -7,7 +7,6 @@
 @section('content') 
   <div class="d-flex flex-wrap justify-content-center card_container mt-5 mb-5">
     <div v-for="element in userRestaurants">
-      <div class="card rounded mt-3 border mr-3">
       <div  class="card rounded mt-3 border mr-3 card_container rounded-pill">
           <a class="text-decoration-none text-reset" :href="'http://127.0.0.1:8000/users/'+ element.id">
             <div class="card_image">
