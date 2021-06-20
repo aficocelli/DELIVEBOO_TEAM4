@@ -14,7 +14,7 @@
         <div class="info-restaurant">
           @if(isset($users->image_restaurant))
             <div class="restaurant-image mr-5">
-              <img src="{{'http://127.0.0.1:8000/storage/' . $users->image_restaurant}}" class="card-img-top" alt="{{$users->name_restaurant}}">
+              <img src="{{'http://127.0.0.1:8000/storage/' . $users->image_restaurant}}" class="card-img-top" alt="{{$users->name_restaurant}}" style="width: 500px;">
             </div>
           @endif
 
@@ -32,17 +32,41 @@
 
       </div>
     </div>
-    
-    <div class="container mt-5">
-      <div class="restaurant-menu">
+     <div class="container mt-5">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Prodotto</th>
+                <th scope="col">Immagine</th>
+                <th scope="col">Prezzo</th>
+                <th scope="col">Descrizione</th>
+              </tr>
+            </thead>
+            <tbody>
+        @foreach ($users->foods as $food)
+        <tr>
+          <td><h5>{{$food->name_food}}</h5></td>
+          <td><img class="" src="{{'http://127.0.0.1:8000/storage/' . $food->food_image}}" style="max-width: 100px"></td>
+          <td><h5>{{$food->price}}</h5></td>
+          <td><h5>{{$food->description}}</h5></td>
+        </tr>
+        @endforeach
+       </tbody>
+      </table>
+   
+      {{-- <div class="restaurant-menu">
         <ul class="list-inline">
             @foreach ($users->foods as $food)
               <li class="menu_item">
-                <p>{{$food->name_food}}</p>
+                <h4>{{$food->name_food}}</h4>
+                <div><img src="{{'http://127.0.0.1:8000/storage/' . $food->food_image}}"></div>
+                
+                <h4>{{$food->price}}</h4>
+                
               </li>
             @endforeach
         </ul>
-      </div>
+      </div> --}}
       
     <section>
         
