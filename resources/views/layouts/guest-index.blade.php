@@ -21,13 +21,11 @@
 
             <!-- header -->
             @include('parts.guest.header-index')
-            
-
+              
             <!-- main -->
             <main>
                 @yield('content')
             </main>
-
         </div>
 
 
@@ -35,7 +33,6 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- Scripts -->
         <script src="{{ asset('js/homesearch.js') }}"></script>
-        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
 

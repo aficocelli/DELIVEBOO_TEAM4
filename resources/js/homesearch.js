@@ -12,11 +12,6 @@ new Vue({
     usersNew:[],
     userRestaurants:[],
     filter:"",
-    // carousel: [
-    //   'http://127.0.0.1:8000/img-carousel/sushi-6.jpg',
-    //   'http://127.0.0.1:8000/img-carousel/hamburger-1.jpg',
-    //   'http://127.0.0.1:8000/img-carousel/pizza-7.jpg', 
-    // ],
     slideIndex: 0,
     url: '{{asset(img-carousel/)}}', 
     qty: 0,
@@ -27,43 +22,33 @@ new Vue({
     foodsRestaurant: [],
     lastScrollPosition: 0,
     scrollValue: 0,
-    ciao: ''
+    ciao: '',
+    typesIndex: []
     
   },
-  
-
   mounted: function () {
 
     // event listener sulla scroll
     // document.addEventListener('scroll', this.scrollHandler);
+    window.addEventListener('scroll', this.scrollHandler);
     
-    window.addEventListener('scroll', this.onScroll);
-    
-
     axios.get('http://localhost:8000/api/search/types')
-    .then((result) => {
-      this.types = result.data;
-      console.log(result.data);
-    });
+      .then((result) => {
+        this.types = result.data;
+        console.log('types:' + result.data);
+      });
 
     axios.get('http://localhost:8000/api/search/users')
-    .then((result) => {
-      this.users = result.data;
-      
-    });    
+      .then((result) => {
+        this.users = result.data;
+
+      });
 
     axios.get('http://localhost:8000/api/search/foods')
       .then((result) => {
-        
         this.foodsRestaurant = result.data;
       });
   },
-
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll);
-  },
-
-
   methods: {
     incrementa: function () {
       this.ordine++;
@@ -123,7 +108,25 @@ new Vue({
     },
     calc: function () {
       this.total = this.qty * this.basePrice;
-    }  
+    }, 
+    
+    // funzioni allo scroll per headers
+
+    scrollHandler: function () {
+    if (window.scrollY > 150) {
+      this.headerTopSticky = false;
+      console.log(this.headerTopSticky);
+    } else {
+      this.headerTopSticky = true;
+    }
+
+    //chevron
+    // if (window.scrollY > 150) {
+    //   this.chevronBackToTop = true;
+    // } else {
+    //   this.chevronBackToTop = false;
+    // }
+    }
   },
 
   //scroll back to top with chevron
@@ -133,36 +136,21 @@ new Vue({
   //   })
   // },
 
-  onScroll: function () {
-    console.log("ciao");
-    // function scrollToC() { divC.scrollIntoView(); }
-
-    // window.onscroll = function () { console.log('scroll') }
+  
    
-    // if (window.pageYOffset < 0) {
-    //   return
-    // }
-    // if (Math.abs(window.pageYOffset - this.lastScrollPosition) < OFFSET) {
-    // //   return
-    // // }
-    // this.headerTopSticky = currentScrollPosition < this.lastScrollPosition;
-    // this.lastScrollPosition = window.pageYOffset;
-  }
-    // if (window.scrollY > 150) {
+  //chevron
+  // if (window.scrollY > 150) {
+  //   this.chevronBackToTop = true;
+  // } else {
+  //   this.chevronBackToTop = false;
+  // }
 
-    //   console.log("ciao");
-    //   this.headerTopSticky = false;
-    //   console.log(this.headerTopSticky);
-    // } else {
-    //   this.headerTopSticky = true;
-    // }
 
-    //chevron
-    // if (window.scrollY > 150) {
-    //   this.chevronBackToTop = true;
-    // } else {
-    //   this.chevronBackToTop = false;
-    // }
+ 
+
+  // beforeDestroy() {
+  //   window.removeEventListener('scroll', this.scrollHandler)
+  // }
   
 
 });
