@@ -67,9 +67,9 @@
             </div>  
             <div class="types d-flex types_search">
                 <div class="type_tag" v-for="type in types">
-                    <form action="">
-                        <button v-on:click="buttonTypes()" type="text" :value="type.origin" class="btn_types d-inline mr-2">@{{type.origin}}</button>
-                    </form>
+                    
+                    <button v-on:click="buttonTypes(type.origin)" type="text"  class="btn_types d-inline mr-2">@{{type.origin}}</button>
+                    
                 </div>
             </div>                    
         </div>
