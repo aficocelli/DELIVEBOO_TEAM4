@@ -19,19 +19,25 @@ new Vue({
     // ],
     slideIndex: 0,
     url: '{{asset(img-carousel/)}}', 
-    qty: 1,
+    qty: 0,
     basePrice: 10,
     total: 10,
     show: 'false',
     headerTopSticky: true,
-    foodsRetaurant: [],
+    foodsRestaurant: [],
+    lastScrollPosition: 0,
+    scrollValue: 0,
+    ciao: ''
     
   },
+  
 
   mounted: function () {
 
     // event listener sulla scroll
-    document.addEventListener('scroll', this.scrollHandler);
+    // document.addEventListener('scroll', this.scrollHandler);
+    
+    window.addEventListener('scroll', this.onScroll);
     
 
     axios.get('http://localhost:8000/api/search/types')
@@ -43,17 +49,19 @@ new Vue({
     axios.get('http://localhost:8000/api/search/users')
     .then((result) => {
       this.users = result.data;
-      console.log(result.data);
-      console.log(this.userRestaurants)
+      
     });    
 
     axios.get('http://localhost:8000/api/search/foods')
       .then((result) => {
+        
         this.foodsRestaurant = result.data;
       });
   },
 
-  
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.onScroll);
+  },
 
 
   methods: {
@@ -101,8 +109,17 @@ new Vue({
     takeOne: function () {
       this.qty -= 1;
     },
-    addOne: function () {
-      this.qty += 1;
+    addOne: function (e) {
+
+      // this.ciao = e;
+
+      // if(e == event){
+      //   this.ciao = event;
+      //   this.qty += 1;
+      // }
+      
+      
+      
     },
     calc: function () {
       this.total = this.qty * this.basePrice;
@@ -116,13 +133,29 @@ new Vue({
   //   })
   // },
 
-  scrollHandler: function () {
-    if (window.scrollY >150) {
-      this.headerTopSticky = false;
-      console.log(this.headerTopSticky);
-    } else {
-      this.headerTopSticky = true;
-    }
+  onScroll: function () {
+    console.log("ciao");
+    // function scrollToC() { divC.scrollIntoView(); }
+
+    // window.onscroll = function () { console.log('scroll') }
+   
+    // if (window.pageYOffset < 0) {
+    //   return
+    // }
+    // if (Math.abs(window.pageYOffset - this.lastScrollPosition) < OFFSET) {
+    // //   return
+    // // }
+    // this.headerTopSticky = currentScrollPosition < this.lastScrollPosition;
+    // this.lastScrollPosition = window.pageYOffset;
+  }
+    // if (window.scrollY > 150) {
+
+    //   console.log("ciao");
+    //   this.headerTopSticky = false;
+    //   console.log(this.headerTopSticky);
+    // } else {
+    //   this.headerTopSticky = true;
+    // }
 
     //chevron
     // if (window.scrollY > 150) {
@@ -130,6 +163,6 @@ new Vue({
     // } else {
     //   this.chevronBackToTop = false;
     // }
-  },
+  
 
 });
