@@ -22,8 +22,9 @@
   justify-content: space-between;
   align-content: center;
   padding: 1em;
-  background-color: red;
+  background-color: #FF9900;
   color: #ecf0f1;
+  margin-bottom: 40px;
 
     .main__title {
       width: 50%;
@@ -46,7 +47,7 @@
 }
 
 .row-names {
-  background-color: red;
+  background-color: #FF9900;
   color: #fff;
   
 }
@@ -98,7 +99,7 @@ button.qty:hover {
 }
 
 .row-total {
-  background-color: red;
+  background-color: #FF9900;
   color: #fff;
   text-align: right;
   padding: 1%;

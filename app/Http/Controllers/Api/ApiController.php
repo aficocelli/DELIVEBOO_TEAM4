@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Type;
+use App\Food;
 use Illuminate\Http\Request;
 
 
@@ -14,7 +15,7 @@ class ApiController extends Controller
     {
         //Prendo i dati del ristoratore
         $types = Type::all();
-
+     
 
         //risposta in json
         return response()->json($types);
@@ -25,6 +26,7 @@ class ApiController extends Controller
     {
 
       $users = User::with(['types'])->get();
+     
 
       return response()->json($users);
 
@@ -75,6 +77,14 @@ class ApiController extends Controller
     };
 
     return response()->json($restaurants);
+  }
+
+  function searchFoods(Request $request) 
+  {
+    $foods = User::with(['foods'])->get();
+
+    return response()->json($foods);
+
   }
 
 

@@ -24,11 +24,10 @@ new Vue({
     total: 10,
     show: 'false',
     headerTopSticky: true,
+    foodsRetaurant: []
   },
 
   mounted: function () {
-
-    
 
     // event listener sulla scroll
     document.addEventListener('scroll', this.scrollHandler);
@@ -46,6 +45,13 @@ new Vue({
       console.log(result.data);
       console.log(this.userRestaurants)
     });    
+
+    axios.get('http://localhost:8000/api/search/foods')
+      .then((result) => {
+        this.users = result.data;
+        console.log(result.data);
+        console.log(this.foodsRetaurant)
+      });
   },
 
   

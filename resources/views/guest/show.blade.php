@@ -6,7 +6,7 @@
 
 @section('content')
   <div id="">
-
+  
     <div class="wrapper-restaurant">
       <div class="container">
 
@@ -36,32 +36,20 @@
     <div class="container mt-5">
       <div class="restaurant-menu">
         <ul class="list-inline">
-          @foreach ($foods as $food)
-              <li class="menu_item">
-                <p class="menu_text">{{$food->name_food}}</p>
+              {{-- <li v-for="food in foodsRestaurant" class="menu_item">
+                <img :src="food.food_image" alt="food.name_food">
+                <p class="menu_text">@{{food.name_food}}</p>
                 <button class="btn_contatore mr-2 ml-2" @@click="incrementa"><i class="fas fa-plus-circle"></i></button>
-                <button class="btn_contatore mr-2" @@click="decrementa"><i class="fas fa-minus-circle"></i></button> 
-                <p class="menu_text">@{{ordine}}</p>
-                {{-- <form action="">
-                  <span>
-                    <select name="" id="" v-model="mainSelect" v-on:change="">
-                      @for ($i = 0; $i <= 5; $i++)
-                      <option value="">{{$i}}</option>
-                      @endfor
-                    </select>
-                  </span>
-
-                </form> --}}
-                
-              </li>
-          @endforeach
+              </li> --}}
         </ul>
       </div>
       
-      <section>
+    <section>
         
-      <aside v-if="!show">
-        <div class="container-cart >
+
+        {{-- carrello --}}
+    <aside v-if="!show">
+        <div class="container-cart>
             {{-- corpo del carrello --}}
             <div class="cart-body">
               <div class="cart-header">
@@ -101,11 +89,12 @@
                 <a href=""><button class="cart__btn " @@click="calc">Update cart</button></a>
                 </div>
             </div>
-          </div>    
+          </div>   
         </div>
-      </section>
-    </div>
     </aside>
+    </section>
+    </div>
+    {{-- /carrello --}}
 
 
 

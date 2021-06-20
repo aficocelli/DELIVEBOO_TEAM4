@@ -27,3 +27,5 @@ Route::get('/select/types', 'Api\ApiController@selectTypes');
 
 Route::get('/filterapi/{type}', 'Api\ApiController@filteredApi');
 
+Route::get('/search/foods', 'Api\ApiController@searchFoods');
+
