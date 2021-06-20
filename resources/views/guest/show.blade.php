@@ -14,7 +14,7 @@
         <div class="info-restaurant">
           @if(isset($users->image_restaurant))
             <div class="restaurant-image mr-5">
-              <img src="{{$users->image_restaurant}}" class="card-img-top" alt="{{$users->name_restaurant}}">
+              <img src="{{'http://127.0.0.1:8000/storage/' . $users->image_restaurant}}" class="card-img-top" alt="{{$users->name_restaurant}}">
             </div>
           @endif
 
