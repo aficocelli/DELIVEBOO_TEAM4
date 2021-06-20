@@ -44,6 +44,7 @@ new Vue({
     .then((result) => {
       this.users = result.data;
       console.log(result.data);
+      console.log(this.userRestaurants)
     });    
   },
 
