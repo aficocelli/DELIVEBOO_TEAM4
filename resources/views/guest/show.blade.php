@@ -64,18 +64,18 @@
                 </div>  
 
                 @foreach ($users->foods as $food)
-                <div class="row row-operations">
+                <div class="row row-operations" @@click="addOne({{$food->id}})">
+                  
                   <div class="col__name col-product product_image">
                     <img class="product__image" src="{{$food->food_image}}"  alt="">
                     <p class="cart__par">{{$food->name_food}}</p>
                   </div>
                   
                   <div class="col__name col-price col-numeric">{{$food->price}}$</div>
-                  
                   <div class="col__name col-qnt">
                     <button class="qty qty-minus" @@click="takeOne">-</button>
-                    <input class="input_cart" type="numeric" value="{{$food->price}}" v-model="qty">
-                    <button class="qty qty-plus" @@click="addOne">+</button>
+                    <input class="input_cart" type="numeric" value="" v-model="qty">
+                    <button class="qty qty-plus" value="{{$food->id}}" @@click="addOne({{$food->id}})">+</button>
                   </div>
                 </div>
                 @endforeach
