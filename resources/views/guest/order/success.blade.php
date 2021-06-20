@@ -8,9 +8,9 @@
       <h4><strong>Recapito telefonico:</strong> </strong>{{$order->h3hone_guest}}</h4>
       <h4><strong>Indirizzo:</strong> {{$order->address_guest}}</h4>
       <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
-      <h4><strong>Data ordine:</strong> {{now()}}</h4>
-      <h4><strong>Tih4o di consegna:</strong> {{$order->delivery_tyh4e}}</h4>
-      <h4><strong>Orario di consegna:</strong> {{now(+4)}}</h4>
+      <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
+      <h4><strong>Tipo di consegna:</strong> {{$order->delivery_tyh4e}}</h4>
+      <h4><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
       <h4><strong>Totale euro:</strong> {{$order->total}}</h4>
     </div>
   <h2 class="mt-3">Checkout pagamento</h2>

@@ -44,11 +44,6 @@
                     <option value="Ritiro al Locale">Ritiro al Locale</option>
                 </select>
             </div>
-
-            <div class="form-group">
-                <label for ="delivery_time">Orario Consegna</label>
-                <input class="form-control" id="delivery_time" name="delivery_time" placeholder="2021-05-28 00:00:00" required>
-            </div>
             
             <div class="form-group">
                 <label for="notes">Note per il Ristorante</label>
