@@ -18,8 +18,8 @@ class CreateOrdersTable extends Migration
             $table->string('delivery_type', 100);
             $table->float('total', 6, 2);
             $table->text('notes');
-            $table->dateTime('date', 0);
-            $table->dateTime('delivery_time', 0);
+            $table->dateTime('date', 0)->nullable();
+            $table->dateTime('delivery_time', 0)->nullable();;
             $table->string('fullname_guest', 100);
             $table->string('phone_guest', 20);
             $table->string('address_guest');
