@@ -49,9 +49,7 @@ new Vue({
 
     axios.get('http://localhost:8000/api/search/foods')
       .then((result) => {
-        this.users = result.data;
-        console.log(result.data);
-        console.log(this.foodsRetaurant)
+        this.foodsRestaurant = result.data;
       });
   },
 

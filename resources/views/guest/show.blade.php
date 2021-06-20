@@ -36,11 +36,11 @@
     <div class="container mt-5">
       <div class="restaurant-menu">
         <ul class="list-inline">
-              {{-- <li v-for="food in foodsRestaurant" class="menu_item">
-                <img :src="food.food_image" alt="food.name_food">
-                <p class="menu_text">@{{food.name_food}}</p>
-                <button class="btn_contatore mr-2 ml-2" @@click="incrementa"><i class="fas fa-plus-circle"></i></button>
-              </li> --}}
+            @foreach ($users->foods as $food)
+              <li class="menu_item">
+                <p>{{$food->name_food}}</p>
+              </li>
+            @endforeach
         </ul>
       </div>
       
@@ -49,7 +49,7 @@
 
         {{-- carrello --}}
     <aside v-if="!show">
-        <div class="container-cart>
+        <div class="container-cart">
             {{-- corpo del carrello --}}
             <div class="cart-body">
               <div class="cart-header">
@@ -61,26 +61,27 @@
                   <div class="col__name col-product">Prodotto</div>
                   <div class="col__name col-price">Prezzo</div>
                   <div class="col__name col-qnt">Quantità</div>
-                </div>
+                </div>  
 
+                @foreach ($users->foods as $food)
                 <div class="row row-operations">
                   <div class="col__name col-product product_image">
-                    <img class="product__image" src="https://via.placeholder.com/150/0000FF/808080 ?Text=Digital.comC/O https://placeholder.com/"  alt="" />
-                    <p class="cart__par">Pizza</p>
+                    <img class="product__image" src="{{$food->food_image}}"  alt="" />
+                    <p class="cart__par">{{$food->name_food}}</p>
                   </div>
                   
-                  <div class="col__name col-price col-numeric">@{{basePrice}}$</div>
+                  <div class="col__name col-price col-numeric">{{$food->price}}$</div>
                   
                   <div class="col__name col-qnt">
                     <button class="qty qty-minus" @@click="takeOne">-</button>
                     <input class="input_cart" type="numeric" value="" v-model="qty"/>
                     <button class="qty qty-plus" @@click="addOne">+</button>
                   </div>
-
                 </div>
+                @endforeach
                 <div class="row-total">
                     <div class="total">
-                        <p>Total: @{{total}} $</p>
+                      <p>Total: @{{total}} $</p>
                     </div>
                 </div>
                 {{-- bottoni --}}
