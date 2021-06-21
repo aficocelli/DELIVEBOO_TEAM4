@@ -9,8 +9,10 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="dropin-container"></div>
+ <div class="container">
+    <div id="dropin-container"></div>
   <button id="submit-button">Request payment method</button>
+ </div>
   
 <script src="{{asset('js/payment.js')}}"></script>
 </body>
