@@ -125,11 +125,11 @@ new Vue({
       // }
       
       
-      
+
     },
-    calc: function () {
-      //this.total = this.qty * this.basePrice;
-    }, 
+
+    
+     
     
     // funzioni allo scroll per headers
 
