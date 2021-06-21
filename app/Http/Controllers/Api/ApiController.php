@@ -96,11 +96,11 @@ class ApiController extends Controller
   }
 
 
-  public function smallSelection(Request $request)
+  public function smallSelUsers(Request $request)
   {
     // query piccola selezione ristoranti in index totale
 
-    $smallSelection = User::all();
+    $smallSelection = User::limit(10)->get();
     // $smallSelection = User::all()->limit(5)->get();
     // dd($smallSelection);
     // $posts = Post::where('published', 1)->orderBy('date', 'asc')->limit(5)->get();
