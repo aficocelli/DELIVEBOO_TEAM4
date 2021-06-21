@@ -27,7 +27,8 @@ new Vue({
     typesIndex: [],
     test: false,
     addProduct: false,
-    userNames:[]
+    userNames:[],
+    smallSelection: []
   },
 
   
@@ -38,21 +39,30 @@ new Vue({
     // document.addEventListener('scroll', this.scrollHandler);
     window.addEventListener('scroll', this.scrollHandler);
     
+    //api types
     axios.get('http://localhost:8000/api/search/types')
       .then((result) => {
         this.types = result.data;
         console.log('types:' + result.data);
       });
-
+    
+    // api users
     axios.get('http://localhost:8000/api/search/users')
       .then((result) => {
         this.users = result.data;
 
       });
-
+    
+    // api foods
     axios.get('http://localhost:8000/api/search/foods')
       .then((result) => {
         this.foodsRestaurant = result.data;
+      });
+    
+    // api small selection index
+    axios.get('http://localhost:8000/api/search/selection/users')
+      .then((result) => {
+        this.smallSelection = result.data;
       });
   },
   methods: {
