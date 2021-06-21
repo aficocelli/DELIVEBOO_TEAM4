@@ -98,7 +98,7 @@
                   <div  class="col__name col-price col-numeric"><p id="prezzo_{{$food->id}}">{{$food->price}}</p>  E</div>
                   <div class="col__name col-qnt">
                     <button class="qty qty-minus" value="{{$food->id}}" @@click="lessOne({{$food->id}})">-</button>
-                    <input  id="{{$food->id}}" class="input_cart" type="numeric" value="qty" v-model="qty">
+                    <input  id="{{$food->id}}" class="input_cart" type="text" value="qty" v-model="qty" readonly="readonly">
                     <button class="qty qty-plus" value="{{$food->id}}" @@click="takeOne({{$food->id}})">+</button>
                   </div>
                 </div>
