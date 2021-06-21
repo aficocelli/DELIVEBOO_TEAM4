@@ -1,4 +1,5 @@
 import { default as axios } from "axios";
+import { forEach } from "lodash";
 
 new Vue({ 
   el: '#root',
@@ -62,6 +63,7 @@ new Vue({
       this.ordine--;
     },
     
+    //filtro con la input della homepage per tipo (non usata)
     filterTypes: function () {
       axios.get('http://localhost:8000/api/filterapi/' + this.filter.toLowerCase().toUpperCase(), {
       }).then((result) => {
@@ -70,20 +72,27 @@ new Vue({
           this.test = true;
         }
       });
-
-
     },
 
-    filterName: function(){
-
-      
+    // filtro con la input della homepage per nome
+    filterName: function() {  
+      this.userRestaurants = [];
       axios.get('http://localhost:8000/api/search/' + this.filter.toLowerCase().toUpperCase(), {  
       }).then((result) => {
-        this.userNames = result.data;
-        console.log(this.userNames);
-        if (this.userNames.includes(this.filter)) {
-          this.userRestaurants = this.userNames;   
-        }
+
+        this.userRestaurants = result.data;
+
+        //filtro con vue e non con query
+        // console.log(result.data);
+        // this.userNames = result.data;
+        // console.log('userNames' + this.userNames);
+
+        // this.userNames.forEach(element => {
+
+        //   if (element.name_restaurant.includes(this.filter)) {
+        //     this.userRestaurants.push(element);   
+        //   }
+        // });
 
         console.log(this.userRestaurants);
         // if (this.userRestaurants.length == 0) {
@@ -92,10 +101,9 @@ new Vue({
       });
     },
 
-    buttonTypes: function(e) {
 
-      
-      
+    // filtro per type premendo i bottoni sulla homepage
+    buttonTypes: function(e) {  
       axios.get('http://localhost:8000/api/filterapi/' + e , {
       }).then((result) => {
         console.log(result.data);
@@ -105,19 +113,20 @@ new Vue({
       });
     },
 
-    prev: function() {
-      this.slideIndex--;
-      if(this.slideIndex < 0) {
-        this.slideIndex = this.carousel.length - 1;
-      }
-    },
+    //carousel
+    // prev: function() {
+    //   this.slideIndex--;
+    //   if(this.slideIndex < 0) {
+    //     this.slideIndex = this.carousel.length - 1;
+    //   }
+    // },
 
-    next: function () {
-      this.slideIndex++;
-      if (this.slideIndex == this.carousel.length) {
-        this.slideIndex = 0;
-      }
-    },
+    // next: function () {
+    //   this.slideIndex++;
+    //   if (this.slideIndex == this.carousel.length) {
+    //     this.slideIndex = 0;
+    //   }
+    // },
 
     takeOne: function (index) {
       var actualValueMore = document.getElementById(index).value;

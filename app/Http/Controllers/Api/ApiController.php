@@ -81,27 +81,9 @@ class ApiController extends Controller
 
   public function filteredName(Request $request)
   {
-    $restaurantName = User::where('name_restaurant', 'like', '%' . $request->name_restaurant . '%')->get();
-
-    
-
-    
-
-    // if ($type != "All") {
-    //   $restaurants = User::whereHas('types', function ($query) use ($type) {
-    //     $query->where('origin', $type);
-    //   })->get();
-    // } else {
-    //   $restaurants = User::all();
-    // }
-
-
-    // foreach ($restaurants as $restaurant) {
-    //   $types = [];
-    //   $types = $restaurant->types;
-    //   $restaurant->types = $types;
-    // };
-      return response()->json($restaurantName);
+    // query per nome dei ristoranti
+    $restaurantName = User::where('name_restaurant', 'like', '%' . $request->name_restaurant . '%')->get();    
+    return response()->json($restaurantName);
    
   }
 
