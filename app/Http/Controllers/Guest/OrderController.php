@@ -44,26 +44,26 @@ class OrderController extends Controller
         $data = $request->all();
 
         $data['total'] = 20;
+        
+        // $data['food_id'] = [1];
 
-        $data['foods'] = [1];
-
-        $foods = Food::all();
+        $foods = Food::all()->pluck('user_id');
 
         
-        
-        // $user_id = User::where('id',['user_id' => $foods])->get();
+        foreach($foods as $food){
+            
+            $user_id = User::where('id', $food)->get()->toArray();
+            
+        }
 
         
-        
-        
 
-
-        // $food_id= Food::where('user_id', 7)->get();
+        $food_id= Food::where('user_id', $user_id)->get();
 
         
         $newOrder = Order::create($data);
         
-        // $newOrder->foods()->attach($data['foods']);
+        $newOrder->foods()->attach($food_id);
 
        
         // $product->users()->attach($user_id, ['price' => $price]);
