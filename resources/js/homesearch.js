@@ -1,6 +1,6 @@
 import { default as axios } from "axios";
 
-new Vue({
+new Vue({ 
   el: '#root',
   data: {
     mainSelect: '',
@@ -15,17 +15,20 @@ new Vue({
     slideIndex: 0,
     url: '{{asset(img-carousel/)}}', 
     qty: 0,
-    basePrice: 10,
-    total: 10,
+    basePrice: 0,
+    total: 0,
     show: 'false',
     headerTopSticky: true,
     foodsRestaurant: [],
     lastScrollPosition: 0,
     scrollValue: 0,
     ciao: '',
-    typesIndex: []
+    typesIndex: [],
     
   },
+
+  
+  
   mounted: function () {
 
     // event listener sulla scroll
@@ -91,11 +94,29 @@ new Vue({
       }
     },
 
-    takeOne: function () {
-      this.qty -= 1;
+    takeOne: function (index) {
+      var actualValueMore = document.getElementById(index).value;
+      console.log(actualValueMore);
+      document.getElementById(index).value = parseInt(actualValueMore) + 1;
+      var productPrice = document.getElementById("prezzo_" + index).innerHTML;
+      var total = document.getElementById('totale_price').innerHTML;
+      var bigTotal = parseFloat(total) + parseFloat(productPrice);
+      document.getElementById('totale_price').innerHTML = bigTotal;
+      //window.localStorage.clear();
+      //window.localStorage.setItem('bigTotal', bigTotal);
     },
-    addOne: function (e) {
+    lessOne: function (index) {
 
+      var actualValueLess = document.getElementById(index).value;
+      if (actualValueLess > 0) {
+        document.getElementById(index).value = parseInt(actualValueLess) -1;
+        var productPrice = document.getElementById("prezzo_" + index).innerHTML;
+        var total = document.getElementById('totale_price').innerHTML;
+        var bigTotal = parseFloat(total) - parseFloat(productPrice);
+        document.getElementById('totale_price').innerHTML = bigTotal;
+      //  window.localStorage.clear();
+      //  window.localStorage.setItem('bigTotal', bigTotal);
+      }
       // this.ciao = e;
 
       // if(e == event){
@@ -107,7 +128,7 @@ new Vue({
       
     },
     calc: function () {
-      this.total = this.qty * this.basePrice;
+      //this.total = this.qty * this.basePrice;
     }, 
     
     // funzioni allo scroll per headers
