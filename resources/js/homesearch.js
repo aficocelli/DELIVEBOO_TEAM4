@@ -24,7 +24,8 @@ new Vue({
     scrollValue: 0,
     ciao: '',
     typesIndex: [],
-    test: false
+    test: false,
+    addProduct: false,
   },
 
   
@@ -33,7 +34,7 @@ new Vue({
 
     // event listener sulla scroll
     // document.addEventListener('scroll', this.scrollHandler);
-    window.addEventListener('scroll', this.scrollHandler);
+    // window.addEventListener('scroll', this.scrollHandler);
     
     axios.get('http://localhost:8000/api/search/types')
       .then((result) => {
@@ -109,6 +110,8 @@ new Vue({
       document.getElementById('totale_price').innerHTML = bigTotal;
       //window.localStorage.clear();
       //window.localStorage.setItem('bigTotal', bigTotal);
+      
+      
     },
     lessOne: function (index) {
 
@@ -130,9 +133,9 @@ new Vue({
       // }
       
       
-
     },
 
+    
     
      
     
