@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+<div v-if="test" class="text-center">
+  <h3 class="" > Nessun risultato trovato, cerca per categoria!</h3>
+</div>
 <div class="d-flex flex-wrap justify-content-center card_container mt-5 mb-5">
   <div v-for="element in userRestaurants">
     <div  class="card rounded mt-3 border mr-3 card_container rounded-pill">

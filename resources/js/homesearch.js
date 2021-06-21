@@ -24,7 +24,7 @@ new Vue({
     scrollValue: 0,
     ciao: '',
     typesIndex: [],
-    
+    test: false
   },
 
   
@@ -64,7 +64,12 @@ new Vue({
       axios.get('http://localhost:8000/api/filterapi/' + this.filter.toLowerCase().toUpperCase(), {
       }).then((result) => {
         this.userRestaurants = result.data;
+        if (this.userRestaurants.length == 0) {
+          this.test = true;
+        }
       });
+
+
     },
 
     buttonTypes: function(e) {
