@@ -63,8 +63,8 @@
             <!-- barra di ricerca per tipologia -->  
             <h2 class="index-title mb-5">Cerca un ristorante vicino a te!</h2>
             <div class="d-flex justify-content-center mb-5">
-                <input  class="main_input" type="text" placeholder="cerca ristorante per tipo" v-model="filter" @@keyup.enter="filterTypes()">
-                <button class="btn_primary" type="button" name="button" v-on:click="filterTypes()">Cerca</button>
+                <input  class="main_input" type="text" placeholder="cerca ristorante per tipo" v-model="filter" @@keyup.enter="filterName()">
+                <button class="btn_primary" type="button" name="button" v-on:click="filterName()">Cerca</button>
             </div>  
             <div class="types d-flex types_search">
                 <div class="type_tag" v-for="type in types">    

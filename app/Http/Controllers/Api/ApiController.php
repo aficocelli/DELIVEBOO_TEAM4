@@ -79,6 +79,30 @@ class ApiController extends Controller
     return response()->json($restaurants);
   }
 
+  public function filteredName()
+  {
+    
+
+    $restaurantName = User::all();
+
+    // if ($type != "All") {
+    //   $restaurants = User::whereHas('types', function ($query) use ($type) {
+    //     $query->where('origin', $type);
+    //   })->get();
+    // } else {
+    //   $restaurants = User::all();
+    // }
+
+
+    // foreach ($restaurants as $restaurant) {
+    //   $types = [];
+    //   $types = $restaurant->types;
+    //   $restaurant->types = $types;
+    // };
+      return response()->json($restaurantName);
+   
+  }
+
   function searchFoods(Request $request) 
   {
     $foods = User::with(['foods'])->get();
