@@ -14,13 +14,10 @@ class OrderController extends Controller
 {
     public function createOrder(Food $food){
 
-        
         // $foods = Food::where('id', $food)->get();
 
         $order = Order::all();
 
-        
-        
 
         return view('guest.order.create', compact('order'));
     }
@@ -42,8 +39,6 @@ class OrderController extends Controller
             
         }
 
-        
-
         $food_id= Food::where('user_id', $user_id)->get();
 
         
@@ -56,13 +51,10 @@ class OrderController extends Controller
 
         // $food_id = Food::select('id')->get()->toArray();
         
-    
 
         // dd($data['total']);
         
         // $newOrder->
-
-
 
         $gateway = new Braintree\Gateway([
             'environment' => 'sandbox',
@@ -71,14 +63,13 @@ class OrderController extends Controller
             'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
         ]);
 
-        $result = $gateway->transaction()->sale([
-            'amount' => $data['total'],
-            'paymentMethodNonce' =>$request->payment_method_nonce,
-            'options' => [
-                'submitForSettlement' => True
-            ]
-        ]);
-
+        // $result = $gateway->transaction()->sale([
+        //     'amount' => $data['total'],
+        //     'paymentMethodNonce' =>$request->payment_method_nonce,
+        //     'options' => [
+        //         'submitForSettlement' => True
+        //     ]
+        // ]);
 
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
@@ -93,15 +84,26 @@ class OrderController extends Controller
         return view('guest.order.success', compact('order'));
     }
 
-    public function paymentOrder(Order $order){
+    public function paymentOrder (Request $request, Order $order){
 
         $order = Order::all();
+        $data = $request->all();
+        
+        
          $gateway = new Braintree\Gateway([
             'environment' => 'sandbox',
             'merchantId' => '3f58gf44rjwx3cz4',
             'publicKey' => 'xkyy5gnc8czp7f9z',
             'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
         ]);
+        $result = $gateway->transaction()->sale([
+
+                'amount' => $data['total'],
+                'paymentMethodNonce' =>$request->payment_method_nonce,
+                'options' => [
+                'submitForSettlement' => True
+            ]
+         ]);
 
         // pass $clientToken to your front-end
         $clientToken = $gateway->clientToken()->generate();

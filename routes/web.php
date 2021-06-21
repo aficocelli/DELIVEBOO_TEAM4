@@ -37,4 +37,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('guest/order/create', 'Guest\OrderController@createOrder')->name('guest.order.create');
 Route::get('guest/order/{order}', 'Guest\OrderController@successOrder')->name('guest.order.success');
 Route::post('guest/order', 'Guest\OrderController@storeOrder')->name('guest.order.store');
-Route::get('guest/order/payment', 'Guest\OrderController@paymentOrder')->name('guest.order.payment');
+Route::get('guest/order/payment/checkout', 'Guest\OrderController@paymentOrder')->name('guest.order.payment');
