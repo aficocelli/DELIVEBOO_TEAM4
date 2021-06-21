@@ -36,7 +36,7 @@
 <div class="text-center">
   <h3>La nostra top 10 dei ristoranti</h3>
 </div>
-<div class="contenitore_custom">
+
   <div class="d-flex flex-wrap justify-content-center card_container mt-5 mb-5">
     <div v-for="element in smallSelection">
       <div  class="card rounded mt-3 border mr-3 card_container rounded-pill">
@@ -56,7 +56,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 
    {{-- <div class="d-flex flex-wrap justify-content-center card_container mt-5 mb-5">
