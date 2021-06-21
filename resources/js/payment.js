@@ -1,30 +1,30 @@
-var dropin = require('braintree-web-drop-in');
+// import { create } from 'braintree-web-drop-in';
 
-dropin.create({ /* options */ }, callback);
+// create({ /* options */ }, callback);
 
 var button = document.querySelector('#submit-button');
 
 braintree.dropin.create({
-  authorization: 'CLIENT_AUTHORIZATION',
+  authorization: 'sandbox_fw7m6dc3_3f58gf44rjwx3cz4',
   container: '#dropin-container'
-}, function (createErr, instance) {
+}, function (err, instance) {
   button.addEventListener('click', function () {
-    instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
+    instance.requestPaymentMethod(function (err, payload) {
       // Submit payload.nonce to your server
     });
   });
 });
 
 
-var button = document.querySelector('#submit-button');
+// var button = document.querySelector('#submit-button');
 
-braintree.dropin.create({
-  authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
-  selector: '#dropin-container'
-}, function (err, instance) {
-  button.addEventListener('click', function () {
-    instance.requestPaymentMethod(function (err, payload) {
-      // Submit payload.nonce to your server
-    });
-  })
-});
+// braintree.dropin.create({
+//   authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
+//   selector: '#dropin-container'
+// }, function (err, instance) {
+//   button.addEventListener('click', function () {
+//     instance.requestPaymentMethod(function (err, payload) {
+//       Submit payload.nonce to your server
+//     });
+//   })
+// });

@@ -38,7 +38,7 @@ class OrderController extends Controller
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
 
-        return redirect()->route('guest.order.success',$newOrder);
+        return redirect()->route('guest.order.payment',$newOrder);
     }
 
     public function successOrder(Order $order)

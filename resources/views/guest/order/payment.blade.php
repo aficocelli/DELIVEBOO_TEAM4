@@ -9,7 +9,7 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="dropin-container" style="margin-top: 200px;"></div>
+  <div id="dropin-container"></div>
   <button id="submit-button">Request payment method</button>
   
 <script src="{{asset('js/payment.js')}}"></script>

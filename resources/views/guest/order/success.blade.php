@@ -15,6 +15,6 @@
     </div>
   <h2 class="mt-3">Checkout pagamento</h2>
     <div class="mt-3">
-      <a href='http://localhost:3000/' class="btn btn-primary">Procedi al Pagamento</a>
+      <a href='{{route('guest.order.payment')}}' class="btn btn-primary">Procedi al Pagamento</a>
     </div>
 </div>
