@@ -9,7 +9,7 @@
       <h4><strong>Indirizzo:</strong> {{$order->address_guest}}</h4>
       <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
       <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
-      <h4><strong>Tipo di consegna:</strong> {{$order->delivery_tyh4e}}</h4>
+      <h4><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
       <h4><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
       {{-- <h4>Totale: </h4><span id="totale_price" >@{{total}}</span> Euro --}}
     </div>
