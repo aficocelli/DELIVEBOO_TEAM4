@@ -88,30 +88,30 @@
                 </div>  
 
                 @foreach ($users->foods as $food)
-                <div class="row row-operations" @@click="addOne({{$food->id}})">
+                <div class="row row-operations">
                   
                   <div class="col__name col-product product_image">
                     <img class="product__image" src="{{$food->food_image}}"  alt="">
                     <p class="cart__par">{{$food->name_food}}</p>
                   </div>
                   
-                  <div class="col__name col-price col-numeric">{{$food->price}}$</div>
+                  <div  class="col__name col-price col-numeric"><p id="prezzo_{{$food->id}}">{{$food->price}}</p>  E</div>
                   <div class="col__name col-qnt">
-                    <button class="qty qty-minus" @@click="takeOne">-</button>
-                    <input class="input_cart" type="numeric" value="" v-model="qty">
-                    <button class="qty qty-plus" value="{{$food->id}}" @@click="addOne({{$food->id}})">+</button>
+                    <button class="qty qty-minus" value="{{$food->id}}" @@click="lessOne({{$food->id}})">-</button>
+                    <input  id="{{$food->id}}" class="input_cart" type="numeric" value="qty" v-model="qty">
+                    <button class="qty qty-plus" value="{{$food->id}}" @@click="takeOne({{$food->id}})">+</button>
                   </div>
                 </div>
                 @endforeach
                 <div class="row-total">
                     <div class="total">
-                      <p>Total: @{{total}} $</p>
+                      <p>Totale: </p><span id="totale_price">0</span> Euro
                     </div>
                 </div>
                 {{-- bottoni --}}
-                <div class="actions">
-                <a href="{{route('guest.order.create')}}"><button class="cart__btn">Procedi al checkout</button></a>
-                <a href=""><button class="cart__btn " @@click="calc">Update cart</button></a>
+                <div class="actions text-center">
+                <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block ">Procedi al checkout</button></a>
+                {{-- <a href=""><button class="cart__btn " @@click="calc">Update cart</button></a> --}}
                 </div>
             </div>
           </div>   
