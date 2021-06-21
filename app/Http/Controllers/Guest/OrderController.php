@@ -20,20 +20,6 @@ class OrderController extends Controller
         $order = Order::all();
 
         
-
-
-
-        
-
-       
-        
-        
-        
-        // $order_id = Food::id();
-
-        
-
-        // $orders = Order::where('order_id', $order_id)->get();
         
 
         return view('guest.order.create', compact('order'));
@@ -93,29 +79,24 @@ class OrderController extends Controller
             ]
         ]);
 
-        // dd($newOrder);
-
-        // $order_id = Order::select('id')->get()->toArray();
-
-        
-        // dd($order_id);
-
-        // dd(DB::table('orders')->where('id', $order->id));
-        
-        // $foods = Food::where('order_id', $order_id)->get();
-
-        // dd($foods);
-       
 
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
 
-        return redirect()->route('guest.order.payment',$newOrder);
+        return redirect()->route('guest.order.success',$newOrder);
     }
 
     public function successOrder(Order $order)
     {
-        $gateway = new Braintree\Gateway([
+       
+
+        return view('guest.order.success', compact('order'));
+    }
+
+    public function paymentOrder(Order $order){
+
+        $order = Order::all();
+         $gateway = new Braintree\Gateway([
             'environment' => 'sandbox',
             'merchantId' => '3f58gf44rjwx3cz4',
             'publicKey' => 'xkyy5gnc8czp7f9z',
@@ -126,6 +107,7 @@ class OrderController extends Controller
         $clientToken = $gateway->clientToken()->generate();
 
         return view('guest.order.payment', compact('order', 'clientToken'));
+
     }
     
 }
