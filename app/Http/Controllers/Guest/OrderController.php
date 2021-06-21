@@ -12,11 +12,26 @@ use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
-    public function createOrder(){
+    public function createOrder(Food $food){
+
+        
+        // $foods = Food::where('id', $food)->get();
 
         $order = Order::all();
 
-        // $order_id = Order::id();
+        
+
+
+
+        
+
+       
+        
+        
+        
+        // $order_id = Food::id();
+
+        
 
         // $orders = Order::where('order_id', $order_id)->get();
         
@@ -25,26 +40,39 @@ class OrderController extends Controller
     }
 
     public function storeOrder(Request $request, Food $food){
-
+        
         $data = $request->all();
 
-        $food_id =Food::all()->toArray();
-        
         $data['total'] = 20;
 
+        $foods = Food::all()->toArray();
+
+        
+        
+        $user_id = User::where('id',['user_id' => $foods])->get();
+
+        
+        
+        dd($user_id);
+
+
+        $food_id= Food::where('user_id', 7)->get();
+
+        
         $newOrder = Order::create($data);
         
-        $newOrder->foods()->attach($food_id[0]['id']);
+        $newOrder->foods()->attach($food_id);
 
-        dd($newOrder);
+       
+        // $product->users()->attach($user_id, ['price' => $price]);
 
-        $food_id = Food::select('id')->get()->toArray();
+        // $food_id = Food::select('id')->get()->toArray();
         
     
 
-        dd($data['total']);
+        // dd($data['total']);
         
-        $newOrder->
+        // $newOrder->
 
 
 
@@ -65,22 +93,22 @@ class OrderController extends Controller
 
         // dd($newOrder);
 
-        $order_id = Order::select('id')->get()->toArray();
+        // $order_id = Order::select('id')->get()->toArray();
 
         
         // dd($order_id);
 
         // dd(DB::table('orders')->where('id', $order->id));
         
-        $foods = Food::where('order_id', $order_id)->get();
+        // $foods = Food::where('order_id', $order_id)->get();
 
-        dd($foods);
+        // dd($foods);
        
 
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
 
-        return redirect()->route('guest.order.payment',$newOrder, compact('foods'));
+        return redirect()->route('guest.order.payment',$newOrder);
     }
 
     public function successOrder(Order $order)

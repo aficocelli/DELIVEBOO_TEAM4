@@ -49,6 +49,8 @@
                 <label for="notes">Note per il Ristorante</label>
                 <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note">{{ old('notes') }}</textarea>
             </div>
+
+            
     
             <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button>
         </form>
