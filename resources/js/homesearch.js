@@ -80,6 +80,7 @@ new Vue({
       axios.get('http://localhost:8000/api/search/' + this.filter.toLowerCase().toUpperCase(), {  
       }).then((result) => {
         this.userNames = result.data;
+        console.log(this.userNames);
         if (this.userNames.includes(this.filter)) {
           this.userRestaurants = this.userNames;   
         }
