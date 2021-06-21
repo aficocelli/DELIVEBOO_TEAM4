@@ -29,4 +29,4 @@ Route::get('/filterapi/{type}', 'Api\ApiController@filteredApi');
 
 Route::get('/search/foods', 'Api\ApiController@searchFoods');
 
-Route::get('/search/name', 'Api\ApiController@filteredName');
+Route::get('/search/{name_restaurant}', 'Api\ApiController@filteredName');

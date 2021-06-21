@@ -35,7 +35,7 @@ new Vue({
 
     // event listener sulla scroll
     // document.addEventListener('scroll', this.scrollHandler);
-    // window.addEventListener('scroll', this.scrollHandler);
+    window.addEventListener('scroll', this.scrollHandler);
     
     axios.get('http://localhost:8000/api/search/types')
       .then((result) => {
@@ -77,9 +77,14 @@ new Vue({
     filterName: function(){
 
       
-      axios.get('http://localhost:8000/api/restaurantName').then((result) => {
-      this.userName = result.data;
-      console.log(this.userName);
+      axios.get('http://localhost:8000/api/search/' + this.filter.toLowerCase().toUpperCase(), {  
+      }).then((result) => {
+        this.userNames = result.data;
+        if (this.userNames.includes(this.filter)) {
+          this.userRestaurants = this.userNames;   
+        }
+
+        console.log(this.userRestaurants);
         // if (this.userRestaurants.length == 0) {
         //   this.test = true;
         // }
