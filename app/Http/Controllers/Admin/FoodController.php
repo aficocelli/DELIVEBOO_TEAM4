@@ -61,6 +61,7 @@ class FoodController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
+        
         // validation
         $validation = $this->validation;
         $request->validate($validation);

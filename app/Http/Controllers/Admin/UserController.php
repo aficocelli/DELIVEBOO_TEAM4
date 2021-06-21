@@ -86,7 +86,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    {
+    {   
         $validation = $this->validation;
 
         $request->validate($validation);
@@ -112,7 +112,7 @@ class UserController extends Controller
         //salvo le modifiche
         $user->update($data);
 
-       
+      ;
 
         // controllo types
 

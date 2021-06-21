@@ -8,6 +8,7 @@ use App\Order;
 use App\Food;
 use App\User;
 use Braintree;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -23,15 +24,29 @@ class OrderController extends Controller
         return view('guest.order.create', compact('order'));
     }
 
-    public function storeOrder(Request $request){
+    public function storeOrder(Request $request, Food $food){
 
-        $foods = Food::all();
-        dd($foods);
         $data = $request->all();
 
+        $food_id =Food::all()->toArray();
+        
         $data['total'] = 20;
 
         $newOrder = Order::create($data);
+        
+        $newOrder->foods()->attach($food_id[0]['id']);
+
+        dd($newOrder);
+
+        $food_id = Food::select('id')->get()->toArray();
+        
+    
+
+        dd($data['total']);
+        
+        $newOrder->
+
+
 
         $gateway = new Braintree\Gateway([
             'environment' => 'sandbox',
@@ -50,7 +65,17 @@ class OrderController extends Controller
 
         // dd($newOrder);
 
-        $newOrder->foods()->attach($data['foods']);
+        $order_id = Order::select('id')->get()->toArray();
+
+        
+        // dd($order_id);
+
+        // dd(DB::table('orders')->where('id', $order->id));
+        
+        $foods = Food::where('order_id', $order_id)->get();
+
+        dd($foods);
+       
 
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
