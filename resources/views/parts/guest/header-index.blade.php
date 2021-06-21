@@ -44,8 +44,8 @@
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
-                                        <a class="dropdown-item" href="{{ route('home') }}">{{Auth::user()->name_restaurant}}</a>
                                     </form>
+                                    <a class="dropdown-item" href="{{ route('home') }}">{{Auth::user()->name_restaurant}}</a>
                                 </div>
                                 
                             </li>
