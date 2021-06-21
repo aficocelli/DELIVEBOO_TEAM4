@@ -44,7 +44,7 @@ class OrderController extends Controller
     public function successOrder(Order $order)
     {
         
-        return view('guest.order.success', compact('order'));
+        return view('guest.order.payment', compact('order'));
     }
     
 }
