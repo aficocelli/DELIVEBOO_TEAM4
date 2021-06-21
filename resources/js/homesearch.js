@@ -26,6 +26,7 @@ new Vue({
     typesIndex: [],
     test: false,
     addProduct: false,
+    userNames:[]
   },
 
   
@@ -71,6 +72,18 @@ new Vue({
       });
 
 
+    },
+
+    filterName: function(){
+
+      
+      axios.get('http://localhost:8000/api/restaurantName').then((result) => {
+      this.userName = result.data;
+      console.log(this.userName);
+        // if (this.userRestaurants.length == 0) {
+        //   this.test = true;
+        // }
+      });
     },
 
     buttonTypes: function(e) {
