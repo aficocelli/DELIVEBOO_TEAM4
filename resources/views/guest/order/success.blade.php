@@ -10,7 +10,7 @@
       
       <h4><strong>Numero ordine:</strong> N. {{$order->id}}</h4>
       <h4><strong>Nome cliente:</strong> </strong>{{$order->fullname_guest}}</h4>
-      <h4><strong>Recapito telefonico:</strong> </strong>{{$order->h3hone_guest}}</h4>
+      <h4><strong>Recapito telefonico:</strong> </strong>{{$order->phone_guest}}</h4>
       <h4><strong>Indirizzo:</strong> {{$order->address_guest}}</h4>
       <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
       <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
