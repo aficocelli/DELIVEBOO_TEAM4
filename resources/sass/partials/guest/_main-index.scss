@@ -1,18 +1,21 @@
 main {
 // content
+
+    .scelti {
+        color: $white;
+        font-size: 35px;
+    }
+
     .carousel_selezione {
+        margin: 0 40px;
         display: flex;
-        position: relative;
+        align-items: center;
         
 
         
 
-        .chev {  
-            position: absolute;
+        .chev {              
             cursor: pointer;
-            z-index: 25;
-            border: 4px solid $orange;
-            border-radius: 50%;
             transition: 0.3s ease-in-out;
 
             
@@ -37,23 +40,54 @@ main {
         }
 
         .wrapper_sezione {
-            height: 800px;
+            height: 600px;
             overflow: hidden;
             scroll-behavior: smooth;
             width: 100%;
             position: relative;
-            display: grid;
-            grid-template-columns: repeat(5, auto);
+            display: flex;
+            justify-content: space-between;
             margin: 20px 0;
-    
+            
             .card_custom {
-                padding: 0 2px;
+                width: calc(100% / 4);
                 transition: 0.3s ease-in-out;
+                background-color: #fff;
+                margin: 0 10px;
+                border-radius: 50px;
+                overflow: hidden;
+                box-shadow: 8px 5px 7px 5px rgba(0, 0, 0, 0.4);
+
+                .card_link {
+                    display: block;
+                    color: $black;
+                    text-decoration: none;
+
+                    .card_image {
+                        
+                        margin-bottom: 20px;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                
             
                 // &:hover { 
                 //     margin: 0 40px;
                 //     transform: scale(0.9);
                 // }
+
+                .card_text {
+                    text-align: center;
+
+                    .card_address {
+                        width: 50%;
+                        margin: 0 auto;
+                    }
+                }
         
             }
     
