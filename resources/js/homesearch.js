@@ -99,7 +99,7 @@ new Vue({
       // var element = document.getElementById("box-scroll");
       // element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
       var currentPositionOfPage = window.scrollY;
-      window.scrollTo(0, 0 + 650);
+      window.scrollTo(0, 0 + 1800);
     },
     
     //filtro con la input della homepage per tipo (non usata)
