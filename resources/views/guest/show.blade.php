@@ -49,7 +49,7 @@
                      <small class="food__description">{{$food->description}}</small>
                   </div>
                   
-                  <div  class="col__price col-numeric"><p id="prezzo_7">{{$food->price}}</p> <span class="euro">€</span>
+                  <div  class="col__price col-numeric"><p id="prezzo_{{$food->id}}">{{$food->price}}</p> <span class="euro">€</span>
                   </div>
                   
                  <button class="qty qty-minus" value="{{$food->id}}" @@click="lessOne({{$food->id}})">-</button>
