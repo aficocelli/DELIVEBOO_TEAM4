@@ -49,9 +49,6 @@
                             </li>
                         @endguest
                     </ul>
-                    <div class="cart" @@click="show = !show">
-                        <i class="fas fa-cart-plus" style="font-size:20px"></i>
-                    </div>
                 </div>
             </div>
         </nav>

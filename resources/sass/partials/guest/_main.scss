@@ -1,5 +1,9 @@
 main {
     // show 
+    .sfondo__show {
+        background-image: url('../img-carousel/banner_image-show.png');
+        background-color: blue;
+    }
     .wrapper-restaurant {
         background-color: #D3D3D3;
         margin-top: 200px;
@@ -62,5 +66,7 @@ main {
         }
     }
 // show
+
+    
 
 }
