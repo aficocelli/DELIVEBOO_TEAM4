@@ -33,7 +33,6 @@ class OrderController extends Controller
     public function storeOrder(Request $request, Food $food){
         
         $data = $request->all();
-
         
         // $data['total'] = 20;
         
@@ -50,17 +49,14 @@ class OrderController extends Controller
 
         $food_id= Food::where('user_id', $user_id)->get();
 
-        
         $newOrder = Order::create($data);
         
         $newOrder->foods()->attach($food_id);
-
        
         // $product->users()->attach($user_id, ['price' => $price]);
 
         // $food_id = Food::select('id')->get()->toArray();
         
-
         // dd($data['total']);
         
         // $newOrder->
@@ -74,12 +70,11 @@ class OrderController extends Controller
 
         $result = $gateway->transaction()->sale([
             'amount' => $data['total'],
-            // 'paymentMethodNonce' =>$request->payment_method_nonce,
+            'paymentMethodNonce' =>$request->payment_method_nonce,
             'options' => [
                 'submitForSettlement' => True
             ]
         ]);
-
         $clientToken = $gateway->clientToken()->generate('clientToken');
        
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
