@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Order;
 use App\Food;
 use App\User;
 use Braintree;
+
+use App\Mail\OrderMail;
+
+
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
@@ -93,9 +98,9 @@ class OrderController extends Controller
 
         
         
-        // $clientToken = $gateway->clientToken()->generate('clientToken');
         
-        //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
+        
+        Mail::to($newOrder->email_guest)->send(new OrderMail($newOrder));
        
 
         return redirect()->route('guest.order.success', $newOrder);
@@ -111,38 +116,9 @@ class OrderController extends Controller
 
     public function paymentOrder (Request $request,Order $order){
 
-
-
         $order = Order::all();
         $data = $request->all();
      
-        
-        
-        
-        
-        // dd($order);
-
-
-        //  $gateway = new Braintree\Gateway([
-        //     'environment' => 'sandbox',
-        //     'merchantId' => '3f58gf44rjwx3cz4',
-        //     'publicKey' => 'xkyy5gnc8czp7f9z',
-        //     'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
-        // ]);
-        // $result = $gateway->transaction()->sale([
-
-        //         'amount' => $data['total'],
-        //         'paymentMethodNonce' =>$request->payment_method_nonce,
-        //         'options' => [
-        //         'submitForSettlement' => True
-        //     ]
-        //  ]);
-
-        // $clientToken = $gateway->clientToken()->generate('clientToken');
-
-
-        // pass $clientToken to your front-end
-        // $clientToken = $gateway->clientToken()->generate();
 
         return view('guest.order.payment', compact('order'));
 
