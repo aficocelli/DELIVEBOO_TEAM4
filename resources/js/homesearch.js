@@ -170,30 +170,28 @@ new Vue({
     // },
 
     takeOne: function (index) {
-      var actualValueMore = document.getElementById(index).value;
-      // console.log(actualValueMore);
-      document.getElementById(index).value = parseInt(actualValueMore) + 1;
-      var productPrice = document.getElementById("prezzo_" + index).innerHTML;
-      var total = document.getElementById('totale_price').innerHTML;
-      var bigTotal = parseFloat(total) + parseFloat(productPrice);
-      document.getElementById('totale_price').innerHTML = bigTotal;
-      window.localStorage.clear();
-      window.localStorage.setItem('bigTotal', bigTotal);
+        var actualValueMore = document.getElementById(index).value;
+        document.getElementById(index).value = parseInt(actualValueMore) + 1;
+        var productPrice = document.getElementById("prezzo_" + index).innerHTML;
+        var total = document.getElementById('totale_price').innerHTML;
+        var bigTotal = parseFloat(total) + parseFloat(productPrice);
+        document.getElementById('totale_price').innerHTML = bigTotal;
+        window.localStorage.clear();
+        window.localStorage.setItem('bigTotal', bigTotal);
       
-      document.getElementById("result").innerHTML = localStorage.getItem("bigTotal");
+       //document.getElementById("result").innerHTML = localStorage.getItem("bigTotal");
     },
     lessOne: function (index) {
 
-      var actualValueLess = document.getElementById(index).value;
-      if (actualValueLess > 0) {
-        document.getElementById(index).value = parseInt(actualValueLess) -1;
-        var productPrice = document.getElementById("prezzo_" + index).innerHTML;
-        var total = document.getElementById('totale_price').innerHTML;
-        var bigTotal = parseFloat(total) - parseFloat(productPrice);
-        document.getElementById('totale_price').innerHTML = bigTotal;
-      //  window.localStorage.clear();
-       window.localStorage.setItem('bigTotal', bigTotal);
-        
+        var actualValueLess = document.getElementById(index).value;
+        if (actualValueLess > 0) {
+          document.getElementById(index).value = parseInt(actualValueLess) -1;
+          var productPrice = document.getElementById("prezzo_" + index).innerHTML;
+          var total = document.getElementById('totale_price').innerHTML;
+          var bigTotal = parseFloat(total) - parseFloat(productPrice);
+          document.getElementById('totale_price').innerHTML = bigTotal;
+          window.localStorage.clear();
+          window.localStorage.setItem('bigTotal', bigTotal);        
       }
       // this.ciao = e;
 

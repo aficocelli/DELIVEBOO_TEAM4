@@ -16,7 +16,7 @@ class FoodController extends Controller
 {
     protected $validation = [
         'name_food' => 'required|string|max:150',
-        'price' => 'required|max:99.99|regex:/^\d+(\.\d{1,2})?$/|max:5',
+        'price' => 'required|max:99.99|regex:/^\d+(\.\d{1,20})?$/|max:5',
         'ingredients'=> 'required|string',
         'description'=> 'required',
         'food_image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -120,9 +120,12 @@ class FoodController extends Controller
         // checkbox
         $data['available'] = !isset($data['available']) ? 0 : 1;
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
+       
         if (isset($data['food_image'])) {
             $data['food_image'] = Storage::disk('public')->put('images', $data['food_image']);
         }
+      
+      
         $food->update($data);
         
         return redirect()->route('admin.foods.index');

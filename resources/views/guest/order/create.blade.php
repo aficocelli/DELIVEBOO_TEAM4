@@ -55,7 +55,7 @@
            
             <div id="root" class="form-group">
                 {{-- <input type="text" id="total" name="total"  value=""> --}}
-                <textarea name="total" id="total" cols="0" rows="0" hidden readonly>@{{ciao}}</textarea>
+                <textarea name="total" id="total" cols="0" rows="0"   hidden readonly></textarea>
                 {{-- <p>il totale è: <h1 id="result"></h1> euro</p> --}}
             </div>
             {{-- <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button> --}}
@@ -88,6 +88,10 @@
 
 </script> --}}
 <script>
+    window.onload = function() {
+    document.getElementById("total").value = localStorage.getItem("bigTotal");
+};
+
     var token = '{{$clientToken}}';
     var button = document.querySelector('#submit-button');
     var payment = document.querySelector('#payment');
