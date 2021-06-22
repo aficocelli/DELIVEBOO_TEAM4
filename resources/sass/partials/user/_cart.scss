@@ -1,5 +1,5 @@
 .container-cart {
-  width: 100%;
+  width: 80%;
   margin: 40px auto;
   border-radius: 0.6em;
   box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
@@ -92,9 +92,6 @@ button.qty:hover {
 
 .actions {
   margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
- 
 }
 .cart__btn {
   padding: 10px 30px;
