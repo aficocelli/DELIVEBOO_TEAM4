@@ -5,22 +5,26 @@
 @endsection
 
 @section('content')
-  
+
 <div id="root">
+<div class="show-bg">
 
   <div class="wrapper-restaurant">
       <div class="container">
-
         <!-- info restaurant -->
         <div class="info-restaurant">
           <div class="info-text">
-              <h3>{{$users->name_restaurant}}</h3>
-              <p><span><i class="fas fa-user"></i> </span> {{$users->name}}</p>
-              <p><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->adress_restaurant}}</p>
-              <p><span><i class="fas fa-phone"></i> </span>{{$users->phone_restaurant}}</p>
+              <h3 class="info__title">{{$users->name_restaurant}}</h3>
+              <p class="info__par"><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->address_restaurant}}</p>
+              <p class="info__par"><span><i class="fas fa-phone"></i> </span>{{$users->phone_restaurant}}</p>
           @foreach ($users->types as $type)
               <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
           @endforeach 
+          </div>
+          <div class="info-image">
+            <img src="http://127.0.0.1:8000/storage/images/jN5x3YylQzSibL2OwYHhB1JqEQFowEUK7jtmd8Dx.jpg" alt="">
+          </div>
+              
         </div>
 
       </div>
@@ -33,7 +37,9 @@
   
   
         <div class="container-cart">
-
+            <div class="cart-title">
+              <h3>Menu</h3>
+            </div>
                       
             @foreach ($users->foods as $food)
                     
@@ -41,7 +47,7 @@
                   
                   {{-- box immagine del prodotto --}}
                   <div class="product__image">
-                    <img class="product__image"  src="http://127.0.0.1:8000/storage/images/jN5x3YylQzSibL2OwYHhB1JqEQFowEUK7jtmd8Dx.jpg"   alt="">
+                    <img class="product__image"  src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}"   alt="">
                   </div>
                   
                   {{-- box informazioni prodotto --}}
@@ -52,7 +58,10 @@
                   </div>
                 
                 {{-- box del prezze --}}
-                <div  class="col__price col-numeric"><p id="prezzo_{{$food->id}}">{{$food->price}}</p> <span class="euro">&euro;</span></div>
+                <div  class="col__price col-numeric">
+                  <p id="prezzo_{{$food->id}}">{{$food->price}}</p> 
+                  <span class="euro">&euro;</span>
+                </div>
                 
                 {{-- box modifica della quantità del prodotto --}}
                 <div class="cart__quantity">
@@ -69,11 +78,11 @@
               </div>
             </div>
             <div class="actions text-center">
-            <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
+              <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
                         
-  </div> 
+</div> 
 
-
+</div>
 @endsection
