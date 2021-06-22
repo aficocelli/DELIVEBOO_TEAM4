@@ -18,20 +18,17 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body>
-        <!-- root wrapper -->
-        <div id="root" class="sfondo__show">
+       
+        
 
             <!-- header -->
-            @include('parts.guest.header')
-            
+                @include('parts.guest.header')
+                
 
-            <!-- main -->
-            <main>
-                @yield('content')
-            </main>
-
-        </div>
-
+                <!-- main -->
+                <main>
+                    @yield('content')
+                </main>
 
         <!-- vue.js CDN -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

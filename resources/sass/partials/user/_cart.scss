@@ -1,9 +1,6 @@
 .container-cart {
-   max-width: 75em;
-    width: 95%;
+    width: 100%;
     margin: 40px auto;
-    overflow: hidden;
-    position: relative;
     border-radius: 0.6em;
     background: #ecf0f1;
     box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
@@ -11,74 +8,56 @@
 }
 
 
-.cart-main {
-  width: 80%;
-  margin: auto;
-  border-radius: 0.6em;
-}
-
-.cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  padding: 1em;
-  background-color: #FF9900;
-  color: #ecf0f1;
-  margin-bottom: 40px;
-
-    .main__title {
-      width: 50%;
     
-    }
-    
-    .show__hide {
-      width: 50%;
-      text-align: right;
-      font-size: 30px;
-    }
-}
 
-.row_cart {
+
+.row__cart {
   display: flex;
   align-items: center;
   max-width: 100%;;
   margin-top: 50px;
   padding: 1em;
 }
-
-.row-names {
-  background-color: #FF9900;
-  color: #fff;
-  
-}
-
-  .col__name {
-    padding: 1em;
-    width: 12%;
-    font-size: 18px;
-  }
-  
-  .col-product {
-    width: 44%;
-    display: flex;
-    align-items: center;
-  }
+ 
   .product__image {
-    margin-right: 10px;
+    width: 20%;
+    padding: 0 1%;
+    height: 225px;
+      img {
+        width: 100%;
+        border-radius: 10px;
+      }
   }
-  .col-qnt {
-    text-align: center;
-    width: 30%;
-  }
+  .product__info {
+    width: 40%;
+    margin-left: 1em;
 
+    .food__name, .food__ingredients {
+      text-transform: capitalize;
+    }
+  }
+  
+  .cart__quantity {
+    width: 20%;
+    text-align: right;
+      .input_cart {
+        max-width: 3.5em;
+      }
+  }
+  
+  .col__price {
+    width: 5%;
+  }
+  
 
 .col-numeric {
   display: flex;
   font: bold 18px helvetica;
+  margin-left: 6em;
 }
 
 
-.col-qnt >input.input_cart {
+.cart__quantity >input.input_cart {
     max-width: 50px ;
 }
 
