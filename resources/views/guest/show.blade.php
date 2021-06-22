@@ -65,7 +65,7 @@
                 </div>
                 
                 <div class="actions text-center">
-                <a class="inline-block" href="http://127.0.0.1:8000/guest/order/create"><button class="cart__btn inline-block">Procedi al checkout</button></a>
+                <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
                 
                 </div>
             </div>
