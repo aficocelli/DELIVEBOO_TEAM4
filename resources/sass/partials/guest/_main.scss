@@ -2,15 +2,15 @@ main {
     // show 
    .show-bg {
     background-image: url('../img-carousel/banner_image-show.png'), url('../img-carousel/banner_image-bottom.png'); 
-    background-repeat: no-repeat;
-    
+    background-repeat: repeat-x;
+    width:100%;
    }
 
     .wrapper-restaurant {
         padding-top: 180px;
     
         .info-image {
-           max-height: 50%;
+            width: 40%;
             margin-right: 50px;
             border-radius: 20px;
             overflow:hidden;
@@ -21,6 +21,7 @@ main {
         .info-restaurant  {
             display: flex;
             width: 100%;
+            padding-bottom: 10px;
 
             .info-text {
                 display: flex;
