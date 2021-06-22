@@ -55,7 +55,7 @@
            
             <div id="root" class="form-group">
                 {{-- <input type="text" id="total" name="total"  value=""> --}}
-                <textarea name="total" id="total" cols="30" rows="10" hidden>@{{ciao}}</textarea>
+                <textarea name="total" id="total" cols="0" rows="0" hidden readonly>@{{ciao}}</textarea>
                 {{-- <p>il totale è: <h1 id="result"></h1> euro</p> --}}
             </div>
             {{-- <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button> --}}
