@@ -15,6 +15,7 @@ class UserController extends Controller
     protected $validation = [
         'phone_restaurant' => 'required|numeric',
         'vat_number' => 'required|numeric',
+        'food_image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
     ];
    
     /**
