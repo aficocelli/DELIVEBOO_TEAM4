@@ -90,6 +90,9 @@ class OrderController extends Controller
                 'submitForSettlement' => True
             ]
         ]);
+
+        
+        
         // $clientToken = $gateway->clientToken()->generate('clientToken');
         
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
