@@ -11,16 +11,14 @@
 
         <!-- info restaurant -->
         <div class="info-restaurant">
-          
           <div class="info-text">
-              <h3>{{$foods->name_restaurant}}</h3>
-              <p><span><i class="fas fa-user"></i> </span> {{$foods->name}}</p>
-              <p><span><i class="fas fa-map-marker-alt"></i> </span>{{$foods->adress_restaurant}}</p>
-              <p><span><i class="fas fa-phone"></i> </span>{{$foods->phone_restaurant}}</p>
-              @foreach ($users->types as $type)
-                <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
-              @endforeach
-             
+              <h3>{{$users->name_restaurant}}</h3>
+              <p><span><i class="fas fa-user"></i> </span> {{$users->name}}</p>
+              <p><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->adress_restaurant}}</p>
+              <p><span><i class="fas fa-phone"></i> </span>{{$users->phone_restaurant}}</p>
+          @foreach ($users->types as $type)
+              <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
+          @endforeach 
         </div>
 
       </div>
@@ -33,10 +31,9 @@
   
   
   <div class="container-cart">
-        
+
         <div class="cart-body">
-            <div class="cart-main">
-                
+            <div class="cart-main">              
                 @foreach ($users->foods as $food)
                     
                 <div class="row__cart">
