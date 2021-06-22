@@ -39,6 +39,7 @@
                 <th scope="col">Prodotto</th>
                 <th scope="col">Immagine</th>
                 <th scope="col">Prezzo</th>
+                <th scope="col">Ingredienti</th>
                 <th scope="col">Descrizione</th>
               </tr>
             </thead>
@@ -48,6 +49,7 @@
           <td><h5>{{$food->name_food}}</h5></td>
           <td><img class="" src="{{$food->food_image ? 'http://127.0.0.1:8000/storage/' . $food->food_image : 'http://lorempixel.com/400/300/food'}}" style="max-width: 100px"></td>
           <td><h5>{{$food->price}}</h5></td>
+          <td><h5>{{$food->ingredients}}</h5></td>
           <td><h5>{{$food->description}}</h5></td>
         </tr>
         @endforeach

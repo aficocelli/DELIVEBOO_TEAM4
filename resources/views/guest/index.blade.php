@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div v-if="test" class="text-center">
+<div class="text-center">
   <h3 class="" > Nessun risultato trovato, cerca per categoria!</h3>
 </div>
 
@@ -35,8 +35,7 @@
 <!-- small selection dei ristoranti stampando i primi 8-->
 <div class="text-center">
   <h3>La nostra top 10 dei ristoranti</h3>
-</div>
-
+</div>3
 <div class="d-flex flex-wrap justify-content-center card_container mt-5 mb-5">
   <div v-for="element in smallSelection">
     <div  class="card rounded mt-3 border mr-3 card_container rounded-pill">
@@ -55,7 +54,7 @@
       </a>
     </div>
   </div>
-</div>
+
 
  
 
