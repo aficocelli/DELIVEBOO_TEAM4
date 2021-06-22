@@ -15,7 +15,7 @@
         <!-- style -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
-    <body>
+    <body class="index_body">
         <!-- root wrapper -->
         <div id="root">
             <!-- header -->

@@ -58,11 +58,11 @@ header {
 
     // jumbotron home principale
     .hero {
-        background-image: url('../img-carousel/pizza-7-min.jpg');
-        background-position: top -320px center;
+        background-image: url('../img-carousel/hero-hamburger-shadow-mod.png');
+        background-position: top -500px center;
         background-size: cover;
         background-repeat: no-repeat;
-        height: 670px;
+        height: 865px;
         // height: 100vh;
         // min-height: 800px;
         position: relative;
@@ -76,14 +76,14 @@ header {
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0,0,0,0.2); /* Black background with opacity */
+            // background-color: rgba(0,0,0,0.2); /* Black background with opacity */
             z-index: 2;
         }
 
 
         
         &__search {
-            background: rgba(255, 255, 255, 0.8);           
+            background: rgba(255, 255, 255, 0.7);           
             padding: 50px;
             border-radius: 15px;;
             text-align: center;

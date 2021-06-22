@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="text-center">
+<div class="text-center no_risultati">
   <h3 class="" > Nessun risultato trovato, cerca per categoria!</h3>
 </div>
 
