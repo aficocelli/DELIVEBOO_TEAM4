@@ -19,7 +19,7 @@
     </head>
     <body>
         <!-- root wrapper -->
-        <div id="root">
+        <div id="root" class="sfondo__show">
 
             <!-- header -->
             @include('parts.guest.header')
