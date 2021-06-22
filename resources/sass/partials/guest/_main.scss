@@ -1,34 +1,52 @@
 main {
     // show 
-    .sfondo__show {
-        background-image: url('../img-carousel/banner_image-show.png');
-        background-color: blue;
-    }
-    .wrapper-restaurant {
-        background-color: #D3D3D3;
-        margin-top: 200px;
-        padding: 20px 0;
+   .show-bg {
+    background-image: url('../img-carousel/banner_image-show.png'), url('../img-carousel/banner_image-bottom.png'); 
+    background-repeat: no-repeat;
+    
+   }
 
+    .wrapper-restaurant {
+        padding-top: 180px;
+    
+        .info-image {
+           max-height: 50%;
+            margin-right: 50px;
+            border-radius: 20px;
+            overflow:hidden;
+            img {
+                width: 100%;
+            }
+        }
         .info-restaurant  {
             display: flex;
             width: 100%;
-
-            .restaurant-image {
-                width: 200px;
-                height: 200px;
-                object-fit: contain;
-                border-radius: 20px;
-                overflow: hidden;
-
-                img {
-                    width: 100%;
-                }
-            }
 
             .info-text {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
+                width: 100%;
+
+                    #restaurant-types {
+                        width: 5em;
+                        background: #FF9900;
+                    }
+
+                    .info__title {
+                        font-size: 30px;
+                        color: black;
+                        margin-bottom: 30px;
+                    }
+
+                    .info__par {
+                        font-size: 20px;
+                        color: #7A7A7A;
+                         span {
+                            color: black;
+                            margin-right: 0.5rem;
+                         }
+                    }
             }
         }
     }
