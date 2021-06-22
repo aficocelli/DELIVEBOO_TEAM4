@@ -49,9 +49,13 @@
                 <label for="notes">Note per il Ristorante</label>
                 <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note">{{ old('notes') }}</textarea>
             </div>
-
-            
-    
+            {{-- <label for="total">Note per il Ristorante</label>
+           <input id="total" type="text" value="" name="total" > --}}
+            <div class="form-group">
+                {{-- <input type="text" id="total" name="total"  value=""> --}}
+                <textarea name="total" id="total" cols="30" rows="10" hidden>@{{ciao}}</textarea>
+                {{-- <p>il totale è: <h1 id="result"></h1> euro</p> --}}
+            </div>
             <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button>
         </form>
 
@@ -69,5 +73,10 @@
         @endforeach --}}
     </div>
 
+{{-- <script>
+
+    document.getElementById("result").innerHTML = localStorage.getItem("bigtotal");
+
+</script> --}}
 
 @endsection

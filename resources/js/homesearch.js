@@ -31,10 +31,15 @@ new Vue({
     smallSelection: []
   },
 
-  
+  // storage vuejs
+
+ 
   
   mounted: function () {
 
+    // // ripreso dato in storage
+    
+    this.ciao = localStorage.getItem("bigTotal");
     // event listener sulla scroll
     // document.addEventListener('scroll', this.scrollHandler);
     window.addEventListener('scroll', this.scrollHandler);
@@ -140,16 +145,16 @@ new Vue({
 
     takeOne: function (index) {
       var actualValueMore = document.getElementById(index).value;
-      console.log(actualValueMore);
+      // console.log(actualValueMore);
       document.getElementById(index).value = parseInt(actualValueMore) + 1;
       var productPrice = document.getElementById("prezzo_" + index).innerHTML;
       var total = document.getElementById('totale_price').innerHTML;
       var bigTotal = parseFloat(total) + parseFloat(productPrice);
       document.getElementById('totale_price').innerHTML = bigTotal;
-      //window.localStorage.clear();
-      //window.localStorage.setItem('bigTotal', bigTotal);
+      window.localStorage.clear();
+      window.localStorage.setItem('bigTotal', bigTotal);
       
-      
+      document.getElementById("result").innerHTML = localStorage.getItem("bigTotal");
     },
     lessOne: function (index) {
 
@@ -161,7 +166,8 @@ new Vue({
         var bigTotal = parseFloat(total) - parseFloat(productPrice);
         document.getElementById('totale_price').innerHTML = bigTotal;
       //  window.localStorage.clear();
-      //  window.localStorage.setItem('bigTotal', bigTotal);
+       window.localStorage.setItem('bigTotal', bigTotal);
+        
       }
       // this.ciao = e;
 

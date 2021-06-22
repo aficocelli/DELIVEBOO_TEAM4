@@ -26,7 +26,8 @@ class OrderController extends Controller
         
         $data = $request->all();
 
-        $data['total'] = 20;
+        
+        // $data['total'] = 20;
         
         // $data['food_id'] = [1];
 
@@ -56,12 +57,12 @@ class OrderController extends Controller
         
         // $newOrder->
 
-        $gateway = new Braintree\Gateway([
-            'environment' => 'sandbox',
-            'merchantId' => '3f58gf44rjwx3cz4',
-            'publicKey' => 'xkyy5gnc8czp7f9z',
-            'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
-        ]);
+        // $gateway = new Braintree\Gateway([
+        //     'environment' => 'sandbox',
+        //     'merchantId' => '3f58gf44rjwx3cz4',
+        //     'publicKey' => 'xkyy5gnc8czp7f9z',
+        //     'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
+        // ]);
 
         // $result = $gateway->transaction()->sale([
         //     'amount' => $data['total'],
@@ -71,10 +72,11 @@ class OrderController extends Controller
         //     ]
         // ]);
 
+       
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
 
-        return redirect()->route('guest.order.success',$newOrder);
+        return redirect()->route('guest.order.success', $newOrder);
     }
 
     public function successOrder(Order $order)
@@ -84,31 +86,42 @@ class OrderController extends Controller
         return view('guest.order.success', compact('order'));
     }
 
-    public function paymentOrder (Request $request, Order $order){
+    public function paymentOrder (Request $request,Order $order){
+
+
 
         $order = Order::all();
         $data = $request->all();
+     
         
         
-         $gateway = new Braintree\Gateway([
-            'environment' => 'sandbox',
-            'merchantId' => '3f58gf44rjwx3cz4',
-            'publicKey' => 'xkyy5gnc8czp7f9z',
-            'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
-        ]);
-        $result = $gateway->transaction()->sale([
+        
+        
+        // dd($order);
 
-                'amount' => $data['total'],
-                'paymentMethodNonce' =>$request->payment_method_nonce,
-                'options' => [
-                'submitForSettlement' => True
-            ]
-         ]);
+
+        //  $gateway = new Braintree\Gateway([
+        //     'environment' => 'sandbox',
+        //     'merchantId' => '3f58gf44rjwx3cz4',
+        //     'publicKey' => 'xkyy5gnc8czp7f9z',
+        //     'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
+        // ]);
+        // $result = $gateway->transaction()->sale([
+
+        //         'amount' => $data['total'],
+        //         'paymentMethodNonce' =>$request->payment_method_nonce,
+        //         'options' => [
+        //         'submitForSettlement' => True
+        //     ]
+        //  ]);
+
+        // $clientToken = $gateway->clientToken()->generate('clientToken');
+
 
         // pass $clientToken to your front-end
-        $clientToken = $gateway->clientToken()->generate();
+        // $clientToken = $gateway->clientToken()->generate();
 
-        return view('guest.order.payment', compact('order', 'clientToken'));
+        return view('guest.order.payment', compact('order'));
 
     }
     
