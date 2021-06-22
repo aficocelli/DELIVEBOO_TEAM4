@@ -18,8 +18,16 @@ class OrderController extends Controller
 
         $order = Order::all();
 
+         $gateway = new Braintree\Gateway([
+            'environment' => 'sandbox',
+            'merchantId' => '3f58gf44rjwx3cz4',
+            'publicKey' => 'xkyy5gnc8czp7f9z',
+            'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
+        ]);
 
-        return view('guest.order.create', compact('order'));
+        $clientToken = $gateway->clientToken()->generate('clientToken');
+
+        return view('guest.order.create', compact('order', 'clientToken'));
     }
 
     public function storeOrder(Request $request, Food $food){
@@ -57,26 +65,27 @@ class OrderController extends Controller
         
         // $newOrder->
 
-        // $gateway = new Braintree\Gateway([
-        //     'environment' => 'sandbox',
-        //     'merchantId' => '3f58gf44rjwx3cz4',
-        //     'publicKey' => 'xkyy5gnc8czp7f9z',
-        //     'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
-        // ]);
+        $gateway = new Braintree\Gateway([
+            'environment' => 'sandbox',
+            'merchantId' => '3f58gf44rjwx3cz4',
+            'publicKey' => 'xkyy5gnc8czp7f9z',
+            'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
+        ]);
 
-        // $result = $gateway->transaction()->sale([
-        //     'amount' => $data['total'],
-        //     'paymentMethodNonce' =>$request->payment_method_nonce,
-        //     'options' => [
-        //         'submitForSettlement' => True
-        //     ]
-        // ]);
+        $result = $gateway->transaction()->sale([
+            'amount' => $data['total'],
+            // 'paymentMethodNonce' =>$request->payment_method_nonce,
+            'options' => [
+                'submitForSettlement' => True
+            ]
+        ]);
 
+        $clientToken = $gateway->clientToken()->generate('clientToken');
        
         //Mail::to($newOrder->email_guest)->send(new Model($newOrder));
        
 
-        return redirect()->route('guest.order.success', $newOrder);
+        return redirect()->route('guest.order.success', compact('newOrder', 'clientToken'));
     }
 
     public function successOrder(Order $order)
