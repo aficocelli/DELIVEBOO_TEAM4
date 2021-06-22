@@ -53,7 +53,7 @@
            <input id="total" type="text" value="" name="total" > --}}
 
            
-            <div class="form-group">
+            <div id="root" class="form-group">
                 {{-- <input type="text" id="total" name="total"  value=""> --}}
                 <textarea name="total" id="total" cols="30" rows="10" hidden>@{{ciao}}</textarea>
                 {{-- <p>il totale è: <h1 id="result"></h1> euro</p> --}}
@@ -98,12 +98,12 @@
     payment.addEventListener('submit', function (event) {
         event.preventDefault();
         instance.requestPaymentMethod(function (err, payload) {
-            if (err) {
-                console.log('Request Payment Method Error', err);
-                return;
-            }
+            // if (err) {
+            //     console.log('Request Payment Method Error', err);
+            //     return;
+            // }
            document.querySelector('#nonce').value = payload.nonce;
-           consol.log(payload.nonce);
+           console.log(payload.nonce);
            payment.submit();
         });
 
