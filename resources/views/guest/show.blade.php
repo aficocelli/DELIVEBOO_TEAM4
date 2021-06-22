@@ -22,7 +22,7 @@
           @endforeach 
           </div>
           <div class="info-image">
-            <img src="http://127.0.0.1:8000/storage/images/jN5x3YylQzSibL2OwYHhB1JqEQFowEUK7jtmd8Dx.jpg" alt="">
+            <img src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{$users->name_restaurant}}">
           </div>
               
         </div>

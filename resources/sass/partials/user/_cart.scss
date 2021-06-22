@@ -78,7 +78,8 @@ button.qty {
 }
 
 button.qty:hover {
-    background: #3b9ac6;
+    background: white;
+    color:black;
 }
 
 .row-total {
@@ -103,7 +104,7 @@ button.qty:hover {
   font-weight: bold;
   background: black;
   color: #fff;
-  box-shadow: 0 3px 0 rgba(59, 154, 198, 1)
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
