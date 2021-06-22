@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -19,4 +23,48 @@ body {
     background-repeat: repeat;
     background-size: 900px;
     
+}
+
+
+//back to top  
+.back-to-top {
+  display: none;
+  border: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 1%;
+  cursor: pointer;
+  background: transparent;
+  transition: all .4 ease-in-out;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+      transform: scale(1.1);
+      
+  }
+
+  i {
+    color: $white;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: $orange;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: $orange;
+        border: 2px solid $orange;
+        background: transparent;
+    }
+  }
+
+  &.back-to-top--active {
+    display: block;
+  }
 }

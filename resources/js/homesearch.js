@@ -13,7 +13,6 @@ new Vue({
     usersNew:[],
     userRestaurants:[],
     filter:"",
-    slideIndex: 0,
     url: '{{asset(img-carousel/)}}', 
     qty: 0,
     basePrice: 0,
@@ -28,7 +27,10 @@ new Vue({
     test: false,
     addProduct: false,
     userNames:[],
-    smallSelection: []
+    smallSelection: [],
+    chevronBackToTop: false,
+    min: 0,
+    max: 4
   },
 
   // storage vuejs
@@ -37,6 +39,7 @@ new Vue({
   
   mounted: function () {
 
+    
     // // ripreso dato in storage
     
     this.ciao = localStorage.getItem("bigTotal");
@@ -69,13 +72,34 @@ new Vue({
       .then((result) => {
         this.smallSelection = result.data;
       });
+
   },
   methods: {
-    incrementa: function () {
-      this.ordine++;
+    next: function (min, max) {
+      this.min = min + 4;
+      this.max = max + 4;
+      if (this.max == 16) {
+        this.min = 0;
+        this.max = 4;
+      }
     },
-    decrementa: function () {
-      this.ordine--;
+    prev: function (min, max) {
+      if (this.min == 0) {
+        this.min = 8;
+        this.max = 12;
+      } else {
+        this.min = min - 4;
+        this.max = max - 4;
+      }
+    },
+
+    scrollToResults: function() {
+      // window.scrollTo(0, document.body.scrollHeight);
+      // $('html,body').animate({ scrollTop: document.body.scrollHeight }, "slow");
+      // var element = document.getElementById("box-scroll");
+      // element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+      var currentPositionOfPage = window.scrollY;
+      window.scrollTo(0, 0 + 650);
     },
     
     //filtro con la input della homepage per tipo (non usata)
@@ -108,7 +132,7 @@ new Vue({
         //     this.userRestaurants.push(element);   
         //   }
         // });
-
+        this.scrollToResults();
         console.log(this.userRestaurants);
         // if (this.userRestaurants.length == 0) {
         //   this.test = true;
@@ -124,6 +148,8 @@ new Vue({
         console.log(result.data);
         
         this.userRestaurants = result.data;
+        this.scrollToResults();
+
         console.log(this.userRestaurants);
       });
     },
@@ -186,28 +212,26 @@ new Vue({
     // funzioni allo scroll per headers
 
     scrollHandler: function () {
-    if (window.scrollY > 150) {
-      this.headerTopSticky = false;
-      console.log(this.headerTopSticky);
-    } else {
-      this.headerTopSticky = true;
-    }
+      if (window.scrollY > 150) {
+        this.headerTopSticky = false;
+        this.chevronBackToTop = true;
+        console.log(this.headerTopSticky);
+      } else {
+        this.headerTopSticky = true;
+        this.chevronBackToTop = false;
+      }
+    },
 
     //chevron
-    // if (window.scrollY > 150) {
-    //   this.chevronBackToTop = true;
-    // } else {
-    //   this.chevronBackToTop = false;
-    // }
-    }
+   
+    //scroll back to top with chevron
+    backToTop: function () {
+      window.scrollTo({
+        top: 0,
+      })
+    },
   },
-
-  //scroll back to top with chevron
-  // backToTop: function () {
-  //   window.scrollTo({
-  //     top: 0,
-  //   })
-  // },
+  
 
   
    
