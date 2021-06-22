@@ -64,6 +64,7 @@
             <div id="dropin-container"></div>
                 <button id="submit-button">Request payment method</button>
                 <input type="hidden" id="nonce" name="payment_method_nonce"/>
+                
             </div>
         </form>
 
@@ -87,20 +88,28 @@
 
 </script> --}}
 <script>
+    var token = '{{$clientToken}}';
     var button = document.querySelector('#submit-button');
     var payment = document.querySelector('#payment');
     braintree.dropin.create({
-    authorization: 'sandbox_fw7m6dc3_3f58gf44rjwx3cz4',
-    container: '#dropin-container'
+    authorization: token,
+    selector: '#dropin-container'
     }, function (err, instance) {
     payment.addEventListener('submit', function (event) {
         event.preventDefault();
         instance.requestPaymentMethod(function (err, payload) {
+            if (err) {
+                console.log('Request Payment Method Error', err);
+                return;
+            }
            document.querySelector('#nonce').value = payload.nonce;
+           consol.log(payload.nonce);
            payment.submit();
         });
 
     });
     });
 </script>
+
 @endsection
+
