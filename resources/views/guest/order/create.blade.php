@@ -13,7 +13,7 @@
             </div>
         @endif
 
-         <form action="{{route('guest.order.store')}}" method="POST">
+         <form id="payment" action="{{route('guest.order.store')}}" method="POST">
             @method("POST")
             @csrf
 
@@ -47,16 +47,24 @@
             
             <div class="form-group">
                 <label for="notes">Note per il Ristorante</label>
-                <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note">{{ old('notes') }}</textarea>
+                <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note" required>{{ old('notes') }}</textarea>
             </div>
             {{-- <label for="total">Note per il Ristorante</label>
            <input id="total" type="text" value="" name="total" > --}}
+
+           
             <div class="form-group">
                 {{-- <input type="text" id="total" name="total"  value=""> --}}
                 <textarea name="total" id="total" cols="30" rows="10" hidden>@{{ciao}}</textarea>
                 {{-- <p>il totale è: <h1 id="result"></h1> euro</p> --}}
             </div>
-            <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button>
+            {{-- <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button> --}}
+
+            <div class="container">
+            <div id="dropin-container"></div>
+                <button id="submit-button">Request payment method</button>
+                <input type="hidden" id="nonce" name="payment_method_nonce"/>
+            </div>
         </form>
 
     </div>
@@ -78,5 +86,21 @@
     document.getElementById("result").innerHTML = localStorage.getItem("bigtotal");
 
 </script> --}}
+<script>
+    var button = document.querySelector('#submit-button');
+    var payment = document.querySelector('#payment');
+    braintree.dropin.create({
+    authorization: 'sandbox_fw7m6dc3_3f58gf44rjwx3cz4',
+    container: '#dropin-container'
+    }, function (err, instance) {
+    payment.addEventListener('submit', function (event) {
+        event.preventDefault();
+        instance.requestPaymentMethod(function (err, payload) {
+           document.querySelector('#nonce').value = payload.nonce;
+           payment.submit();
+        });
 
+    });
+    });
+</script>
 @endsection

@@ -3,6 +3,8 @@
 @extends('layouts.guest')
 
 <div id="root" class="container-sm" style="margin-top: 170px">
+  <h1 class="mt-3">Il tuo ordine è confermato</h1>
+
   <h2>Dettaglio Ordine</h2>
     <div class="container-sm mt-5 mb-5">     
       
@@ -20,9 +22,9 @@
 </div>
 
 
-<h2 class="mt-3">Checkout pagamento</h2>
+
 <div class="mt-3">
-  <a href='{{route('guest.order.payment')}}' class="btn btn-primary">Procedi al Pagamento</a>
+  <a href='{{route('guest.index')}}' class="btn btn-primary">Home</a>
 </div>
 
 </div>
