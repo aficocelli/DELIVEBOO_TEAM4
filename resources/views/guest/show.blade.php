@@ -38,7 +38,7 @@
   
         <div class="container-cart">
             <div class="cart-title">
-              <h3>Menu</h3>
+              <h2>Menu</h2>
             </div>
                       
             @foreach ($users->foods as $food)
@@ -72,7 +72,7 @@
               </div>
             @endforeach
       
-            <div class="row-total">
+            <div class="row-total mt-5">
               <div class="total">
                 <p>Totale: </p><span id="totale_price">0</span> Euro
               </div>
