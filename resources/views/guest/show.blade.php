@@ -22,7 +22,7 @@
           @endforeach 
           </div>
           <div class="info-image">
-            <img src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{$users->name_restaurant}}">
+            <img src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
           </div>
               
         </div>
@@ -54,7 +54,7 @@
                   <div class="product__info">
                      <h4 class="food__name">{{$food->name_food}}</h4>
                      <p class="food__ingredients">{{$food->ingredients}}</p>
-                     <small class="food__description">{{$food->description}}</small>
+                     <p class="food__description">{{$food->description}}</p>
                   </div>
                 
                 {{-- box del prezze --}}
@@ -77,8 +77,8 @@
                 <p>Totale: </p><span id="totale_price">0</span> Euro
               </div>
             </div>
-            <div class="actions text-center">
-              <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
+            <div class="actions text-right">
+              <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
                         
