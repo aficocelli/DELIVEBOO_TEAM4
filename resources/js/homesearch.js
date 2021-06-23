@@ -170,7 +170,7 @@ new Vue({
         var productPrice = document.getElementById("prezzo_" + index).innerHTML;
         var total = document.getElementById('totale_price').innerHTML;
         var bigTotal = parseFloat(total) + parseFloat(productPrice);
-        document.getElementById('totale_price').innerHTML = bigTotal;
+        document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
         window.localStorage.clear();
         window.localStorage.setItem('bigTotal', bigTotal);
       
@@ -184,7 +184,7 @@ new Vue({
           var productPrice = document.getElementById("prezzo_" + index).innerHTML;
           var total = document.getElementById('totale_price').innerHTML;
           var bigTotal = parseFloat(total) - parseFloat(productPrice);
-          document.getElementById('totale_price').innerHTML = bigTotal;
+          document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
           window.localStorage.clear();
           window.localStorage.setItem('bigTotal', bigTotal);        
       }
