@@ -99,7 +99,7 @@ new Vue({
       // var element = document.getElementById("box-scroll");
       // element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
       var currentPositionOfPage = window.scrollY;
-      window.scrollTo(0, 0 + 1800);
+      window.scrollTo(0, 0 + 600);
     },
     
     //filtro con la input della homepage per tipo (non usata)
@@ -118,7 +118,6 @@ new Vue({
       this.userRestaurants = [];
       axios.get('http://localhost:8000/api/search/' + this.filter.toLowerCase().toUpperCase(), {  
       }).then((result) => {
-
         this.userRestaurants = result.data;
 
         //filtro con vue e non con query
@@ -133,7 +132,6 @@ new Vue({
         //   }
         // });
         this.scrollToResults();
-        console.log(this.userRestaurants);
         // if (this.userRestaurants.length == 0) {
         //   this.test = true;
         // }
@@ -145,12 +143,9 @@ new Vue({
     buttonTypes: function(e) {  
       axios.get('http://localhost:8000/api/filterapi/' + e , {
       }).then((result) => {
-        console.log(result.data);
         
         this.userRestaurants = result.data;
         this.scrollToResults();
-
-        console.log(this.userRestaurants);
       });
     },
 
