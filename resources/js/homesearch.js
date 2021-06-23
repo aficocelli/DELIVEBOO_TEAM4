@@ -33,6 +33,8 @@ new Vue({
     min: 0,
     max: 4,
     indexArray:[],
+    checkButton: 0,
+    testIndex:[]
   },
   
   // storage vuejs
@@ -50,6 +52,7 @@ new Vue({
   
   mounted: function () {
     
+    document.getElementById("button-check").disabled = true;
     //window.localStorage.clear();
     // // ripreso dato in storage
     
@@ -181,14 +184,31 @@ new Vue({
     // },
 
     takeOne: function (index) {
+
+        document.getElementById("button-check").disabled = false;
+        
         var actualValueMore = document.getElementById(index).value;
         document.getElementById(index).value = parseInt(actualValueMore) + 1;
+      
         var productPrice = document.getElementById("prezzo_" + index).innerHTML;
         var total = document.getElementById('totale_price').innerHTML;
         var bigTotal = parseFloat(total) + parseFloat(productPrice);
         document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
-       // window.localStorage.clear();
+
+        // this.checkButton = document.getElementById('totale_price').innerHTML;
+      
+        // window.localStorage.clear();
         window.localStorage.setItem('bigTotal', bigTotal);
+        
+        
+        // if (document.getElementById(index).value > 0){
+          
+          
+        //   this.checkButton = true;
+          
+          
+          
+        // }
       //   window.localStorage.setItem('index', index);
       // window.localStorage.setItem('quantity', document.getElementById(index).value )
     
@@ -215,12 +235,19 @@ new Vue({
           //   'idFood': index,
           //   'qty': document.getElementById(index).value
           // };
+          
           // localStorage.setItem('indexQty_' + index, JSON.stringify(indexQty));
         localStorage.setItem('indexQty_' + index, document.getElementById(index).value);
          }   
         {
         localStorage.removeItem('indexQty_' + index);
+
+          if (bigTotal == 0){
+            document.getElementById("button-check").disabled = true;
+          }
         } 
+
+        
     },
 
     
