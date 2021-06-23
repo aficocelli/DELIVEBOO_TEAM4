@@ -1,10 +1,11 @@
 header {
-    margin-bottom: 40px;
 
     //navbar
     .nav-wrapper-user {
+        margin-bottom: 30px;
         
-        nav.navbar-user {
+
+        nav {
             background-color: #ff9900;
            
 
@@ -26,17 +27,15 @@ header {
                     text-decoration: none;
                     font-weight: $extra-boldWeight;
                     font-size: 30px;
+                    color: #ffff;
                 }
                 
             }
 
             //login e register
-            .login-navbar-wrapper-user {
+            .login-navbar-wrapper {
 
-                .login-navbar-user {
-                    display: flex;
-                    align-items: center;
-                    
+                .login-navbar {
                     .nav-item {
                         
                         .nav-link {
@@ -55,5 +54,14 @@ header {
             }
         }
     }
-  
+    
+        
+
+
+    
+
+    
+
+
+    
 }

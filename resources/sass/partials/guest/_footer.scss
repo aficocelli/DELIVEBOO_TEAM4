@@ -1,0 +1,24 @@
+footer {
+    background-image: url('../img-carousel/footer_bg-down.png');
+    background-repeat: no-repeat;
+    height: 300px;
+    margin-top: 50px;
+
+    .footer_wrapper {
+        width: 60%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .footer_logo {
+            width: 70px;
+            height: auto;
+    
+            .img-logo-footer {
+                width: 100%;
+            }
+        }
+    }
+}

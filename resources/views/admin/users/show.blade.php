@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('pageTitle')
-    Il tuo ristorante
+    {{Auth::user()->name_restaurant}}
 @endsection
 
 @section('content')
