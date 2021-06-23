@@ -58,10 +58,11 @@ main {
                 overflow: hidden;
                 box-shadow: 8px 5px 7px 5px rgba(0, 0, 0, 0.4);
 
-                .card_link {
+                a {
                     display: block;
                     color: $black;
                     text-decoration: none;
+                    
 
                     .card_image {
                         width: 100%;
@@ -77,8 +78,6 @@ main {
 
                 
             
-                
-
                 .card_text {
                     text-align: center;
 
@@ -121,14 +120,18 @@ main {
                 .wrapper_custom_card {
                     margin: 0 10px;
 
-                    .card_link {
+                    a {
                         display: block;
                         color: $black;
                         text-decoration: none;
+
+                        #chosen_item {
+                            color: black;
+                        }
     
                         .card_image {
                             width: 100%;
-                            margin-bottom: 20px;
+                            margin-bottom: 30px;
     
                             .img_card {
                                 width: 100%;
@@ -167,3 +170,4 @@ main {
     }
 
 }
+

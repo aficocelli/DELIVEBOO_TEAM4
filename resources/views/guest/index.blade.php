@@ -38,11 +38,11 @@
   <div class="wrapper_sezione_guest" >
     <div class="card_custom" v-for="element in userRestaurants">
       <div class="wrapper_custom_cart" >
-        <a class="card_link" :href="'http://127.0.0.1:8000/users/'+ element.id">
-          <div class="card_image">
+        <a class="card_link text-reset text-decoration-none" id="chosen_item" :href="'http://127.0.0.1:8000/users/'+ element.id">
+          <div class="card_image mb-3 text-capitalize">
             <img :src="element.image_restaurant ? 'storage/' + element.image_restaurant : 'http://lorempixel.com/400/300/food'" :alt="element.name_restaurant">
           </div>
-          <div class="card_text">
+          <div class="card_text" id="chosen_text" >
             <h3>"@{{element.name_restaurant}}"</h3>
             <p>@{{element.name}}</p>
             <p class="card_address">@{{element.address_restaurant}}</p>
