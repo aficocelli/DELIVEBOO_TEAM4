@@ -82,7 +82,8 @@
   
 </div>
 <script>
-   
+  
+   document.getElementById("button-check").disabled = true;
   //     window.onload = function() {
 
   //     var retrievedObject = localStorage.getItem('indexQty');
