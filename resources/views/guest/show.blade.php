@@ -77,8 +77,8 @@
                 <p>Totale: </p><span id="totale_price">0</span> Euro
               </div>
             </div>
-            <div class="actions text-right">
-              <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
+            <div class="actions">
+              <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
                         
