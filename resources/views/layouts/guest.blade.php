@@ -30,6 +30,8 @@
                     @yield('content')
                 </main>
 
+                @include('parts.guest.footer')
+
         <!-- vue.js CDN -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <!-- Scripts -->
