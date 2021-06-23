@@ -38,7 +38,7 @@
                       
             @foreach ($users->foods as $food)
               
-              {{$food->price = number_format($food->price, 2)}}
+              
                  
               <div class="row__cart">
                   
@@ -56,7 +56,7 @@
                 
                 {{-- box del prezze --}}
                 <div  class="col__price col-numeric">
-                  <p id="prezzo_{{$food->id}}">{{$food->price}}</p> 
+                  <p id="prezzo_{{$food->id}}">{{$food->price = number_format($food->price, 2)}}</p> 
                   <span class="euro">&euro;</span>
                 </div>
                 
