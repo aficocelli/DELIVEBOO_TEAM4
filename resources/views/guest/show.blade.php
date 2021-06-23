@@ -76,27 +76,25 @@
               <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
-                      
  </div>  
   
 </div>
-{{-- <script>
+<script>
+  //     window.onload = function() {
 
-      window.onload = function() {
+  //     var retrievedObject = localStorage.getItem('indexQty');
 
-      var retrievedObject = localStorage.getItem('indexQty');
-
-      console.log(retrievedObject);
+  //     console.log(retrievedObject);
 
       
 
-      document.getElementsByClassName("input_cart").value = localStorage.getItem(retrievedObject.qty);
-   };
+  //     document.getElementsByClassName("input_cart").value = localStorage.getItem(retrievedObject.qty);
+  //  };
 
 //   Storage.prototype.getObject = function(key) {
 //     return JSON.parse(this.getItem(key));
 // }
 
-</script> --}}
+</script>
                       
 @endsection
