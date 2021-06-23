@@ -29,3 +29,15 @@
 
 </div>
 
+<script>
+
+      // window.onload = function() {
+      //   axios.get('http://localhost:8000/api/search/foods')
+      // .then((result) => {
+      //   var foods = result.data;
+      //   console.log(foods);
+      // });
+      // }
+
+
+</script>

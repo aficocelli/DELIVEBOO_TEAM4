@@ -82,13 +82,25 @@
         @endforeach --}}
     </div>
 
-{{-- <script>
-
-    document.getElementById("result").innerHTML = localStorage.getItem("bigtotal");
-
-</script> --}}
 <script>
     window.onload = function() {
+        var onlyFoodsSalvati = [];
+        var onlyFoods = [];
+                axios.get('http://localhost:8000/api/search/foods/onlyfoods')
+            .then((result) => {
+                onlyFoods = result.data;
+                for (let index = 0; index < onlyFoods.length; index++) {
+                // console.log(onlyFoods[index].id);
+                var quantita =localStorage.getItem("indexQty_"+onlyFoods[index].id);
+                var cibo = "";
+                if(quantita!=null)
+                {
+                    console.log("quantita-->"+quantita);
+                    console.log("cibo-->"+onlyFoods[index].name_food);
+                }
+            }
+        });
+
     document.getElementById("total").value = localStorage.getItem("bigTotal");
 };
 
@@ -109,9 +121,8 @@
            document.querySelector('#nonce').value = payload.nonce;
            console.log(payload.nonce);
            payment.submit();
+            });
         });
-
-    });
     });
 </script>
 
