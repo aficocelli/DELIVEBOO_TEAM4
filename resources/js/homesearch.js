@@ -30,7 +30,9 @@ new Vue({
     smallSelection: [],
     chevronBackToTop: false,
     min: 0,
-    max: 4
+    max: 4,
+    indexArray:[],
+    
   },
 
   // storage vuejs
@@ -173,8 +175,19 @@ new Vue({
         document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
         window.localStorage.clear();
         window.localStorage.setItem('bigTotal', bigTotal);
+      //   window.localStorage.setItem('index', index);
+      // window.localStorage.setItem('quantity', document.getElementById(index).value )
+
+      var indexQty = {
+        'index': index,
+        'qty': document.getElementById(index).value
+      };
+
+
+      localStorage.setItem('indexQty', JSON.stringify(indexQty));
       
-       //document.getElementById("result").innerHTML = localStorage.getItem("bigTotal");
+      
+      
     },
     lessOne: function (index) {
 
@@ -186,16 +199,10 @@ new Vue({
           var bigTotal = parseFloat(total) - parseFloat(productPrice);
           document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
           window.localStorage.clear();
-          window.localStorage.setItem('bigTotal', bigTotal);        
-      }
-      // this.ciao = e;
-
-      // if(e == event){
-      //   this.ciao = event;
-      //   this.qty += 1;
-      // }
-      
-      
+          window.localStorage.setItem('bigTotal', bigTotal); 
+          
+          
+        }     
     },
 
     
