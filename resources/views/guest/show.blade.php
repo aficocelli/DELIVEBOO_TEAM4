@@ -24,7 +24,7 @@
               </div> 
           </div>
           <div class="info-image">
-            <img src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
+            <img class="image__restaurant" src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
           </div>         
         </div>
       </div>
@@ -72,7 +72,7 @@
                 <p>Totale: </p><span id="totale_price">0</span> Euro
               </div>
             </div>
-            <div class="actions text-right">
+            <div v-if="ciao != ''" class="actions text-right">
               <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
