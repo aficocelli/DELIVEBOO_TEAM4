@@ -32,6 +32,7 @@ class OrderController extends Controller
         
        
         $clientToken = $gateway->clientToken()->generate();
+
         
         return view('guest.order.create', compact('order', 'clientToken'));
     }

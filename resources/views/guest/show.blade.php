@@ -61,7 +61,7 @@
                 {{-- box modifica della quantità del prodotto --}}
                 <div id='cart' class="cart__quantity">
                   <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
-                  <input  id="{{$food->id}}" class="input_cart" type="text" value="qty" v-model="qty" readonly="readonly" name="{{$food->id}}">
+                  <input  id="{{$food->id}}" class="input_cart" type="number"  v-model="qty" readonly="readonly" name="{{$food->id}}">
                   <button class="qty qty-plus transition" value="{{$food->id}}" @@click="takeOne({{$food->id}})"><i class="fas fa-plus-circle"></i></button>
                 </div>
               </div>
@@ -72,14 +72,17 @@
                 <p>Totale: </p><span id="totale_price">0</span> Euro
               </div>
             </div>
-            <div v-if="ciao != ''" class="actions text-right">
-              <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
+            <div class="actions text-right">
+              
+              <a  class="inline-block text-right" href="{{route('guest.order.create')}}"><button id="button-check" class="cart__btn inline-block">Procedi al checkout</button></a>
+              
             </div>
         </div>     
  </div>  
   
 </div>
 <script>
+   
   //     window.onload = function() {
 
   //     var retrievedObject = localStorage.getItem('indexQty');
