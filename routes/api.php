@@ -33,3 +33,5 @@ Route::get('/search/{name_restaurant}', 'Api\ApiController@filteredName');
 
 Route::get('/search/selection/users', 'Api\ApiController@smallSelUsers');
 
+Route::get('/search/foods/onlyfoods', 'Api\ApiController@onlyFoods');
+

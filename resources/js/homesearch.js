@@ -20,6 +20,7 @@ new Vue({
     show: 'false',
     headerTopSticky: true,
     foodsRestaurant: [],
+    onlyFoods:[],
     lastScrollPosition: 0,
     scrollValue: 0,
     ciao: '',
@@ -32,18 +33,27 @@ new Vue({
     min: 0,
     max: 4,
     indexArray:[],
-    
   },
-
+  
   // storage vuejs
-
- 
+  
+  
+  watch: {
+    saveValue(){
+      var qtyOld = document.getElementByName('qtyOld');
+      for (let index = 0; index < qtyOld.length; index++) {
+        console.log(qtyOld[index].value);
+        
+      }
+      }
+    },
   
   mounted: function () {
-
     
+    //window.localStorage.clear();
     // // ripreso dato in storage
     
+
     this.ciao = localStorage.getItem("bigTotal");
     // event listener sulla scroll
     // document.addEventListener('scroll', this.scrollHandler);
@@ -68,7 +78,11 @@ new Vue({
       .then((result) => {
         this.foodsRestaurant = result.data;
       });
-    
+    //only foods
+    axios.get('http://localhost:8000/api/search/foods/onlyfoods')
+      .then((result) => {
+        this.onlyFoods = result.data;
+      });
     // api small selection index
     axios.get('http://localhost:8000/api/search/selection/users')
       .then((result) => {
@@ -173,18 +187,15 @@ new Vue({
         var total = document.getElementById('totale_price').innerHTML;
         var bigTotal = parseFloat(total) + parseFloat(productPrice);
         document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
-        window.localStorage.clear();
+       // window.localStorage.clear();
         window.localStorage.setItem('bigTotal', bigTotal);
       //   window.localStorage.setItem('index', index);
       // window.localStorage.setItem('quantity', document.getElementById(index).value )
-
-      var indexQty = {
-        'index': index,
-        'qty': document.getElementById(index).value
-      };
-
-
-      localStorage.setItem('indexQty', JSON.stringify(indexQty));
+    
+   //   var indexQty = {
+    //    'qty': document.getElementById(index).value
+    //  };
+      localStorage.setItem('indexQty_' + index, document.getElementById(index).value);
       
       
       
@@ -198,11 +209,18 @@ new Vue({
           var total = document.getElementById('totale_price').innerHTML;
           var bigTotal = parseFloat(total) - parseFloat(productPrice);
           document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
-          window.localStorage.clear();
+          //window.localStorage.clear();
           window.localStorage.setItem('bigTotal', bigTotal); 
-          
-          
-        }     
+          // var indexQty = {
+          //   'idFood': index,
+          //   'qty': document.getElementById(index).value
+          // };
+          // localStorage.setItem('indexQty_' + index, JSON.stringify(indexQty));
+        localStorage.setItem('indexQty_' + index, document.getElementById(index).value);
+         }   
+        {
+        localStorage.removeItem('indexQty_' + index);
+        } 
     },
 
     
@@ -249,5 +267,4 @@ new Vue({
   //   window.removeEventListener('scroll', this.scrollHandler)
   // }
   
-
 });

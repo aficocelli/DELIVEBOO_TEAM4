@@ -36,23 +36,31 @@ main {
                 flex-direction: column;
                 justify-content: center;
                 width: 100%;
-
-                    #restaurant-types {
-                        width: 5em;
-                        background: #FF9900;
-                    }
+                .container__types {
+                    display: flex;
+                         #restaurant-types {
+                            max-width: 10rem;
+                            font-size: 15px;
+                            background: #FF9900;
+                            margin-right: 5px;
+                        }
+        
+                }
 
                     .info__title {
-                        font-size: 30px;
-                        color: black;
+                        font-size: 40px;
+                        color: white;
+                        text-transform: capitalize;
                         margin-bottom: 30px;
                     }
 
                     .info__par {
                         font-size: 20px;
-                        color: #7A7A7A;
+                        color: $white;
+                        text-transform: capitalize;
                          span {
-                            color: black;
+                            color: #FF9900;
+                            font-size: 25px;
                             margin-right: 0.5rem;
                          }
                     }

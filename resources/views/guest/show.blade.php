@@ -17,23 +17,23 @@
               <h3 class="info__title">{{$users->name_restaurant}}</h3>
               <p class="info__par"><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->address_restaurant}}</p>
               <p class="info__par"><span><i class="fas fa-phone"></i> </span>{{$users->phone_restaurant}}</p>
+              <div class="container__types">
           @foreach ($users->types as $type)
               <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
-          @endforeach 
+          @endforeach
+              </div> 
           </div>
           <div class="info-image">
-            <img class="image__restaurant" src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
-          </div>
-              
+            <img src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
+          </div>         
         </div>
-
       </div>
     </div>
   
   {{-- /carrello --}}
         <div class="container-cart">
             <div class="cart-title">
-              <h2>Menu</h2>
+              <h2>- Menu -</h2>
             </div>
                       
             
@@ -60,9 +60,9 @@
                 
                 {{-- box modifica della quantità del prodotto --}}
                 <div id='cart' class="cart__quantity">
-                  <button class="qty qty-minus" value="{{$food->id}}" @@click="lessOne({{$food->id}})">-</button>
+                  <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
                   <input  id="{{$food->id}}" class="input_cart" type="text" value="qty" v-model="qty" readonly="readonly" name="{{$food->id}}">
-                  <button class="qty qty-plus" value="{{$food->id}}" @@click="takeOne({{$food->id}})">+</button>
+                  <button class="qty qty-plus transition" value="{{$food->id}}" @@click="takeOne({{$food->id}})"><i class="fas fa-plus-circle"></i></button>
                 </div>
               </div>
             @endforeach
@@ -76,27 +76,25 @@
               <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
-                      
  </div>  
   
 </div>
-{{-- <script>
+<script>
+  //     window.onload = function() {
 
-      window.onload = function() {
+  //     var retrievedObject = localStorage.getItem('indexQty');
 
-      var retrievedObject = localStorage.getItem('indexQty');
-
-      console.log(retrievedObject);
+  //     console.log(retrievedObject);
 
       
 
-      document.getElementsByClassName("input_cart").value = localStorage.getItem(retrievedObject.qty);
-   };
+  //     document.getElementsByClassName("input_cart").value = localStorage.getItem(retrievedObject.qty);
+  //  };
 
 //   Storage.prototype.getObject = function(key) {
 //     return JSON.parse(this.getItem(key));
 // }
 
-</script> --}}
+</script>
                       
 @endsection

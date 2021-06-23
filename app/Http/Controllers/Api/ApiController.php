@@ -94,6 +94,12 @@ class ApiController extends Controller
     return response()->json($foods);
 
   }
+  public function onlyFoods(Request $request)
+  {
+    $onlyFoods = Food::all();
+
+    return response()->json($onlyFoods);
+  }
 
 
   public function smallSelUsers(Request $request)
