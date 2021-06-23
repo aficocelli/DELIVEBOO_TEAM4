@@ -16,7 +16,7 @@
       <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
       <h4><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
       <h4><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
-      <h4><strong>Totale ordine:</strong> {{$order->total}} € </h4>
+      <h4><strong>Totale ordine:</strong> {{$order->total = number_format($order->total, 2)}} € </h4>
       {{-- <h4>Totale: </h4><span id="totale_price" >@{{total}}</span> Euro --}}
       
 </div>
