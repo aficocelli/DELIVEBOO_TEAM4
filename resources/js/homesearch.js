@@ -40,7 +40,10 @@ new Vue({
   // storage vuejs
   
   
+  
   watch: {
+    
+
     saveValue(){
       var qtyOld = document.getElementByName('qtyOld');
       for (let index = 0; index < qtyOld.length; index++) {
@@ -48,11 +51,12 @@ new Vue({
         
       }
       }
+      
     },
   
   mounted: function () {
     
-    document.getElementById("button-check").disabled = true;
+    
     //window.localStorage.clear();
     // // ripreso dato in storage
     
@@ -91,6 +95,8 @@ new Vue({
       .then((result) => {
         this.smallSelection = result.data;
       });
+
+    
 
   },
   methods: {
@@ -185,7 +191,7 @@ new Vue({
 
     takeOne: function (index) {
 
-        document.getElementById("button-check").disabled = false;
+        // document.getElementById("button-check").disabled = false;
         
         var actualValueMore = document.getElementById(index).value;
         document.getElementById(index).value = parseInt(actualValueMore) + 1;
@@ -194,8 +200,12 @@ new Vue({
         var total = document.getElementById('totale_price').innerHTML;
         var bigTotal = parseFloat(total) + parseFloat(productPrice);
         document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
+        
 
-        // this.checkButton = document.getElementById('totale_price').innerHTML;
+
+          
+        
+      document.getElementById("button-check").disabled = false;
       
         // window.localStorage.clear();
         window.localStorage.setItem('bigTotal', bigTotal);
