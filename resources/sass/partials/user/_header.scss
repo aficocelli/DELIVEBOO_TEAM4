@@ -7,6 +7,7 @@ header {
 
         nav {
             background-color: #ff9900;
+            padding: 25px 0;
            
 
             // logo
@@ -15,7 +16,8 @@ header {
                 text-decoration: none;
         
                 .logo {
-                    width: 90px;
+                    width: 40px;
+                    margin-right: 20px;
                     
                     img {
                         width: 100%;
@@ -26,8 +28,10 @@ header {
                 .dropfood {
                     text-decoration: none;
                     font-weight: $extra-boldWeight;
-                    font-size: 30px;
+                    font-size: 25px;
                     color: #ffff;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
                 }
                 
             }
