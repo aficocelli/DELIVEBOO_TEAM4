@@ -16,7 +16,7 @@ class FoodController extends Controller
 {
     protected $validation = [
         'name_food' => 'required|string|max:150',
-        'price' => 'required|max:99.99|regex:/^\d+(\.\d{1,20})?$/|max:5',
+        'price' => 'required|regex:/^\d+(\.\d{1,20})?$/|max:5',
         'ingredients'=> 'required|string',
         'description'=> 'required',
         'food_image' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -34,6 +34,9 @@ class FoodController extends Controller
         
         $foods = Food::where('user_id', $user_id)->get();
 
+        foreach ($foods as $food) {
+            $food->price = number_format($food->price, 2);
+        }
 
         return view('admin.foods.index', compact('foods'));
     }
@@ -50,6 +53,11 @@ class FoodController extends Controller
         
 
         $foods = Food::where('user_id', $user_id)->get();
+
+        foreach ($foods as $food){
+            $food->price = number_format($food->price, 2);
+        }
+        
 
         return view('admin.foods.create', compact('foods'));
     }
@@ -70,6 +78,8 @@ class FoodController extends Controller
         $data = $request->all();
         // checkbox
         $data['available'] = !isset($data['available']) ? 0 : 1;
+        $data['price'] = number_format($data['price'], 2);
+        
         $data['vegan'] = !isset($data['vegan']) ? 0 : 1;
         // verificata autenticazione
         $data['user_id'] = $user->id;
