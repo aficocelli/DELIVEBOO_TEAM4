@@ -37,7 +37,9 @@
             </div>
                       
             @foreach ($users->foods as $food)
-                    
+              
+              {{$food->price = number_format($food->price, 2)}}
+                 
               <div class="row__cart">
                   
                   {{-- box immagine del prodotto --}}
