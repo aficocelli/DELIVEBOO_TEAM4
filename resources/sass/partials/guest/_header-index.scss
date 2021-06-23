@@ -15,7 +15,8 @@ header {
                 text-decoration: none;
         
                 .logo {
-                    width: 120px;
+                    width: 60px;
+                    margin-right: 20px;
                     
                     img {
                         width: 100%;
@@ -23,10 +24,12 @@ header {
         
                 }
         
-                .dropfood {
+                h1.dropfood {
                     text-decoration: none;
                     font-weight: $extra-boldWeight;
-                    font-size: 40px;
+                    font-size: 33px;
+                    padding-bottom: 0;
+                    margin-bottom: 0;
                 }
                 
             }
