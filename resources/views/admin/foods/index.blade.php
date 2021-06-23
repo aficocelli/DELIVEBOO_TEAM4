@@ -50,6 +50,7 @@
             {{-- food's loop --}}
             @foreach ($foods as $food)
             <tr>
+               
                 <td><img src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}" alt="{{$food->name_food}}" style="width: 100px"></td>
                 
                 <td>{{$food->name_food}}</td>
@@ -58,7 +59,7 @@
                 
                 <td>{{$food->ingredients}}</td>
 
-                <td>{{$food->price}}</td>
+                <td>{{$food->price}} €</td>
 
                 <td>{!! $food->vegan ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times-circle"></i>'!!}</td>
                 
