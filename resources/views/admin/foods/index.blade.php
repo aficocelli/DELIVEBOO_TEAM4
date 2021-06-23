@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('pageTitle')
-    Food's List
+    {{Auth::user()->name_restaurant}}
 @endsection
 
 

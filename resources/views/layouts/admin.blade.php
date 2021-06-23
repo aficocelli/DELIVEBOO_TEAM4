@@ -13,7 +13,7 @@
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="admin_bg">
         <div id="root">
              <!-- header -->
             @include('parts.user.header')

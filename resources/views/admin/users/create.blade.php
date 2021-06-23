@@ -1,3 +1,9 @@
+@extends('layouts.admin')
+
+@section('pageTitle')
+    {{Auth::user()->name_restaurant}}
+@endsection
+
 
           <div class="row row-operations">
             <div class="col__name col-product product_image">

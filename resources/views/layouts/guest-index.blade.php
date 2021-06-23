@@ -29,6 +29,8 @@
             <main>
                 @yield('content')
             </main>
+
+            @include('parts.guest.footer')
         </div>
 
         <!-- vue.js CDN -->
