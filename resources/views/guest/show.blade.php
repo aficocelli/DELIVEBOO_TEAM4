@@ -10,7 +10,7 @@
 <div class="show-bg">
 
   <div class="wrapper-restaurant">
-      <div class="container-info">
+      <div class="container">
         <!-- info restaurant -->
         <div class="info-restaurant">
           <div class="info-text">
@@ -22,12 +22,12 @@
           @endforeach 
           </div>
           <div class="info-image">
-            <img class="image__restaurant" src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
+            <img src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
           </div>
-        </div>
               
-      </div>
+        </div>
 
+      </div>
     </div>
   
   {{-- /carrello --}}
@@ -36,10 +36,8 @@
               <h2>Menu</h2>
             </div>
                       
-            @foreach ($users->foods as $food)
-              
-              
-                 
+            
+            @foreach ($users->foods as $food)  
               <div class="row__cart">
                   
                   {{-- box immagine del prodotto --}}
@@ -74,8 +72,8 @@
                 <p>Totale: </p><span id="totale_price">0</span> Euro
               </div>
             </div>
-            <div class="actions">
-              <a class="inline-block" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
+            <div class="actions text-right">
+              <a class="inline-block text-right" href="{{route('guest.order.create')}}"><button class="cart__btn inline-block">Procedi al checkout</button></a>
             </div>
         </div>     
                         

@@ -30,7 +30,8 @@
     height: 225px;
       img {
         width: 100%;
-        border-radius: 10px;
+        height: 100%;
+        border-radius: 20px;
       }
   }
   .product__info {
@@ -92,6 +93,7 @@ button.qty:hover {
 
 .actions {
   margin-top: 50px;
+
 }
 .cart__btn {
   padding: 10px 30px;
