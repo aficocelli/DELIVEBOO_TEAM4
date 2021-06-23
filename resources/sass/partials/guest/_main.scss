@@ -10,13 +10,14 @@ main {
         padding-top: 180px;
     
         .info-image {
-            width: 60%;
+            width: 400px;
+            height: 200px;
             margin-right: 50px;
-            border-radius: 20px;
-            overflow:hidden;
+            overflow: hidden;
             img {
-                width: 300px;
-                height: 200px;
+                max-width:100%;
+                max-height: 100%;
+                border-radius: 20px;
             }
         }
         .info-restaurant  {

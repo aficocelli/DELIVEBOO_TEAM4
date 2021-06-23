@@ -31,11 +31,6 @@
     </div>
   
   {{-- /carrello --}}
-  
-  
-  
-  
-  
         <div class="container-cart">
             <div class="cart-title">
               <h2>Menu</h2>
