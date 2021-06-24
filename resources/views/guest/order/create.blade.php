@@ -54,13 +54,12 @@
             {{-- <label for="total">Note per il Ristorante</label>address_guest
            <input id="total" type="text" value="" name="total" > --}}
 
-         <div v-for="(food,index) in listaFood" class="plate_card flex">
-        
-        </div>
-           
+       
+
+
 
    <div id="app" class="form-group">
-           <textarea v-for='(food,index) in listaFood'  id="index"  :name="index" cols="0" rows="0">@{{food}}</textarea>
+           <textarea v-for='(food,index) in listaFood'  id="index"  name="idFood[]" cols="0" rows="0">@{{food}}</textarea>
     </div>
 
 

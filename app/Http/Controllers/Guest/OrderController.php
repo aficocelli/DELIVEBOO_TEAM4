@@ -56,11 +56,15 @@ class OrderController extends Controller
         // $data['food_id'] = [1];
 
         $data = $request->all();
-        
+
+        //dd($data['idFood']);
+        $arrayFoods = $data['idFood'];
+       // dd($arrayFodds);
+
 
         $foods = Food::all()->pluck('user_id');
         //$data['listaFood'] = $request->food_id;
-        //dd($data['listaFood']);
+       
         $user_id = User::where('id', $foods)->get()->toArray();
        // $arrayFodds = $data['index'];
         
@@ -76,8 +80,10 @@ class OrderController extends Controller
         $newOrder->email_guest = $data['email_guest'];
         
         $newOrder->save();
-
-        $newOrder->foods()->attach($food_id);
+        foreach($arrayFoods as $food) {
+            $newOrder->foods()->attach($food);
+        }
+        //$newOrder->foods()->attach($food_id);
 
         // $product->users()->attach($user_id, ['price' => $price]);
 

@@ -48,15 +48,16 @@ class HomeController extends Controller
         // ->join('orders', 'users.id', '=', 'orders.id')
         // ->get();
 
-        $orders = DB::table('orders')
+
+
+        $orders = DB::table('orders')->select('orders.id AS order_id',  DB::raw("CONVERT(orders.total, CHAR) AS totale"), 'orders.created_at as created_at', 'orders.email_guest as email_guest', 'orders.notes as notes')
         ->join('food_order', 'food_order.order_id', '=', 'orders.id')
         ->join('foods', 'foods.id', '=', 'food_order.food_id')
-        ->where('user_id', $user_id )->get();
-
-        dd($orders);
-        
-        // dd($orders);
+        ->where('user_id', $user_id )
+        ->groupBy('orders.id',  'orders.total', 'orders.created_at', 'orders.email_guest', 'orders.notes')->get();        // dd($orders);
     
+ //dd($orders);
+
         $data = User::all()->where('id');
         
         return view('admin.users.index', compact('data', 'user', 'foods', 'orders'));

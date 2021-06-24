@@ -75,11 +75,11 @@
     </thead>
     <tbody>
       @foreach ($orders as $key => $order)
-      
+    
       <tr>
         <td>{{$key}}</td>
         <td>{{$order->order_id}}</td>
-        <td>{{$order->total}}</td>
+        <td>{{$order->totale}}</td>
         <td>{{$order->created_at}}</td>
         <td>{{$order->email_guest}}</td>
         <td>{{$order->notes}}</td>
