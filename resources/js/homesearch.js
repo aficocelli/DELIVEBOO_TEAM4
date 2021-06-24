@@ -34,7 +34,8 @@ new Vue({
     max: 4,
     indexArray:[],
     checkButton: 0,
-    testIndex:[]
+    testIndex:[],
+    noMatch: false
   },
   
   // storage vuejs
@@ -100,6 +101,7 @@ new Vue({
 
   },
   methods: {
+    //carousel index
     next: function (min, max) {
       this.min = min + 4;
       this.max = max + 4;
@@ -118,11 +120,8 @@ new Vue({
       }
     },
 
+    // scroll index
     scrollToResults: function() {
-      // window.scrollTo(0, document.body.scrollHeight);
-      // $('html,body').animate({ scrollTop: document.body.scrollHeight }, "slow");
-      // var element = document.getElementById("box-scroll");
-      // element.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
       var currentPositionOfPage = window.scrollY;
       window.scrollTo(0, 0 + 600);
     },
@@ -144,6 +143,11 @@ new Vue({
       axios.get('http://localhost:8000/api/search/' + this.filter.toLowerCase().toUpperCase(), {  
       }).then((result) => {
         this.userRestaurants = result.data;
+        this.noMatch = false;
+
+        if (this.userRestaurants.length == 0) {
+          this.noMatch = true;
+        }
 
         //filtro con vue e non con query
         // console.log(result.data);
@@ -170,6 +174,7 @@ new Vue({
       }).then((result) => {
         
         this.userRestaurants = result.data;
+        this.noMatch = false;
         this.scrollToResults();
       });
     },

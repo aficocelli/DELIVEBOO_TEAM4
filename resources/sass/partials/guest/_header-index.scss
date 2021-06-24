@@ -71,6 +71,8 @@ header {
         // min-height: 800px;
         position: relative;
 
+        
+
         &:before {
             content: '';
             position: absolute;
@@ -146,6 +148,9 @@ header {
             }
 
             .types_search {
+                @media only screen and(max-width: 1200px) {
+                    flex-wrap: wrap;
+                }
                 .btn_types {
                     font-size: 16px;
                     font-weight: $mediumWeight;
