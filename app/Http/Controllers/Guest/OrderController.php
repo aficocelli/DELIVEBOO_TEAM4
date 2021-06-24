@@ -56,18 +56,16 @@ class OrderController extends Controller
         // $data['food_id'] = [1];
 
         $data = $request->all();
-
+        
 
         $foods = Food::all()->pluck('user_id');
-
-
-        foreach ($foods as $food) {
-
-            $user_id = User::where('id', $food)->get()->toArray();
-        }
-
-        $food_id = Food::where('user_id', $user_id)->get();
+        //$data['listaFood'] = $request->food_id;
+        //dd($data['listaFood']);
+        $user_id = User::where('id', $foods)->get()->toArray();
+       // $arrayFodds = $data['index'];
         
+        
+        $food_id = Food::where('user_id', $user_id)->get();
         $newOrder = new Order();
         $newOrder->total = $data['total'];
         $newOrder->delivery_type = $data['delivery_type'];
@@ -76,6 +74,7 @@ class OrderController extends Controller
         $newOrder->phone_guest = $data['phone_guest'];
         $newOrder->address_guest = $data['address_guest'];
         $newOrder->email_guest = $data['email_guest'];
+        
         $newOrder->save();
 
         $newOrder->foods()->attach($food_id);

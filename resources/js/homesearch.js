@@ -35,7 +35,8 @@ new Vue({
     indexArray:[],
     checkButton: 0,
     testIndex:[],
-    noMatch: false
+    noMatch: false,
+    test2:''
   },
   
   // storage vuejs
@@ -57,6 +58,7 @@ new Vue({
   
   mounted: function () {
     
+
     
     //window.localStorage.clear();
     // // ripreso dato in storage
@@ -195,7 +197,7 @@ new Vue({
     // },
 
     takeOne: function (index) {
-
+      var cart =  [];
         // document.getElementById("button-check").disabled = false;
         
         var actualValueMore = document.getElementById(index).value;
@@ -209,7 +211,7 @@ new Vue({
         document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
         
 
-
+      this.test2 = bigTotal;
           
         
       document.getElementById("button-check").disabled = false;
