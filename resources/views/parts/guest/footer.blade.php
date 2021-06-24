@@ -15,7 +15,16 @@
             <li class="list_item"><a target="_blank" class="list_item_link" href="https://www.youtube.com/"><i class="fab fa-youtube-square"></i></a></li>
         </ul>
     </div>
-    <small class="d-block">made with &hearts; by Team 4</small>
-    <small>Copyright&reg; 2021</small>
+
+    <div class="footer_payment">
+        <small class="d-block mb-1">we accept the following payment methods:</small>
+        <ul class="payments_custom d-inline-flex align-items-center list-unstyled">
+            <li class="pay_cards"><img src="{{asset('img-carousel/credit_cards/MainVisaWhite.png')}}" alt=""></li>
+            <li class="pay_cards_mc"><img src="{{asset('img-carousel/credit_cards/mc_hrz_rev.svg')}}" alt=""></li>
+            <li class="pay_cards_ms"><img src="{{asset('img-carousel/credit_cards/ms_hrz_rev.svg')}}" alt=""></li>
+        </ul>
+    </div>
+    <small class="d-block copyright_custom mt-5">made with &hearts; by Team 4</small>
+    <small class="copyright_custom">Copyright&reg; 2021</small>
     
 </footer>

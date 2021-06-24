@@ -4,6 +4,7 @@ footer {
     margin-top: 50px;
     color: $white;
     text-align: center;
+    width: 100%;
     padding: 45px 0;
 
     .footer_wrapper {
@@ -70,7 +71,7 @@ footer {
                 
                 .list_item_link {
                     margin: 0 10px;
-                    font-size: 22px;
+                    font-size: 30px;
                     color: $white;
                     transition: all .4 ease-in-out;
 
@@ -82,5 +83,40 @@ footer {
 
             }
         }
+    }
+
+    .footer_payment {
+        padding-top: 20px;
+        .payments_custom {
+            
+
+            .pay_cards {
+                width: 30px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .pay_cards_mc{
+                width: 115px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .pay_cards_ms{
+                width: 90px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .copyright_custom {
+        font-size: 8px;
     }
 }

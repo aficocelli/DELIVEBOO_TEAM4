@@ -21,6 +21,7 @@
             <main>
                 @yield('content')
             </main>
+            
         </div>
 
         <!-- vue.js -->
