@@ -197,7 +197,9 @@ new Vue({
         document.getElementById(index).value = parseInt(actualValueMore) + 1;
       
         var productPrice = document.getElementById("prezzo_" + index).innerHTML;
-        var total = document.getElementById('totale_price').innerHTML;
+       var total = document.getElementById('totale_price').innerHTML;
+      if (total=="0")
+      { window.localStorage.clear();}
         var bigTotal = parseFloat(total) + parseFloat(productPrice);
         document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
         
@@ -225,7 +227,7 @@ new Vue({
    //   var indexQty = {
     //    'qty': document.getElementById(index).value
     //  };
-      localStorage.setItem('indexQty_' + index, document.getElementById(index).value);
+      localStorage.setItem('food_Id_' + index, document.getElementById(index).value);
       
       
       
@@ -247,10 +249,10 @@ new Vue({
           // };
           
           // localStorage.setItem('indexQty_' + index, JSON.stringify(indexQty));
-        localStorage.setItem('indexQty_' + index, document.getElementById(index).value);
+          localStorage.setItem('food_Id_' + index, document.getElementById(index).value);
          }   
         {
-        localStorage.removeItem('indexQty_' + index);
+        localStorage.removeItem('food_Id_' + index);
 
           if (bigTotal == 0){
             document.getElementById("button-check").disabled = true;

@@ -91,7 +91,7 @@
                 onlyFoods = result.data;
                 for (let index = 0; index < onlyFoods.length; index++) {
                 // console.log(onlyFoods[index].id);
-                var quantita =localStorage.getItem("indexQty_"+onlyFoods[index].id);
+                var quantita =localStorage.getItem("food_Id_"+onlyFoods[index].id);
                 var cibo = "";
                 if(quantita!=null)
                 {
