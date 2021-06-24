@@ -19,8 +19,8 @@
 @endif
 
 {{-- /advice alert --}}
-<div class="d-flex flex-row container-sm justify-content-sm-between mt-5">
-    <div class=" mb-3 text-left d-inline">
+<div class="d-flex flex-row container justify-content-sm-between mt-5">
+    <div class="mb-3 mr-5 text-left d-inline">
         <a href="{{route('home')}}">
                 <button type="button" class="btn btn-primary ">Back Home</button>
         </a>
@@ -30,22 +30,23 @@
             <button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Add Foods</button>
         </a>
     </div>
-</div>  
+</div> 
 
-    
-    <table class="table table-striped container-sm">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th scope="col">Food's name</th>
-                <th scope="col">Food's description</th>
-                <th scope="col">Food's ingredients</th>
-                <th scope="col">Food's price</th>
-                <th scope="col">Vegan</th>
-                <th scope="col">Available</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="table-responsive pl-3 ">
+        <table class="table table-hover container bg-white pl-3">
+            <thead class="thead-light">
+                    <tr>
+                        <th>Image</th>
+                        <th scope="col">Food's name</th>
+                        <th scope="col">Food's description</th>
+                        <th scope="col">Food's ingredients</th>
+                        <th scope="col">Food's price</th>
+                        <th scope="col">Vegan</th>
+                        <th scope="col">Available</th>
+                        <th scope="col"></th>
+                    </tr>
+            </thead>
+            <tbody>
 
             {{-- food's loop --}}
             @foreach ($foods as $food)
@@ -77,6 +78,7 @@
             @endforeach 
         </tbody>
     </table>
+    </div>
 
 {{-- cdn vuejs --}}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>		  
