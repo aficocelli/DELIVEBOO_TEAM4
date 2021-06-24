@@ -50,13 +50,12 @@ class HomeController extends Controller
 
         $orders = DB::table('orders')
         ->join('food_order', 'food_order.order_id', '=', 'orders.id')
-        
         ->join('foods', 'foods.id', '=', 'food_order.food_id')
         ->where('user_id', $user_id)->get();
 
       
         
-        dd($orders);
+        // dd($orders);
     
         $data = User::all()->where('id');
         
