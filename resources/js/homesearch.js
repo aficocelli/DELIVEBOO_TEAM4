@@ -36,7 +36,9 @@ new Vue({
     checkButton: 0,
     testIndex:[],
     noMatch: false,
-    test2:''
+    test2:'',
+    selectCustom: "",
+    genreSelected: []
   },
   
   // storage vuejs
@@ -181,21 +183,6 @@ new Vue({
       });
     },
 
-    //carousel
-    // prev: function() {
-    //   this.slideIndex--;
-    //   if(this.slideIndex < 0) {
-    //     this.slideIndex = this.carousel.length - 1;
-    //   }
-    // },
-
-    // next: function () {
-    //   this.slideIndex++;
-    //   if (this.slideIndex == this.carousel.length) {
-    //     this.slideIndex = 0;
-    //   }
-    // },
-
     takeOne: function (index) {
       var cart =  [];
         // document.getElementById("button-check").disabled = false;
@@ -269,25 +256,21 @@ new Vue({
         
     },
 
-    
-    
-     
-    
+  
     // funzioni allo scroll per headers
-
     scrollHandler: function () {
       if (window.scrollY > 150) {
         this.headerTopSticky = false;
+        //chevron
         this.chevronBackToTop = true;
         console.log(this.headerTopSticky);
       } else {
         this.headerTopSticky = true;
+        //chevron
         this.chevronBackToTop = false;
       }
     },
-
-    //chevron
-   
+     
     //scroll back to top with chevron
     backToTop: function () {
       window.scrollTo({
@@ -295,22 +278,5 @@ new Vue({
       })
     },
   },
-  
-
-  
-   
-  //chevron
-  // if (window.scrollY > 150) {
-  //   this.chevronBackToTop = true;
-  // } else {
-  //   this.chevronBackToTop = false;
-  // }
-
-
- 
-
-  // beforeDestroy() {
-  //   window.removeEventListener('scroll', this.scrollHandler)
-  // }
   
 });
