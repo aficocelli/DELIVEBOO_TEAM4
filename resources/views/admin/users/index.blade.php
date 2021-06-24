@@ -55,5 +55,37 @@
               @endif 
           </div>
         </div>
-  </div>  
+      </div>
+  </div>
+
+
+  <div class="container-sm bg-white">
+    <h2>Riepilogo ordini</h2>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Numero Progessivo Ordini</th>
+        <th scope="col">Ordine Cliente N.</th>
+        <th scope="col">Totale Euro</th>
+        <th scope="col">Data Ordine</th>
+        <th scope="col">Email Cliente</th>
+        <th scope="col">Note Cliente</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach ($orders as $key => $order)
+      
+      <tr>
+        <td>{{$key}}</td>
+        <td>{{$order->order_id}}</td>
+        <td>{{$order->total}}</td>
+        <td>{{$order->created_at}}</td>
+        <td>{{$order->email_guest}}</td>
+        <td>{{$order->notes}}</td>
+      </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
 @endsection

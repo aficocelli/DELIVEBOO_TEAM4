@@ -75,7 +75,7 @@ class OrderController extends Controller
         $newOrder->address_guest = $data['address_guest'];
         $newOrder->email_guest = $data['email_guest'];
         $newOrder->save();
-
+        
         $newOrder->foods()->attach($food_id);
 
 

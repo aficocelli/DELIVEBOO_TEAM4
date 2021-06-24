@@ -13,7 +13,7 @@
       <h4><strong>Recapito telefonico:</strong> </strong>{{$order->phone_guest}}</h4>
       <h4><strong>Indirizzo:</strong> {{$order->address_guest}}</h4>
       <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
-      <h4><strong>Data ordine:</strong> {{now(+2)}}</h4>
+      <h4><strong>Data ordine:</strong>{{ $order->created_at}}</h4>
       <h4><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
       <h4><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
       <h4><strong>Totale ordine:</strong> {{$order->total = number_format($order->total, 2)}} € </h4>
