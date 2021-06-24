@@ -22,6 +22,7 @@
                 @yield('content')
             </main>
             
+            @include('parts.footer')
         </div>
 
         <!-- vue.js -->

@@ -30,7 +30,7 @@
                 @yield('content')
             </main>
 
-            @include('parts.guest.footer')
+            @include('parts.footer')
         </div>
 
         <!-- vue.js CDN -->
