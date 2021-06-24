@@ -1,5 +1,7 @@
 @extends('layouts.guest-order')
 
+
+
 @section('content')
   <div class="container-sm" id="form_cust">
        
@@ -49,13 +51,24 @@
                 <label for="notes">Note per il Ristorante</label>
                 <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note" required>{{ old('notes') }}</textarea>
             </div>
-            {{-- <label for="total">Note per il Ristorante</label>
+            {{-- <label for="total">Note per il Ristorante</label>address_guest
            <input id="total" type="text" value="" name="total" > --}}
 
+         <div v-for="(food,index) in listaFood" class="plate_card flex">
+        
+        </div>
            
+
+   <div id="app" class="form-group">
+           <textarea v-for='(food,index) in listaFood'  id="index"  :name="index" cols="0" rows="0">@{{food}}</textarea>
+    </div>
+
+
             <div id="root" class="form-group">
+
+
                 {{-- <input type="text" id="total" name="total"  value=""> --}}
-                <textarea name="total" id="total" cols="0" rows="0"   hidden readonly></textarea>
+                <textarea  name="total" id="total" cols="0" rows="0"   hidden readonly></textarea>
                 {{-- <p>il totale è: <h1 id="result"></h1> euro</p> --}}
             </div>
             {{-- <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button> --}}
@@ -82,11 +95,29 @@
         @endforeach --}}
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+
+</script>
+
 <script>
-    window.onload = function() {
-        var onlyFoodsSalvati = [];
-        var onlyFoods = [];
-                axios.get('http://localhost:8000/api/search/foods/onlyfoods')
+
+    var app = new Vue({
+        el:'#app',
+        data: {
+        listaFood:[]
+        },
+
+
+        mounted: function () {
+            this.testaxios();
+        },
+
+        methods:{
+                testaxios: function() {
+                var indice=0;
+                              axios.get('http://localhost:8000/api/search/foods/onlyfoods')
             .then((result) => {
                 onlyFoods = result.data;
                 for (let index = 0; index < onlyFoods.length; index++) {
@@ -95,14 +126,31 @@
                 var cibo = "";
                 if(quantita!=null)
                 {
+                  //  this.listaFood[indice] = 
+                   // onlyFoodsSalvati.push(onlyFoods[index].name_food);
                     console.log("quantita-->"+quantita);
                     console.log("cibo-->"+onlyFoods[index].name_food);
+                    this.listaFood.push(onlyFoods[index].id,);
+                    indice ++;
                 }
             }
         });
+     }
+        },
 
-    document.getElementById("total").value = localStorage.getItem("bigTotal");
-};
+
+
+    });
+    //  var onlyFoodsSalvati = [];
+
+
+    window.onload = function() {
+       
+      
+      
+
+     document.getElementById("total").value = localStorage.getItem("bigTotal");
+ };
 
     var token = '{{$clientToken}}';
     var button = document.querySelector('#submit-button');
