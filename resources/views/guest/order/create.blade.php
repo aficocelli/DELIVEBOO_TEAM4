@@ -1,7 +1,7 @@
-@extends('layouts.guest')
+@extends('layouts.guest-order')
 
 @section('content')
-  <div class="container-sm" style="margin-top: 170px">
+  <div class="container-sm" id="form_cust">
        
      @if ($errors->any())
             <div class="alert alert-danger">
@@ -60,7 +60,7 @@
             </div>
             {{-- <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button> --}}
 
-            <div class="container">
+            <div class="container pl-0 pr-0">
             <div id="dropin-container"></div>
                 <button id="submit-button">Request payment method</button>
                 <input type="hidden" id="nonce" name="payment_method_nonce"/>

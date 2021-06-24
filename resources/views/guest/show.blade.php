@@ -30,15 +30,16 @@
       </div>
     </div>
   
-  {{-- /carrello --}}
+        <!-- /carrello -->
         <div class="container-cart">
             <div class="cart-title">
-              <h2>- Menu -</h2>
+              <h2 class="menu_title"> MENU </h2>
+              <h5 class="text-secondary"><strong>ordina qui</strong></h5>
             </div>
                       
             
             @foreach ($users->foods as $food)  
-              <div class="row__cart">
+              <div class="row__cart pt-5">
                   
                   {{-- box immagine del prodotto --}}
                   <div class="product__image">
@@ -52,13 +53,13 @@
                      <p class="food__description">{{$food->description}}</p>
                   </div>
                 
-                {{-- box del prezze --}}
+                <!-- box del prezze -->
                 <div  class="col__price col-numeric">
                   <p id="prezzo_{{$food->id}}">{{$food->price = number_format($food->price, 2)}}</p> 
                   <span class="euro">&euro;</span>
                 </div>
                 
-                {{-- box modifica della quantità del prodotto --}}
+                <!-- box modifica della quantità del prodotto -->
                 <div id='cart' class="cart__quantity">
                   <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
                   <input  id="{{$food->id}}" class="input_cart" type="number"  v-model="qty" readonly="readonly" name="{{$food->id}}">

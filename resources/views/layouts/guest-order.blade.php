@@ -21,7 +21,7 @@
         <!-- style -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
-    <body>
+    <body class="wrap_all_order">
        
         
 
