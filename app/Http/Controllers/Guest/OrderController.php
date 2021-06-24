@@ -39,7 +39,7 @@ class OrderController extends Controller
 
     public function storeOrder(Request $request, Food $food){
         
-
+        
         $request->validate([
             'fullname_guest'=>'required|string|max:100',
             'phone_guest'=>'required|numeric',
@@ -50,20 +50,47 @@ class OrderController extends Controller
         ]);
 
         
+        // $data = $request->all();
 
         $data = $request->all();
 
+        
+        // dd($data['foods'] = $request->food_id);
+        // $food = Food::find($request->food_id[0]);
+        // $user = User::where('id', $food->user_id)->first();
+        
+        
+        
 
-        $foods = Food::all()->pluck('user_id');
+        $foods = Food::all()->toArray();
 
         
-        foreach($foods as $food){
+        $user = User::where('id', $foods[6]['id'])->get();
+
+        dd($user);
+       
+        
+           
+            $user_id = Food::where('user_id', 7)->get()->toArray();
             
-            $user_id = User::where('id', $food)->get()->toArray();
-            
+        
+        dd($user_id);
+        // qui mi esce user_id =  8 che è id di ficocelli
+        
+        
+        $food_id= Food::where('user_id', $user_id)->get()->toArray();
+
+        
+        
+
+        foreach($food_id as $id){
+
+            $newId = $id['id'];
+
         }
 
-        $food_id= Food::where('user_id', $user_id)->get();
+
+        
 
         $newOrder = new Order();
 
@@ -76,7 +103,7 @@ class OrderController extends Controller
         $newOrder->email_guest = $data['email_guest'];
         $newOrder->save();
         
-        $newOrder->foods()->attach($food_id);
+        $newOrder->foods()->attach($newId);
 
 
         $gateway = new Braintree\Gateway([
