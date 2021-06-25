@@ -26,7 +26,7 @@
                 <img src="{{asset('img-carousel/dropfood-logo-white.svg')}}" alt="Dropfood" style ="width: 200px; height:100px;">
                 <h1 style="font-weight: bold;" class="font-weight-bold text-white">dropfood</h1>
             </div>
-            <h2 class="mt-3 text-center" style= "font-family: 'Permanent Marker', cursive;">Gentile <span> Francesca Petraroia</span> il suo ordine è confermato!</h2> 
+            <h2 class="mt-3 text-center" style= "font-family: 'Permanent Marker', cursive;">Gentile <span>{{$order->fullname_guest}}</span> il suo ordine è confermato!</h2> 
             
             <div class="d-flex justify-content-start container-sm mt-5 mb-5" style="background-color: #FF9900; text-align:center; padding:30px 0; border-radius:20px">     
             
