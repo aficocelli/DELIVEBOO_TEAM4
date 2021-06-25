@@ -60,7 +60,6 @@ new Vue({
   
   mounted: function () {
 
-
     // responsive carousel 
     var x = window.matchMedia("(max-width: 1300px)");
     if (x.matches) { // If media query matches
@@ -79,8 +78,6 @@ new Vue({
       this.max = 1;
       this.slideNumber = 1;
     }
-    
-    
 
     
     //window.localStorage.clear();
