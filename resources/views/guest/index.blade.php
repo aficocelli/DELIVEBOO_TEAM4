@@ -86,12 +86,6 @@
   </div>
 </div>
 
-<!-- back to top button -->
-<button class="back-to-top" @@click="backToTop" :class="chevronBackToTop ? 'back-to-top--active' : '' ">
-  <i class="fas fa-chevron-up"></i>
-</button>
-<!-- /back to top button -->
-
 @endsection
 
 
