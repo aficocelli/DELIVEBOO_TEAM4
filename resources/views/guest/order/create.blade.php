@@ -22,27 +22,27 @@
             @csrf
 
             <div class="form-group">
-                <label for="fullname_guest">Nome e Cognome</label>
-                <input type="text" class="form-control" id="fullname_guest" name="fullname_guest" placeholder="Nome e Cogome" value="{{ old('fullname_guest')}}" required>
+                <label for="fullname_guest">Nome e Cognome *</label>
+                <input type="text" class="form-control text-capitalize" id="fullname_guest" name="fullname_guest" placeholder="Nome e Cogome" value="{{ old('fullname_guest')}}" required>
             </div>
 
             <div class="form-group">
-                <label for="email_guest">Email</label>
+                <label for="email_guest">Email *</label>
                 <input type="text" class="form-control" id="email_guest" name="email_guest" placeholder="Email" value="{{ old('email_guest') }}" required>
             </div>
 
             <div class="form-group">
-                <label for="phone_guest">Recapito Telefonico</label>
+                <label for="phone_guest">Recapito Telefonico *</label>
                 <input type="text" class="form-control" id="phone_guest" name="phone_guest" placeholder="Recapito Telefonico" value="{{ old('phone_guest') }}" required>
             </div>
 
             <div class="form-group">
-                <label for="address_guest">Indirizzo</label>
-                <input type="text" class="form-control" id="address_guest" name="address_guest" placeholder="Indirizzo" value="{{ old('address_guest') }}" required>
+                <label for="address_guest">Indirizzo *</label>
+                <input type="text" class="form-control text-capitalize" id="address_guest" name="address_guest" placeholder="Indirizzo" value="{{ old('address_guest') }}" required>
             </div>
 
             <div class="form-group">
-                <label for="delivery_type">Tipo di Consegna</label>
+                <label for="delivery_type">Tipo di Consegna *</label>
                 <select class="form-control" id="delivery_type" name="delivery_type" placeholder="Tipo di consgna">
                     <option value="Consegna a Domicilio">Consegna a Domicilio</option>
                     <option value="Ritiro al Locale">Ritiro al Locale</option>
@@ -50,7 +50,7 @@
             </div>
             
             <div class="form-group">
-                <label for="notes">Note per il Ristorante</label>
+                <label for="notes">Note per il Ristorante *</label>
                 <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note" required>{{ old('notes') }}</textarea>
             </div>
             {{-- <label for="total">Note per il Ristorante</label>address_guest
@@ -61,7 +61,7 @@
 
 
    <div id="app" class="form-group">
-           <textarea v-for='(food,index) in listaFood'  id="index"  name="idFood[]" cols="0" rows="0">@{{food}}</textarea>
+           <textarea v-for='(food,index) in listaFood'  id="index"  name="idFood[]" cols="0" rows="0" hidden readonly>@{{food}}</textarea>
     </div>
 
 
@@ -80,6 +80,7 @@
                 <input type="hidden" id="nonce" name="payment_method_nonce"/>
                 
             </div>
+            <p class="pt-3">(*) Campi obbligatori</p>
         </form>
 
     </div>
