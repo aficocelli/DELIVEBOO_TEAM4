@@ -26,15 +26,16 @@
         
 
             <!-- header -->
-                @include('parts.guest.header')
-                
+            @include('parts.guest.header')
+            
 
-                <!-- main -->
-                <main>
-                    @yield('content')
-                </main>
+            <!-- main -->
+            <main>
+                @yield('content')
+            </main>
 
-                @include('parts.footer')
+            @include('parts.footer')
+
 
         <!-- vue.js CDN -->
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
