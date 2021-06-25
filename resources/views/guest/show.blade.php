@@ -53,18 +53,18 @@
                      <p class="food__description">{{$food->description}}</p>
                   </div>
                 
-                <!-- box del prezze -->
-                <div  class="col__price col-numeric align-items-center">
-                  <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 
-                  <span class="euro">&euro;</span>
-                </div>
+                  <!-- box del prezze -->
+                  <div  class="col__price col-numeric align-items-center">
+                    <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 
+                    <span class="euro">&euro;</span>
+                  </div>
                 
-                <!-- box modifica della quantità del prodotto -->
-                <div id='cart' class="cart__quantity">
-                  <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
-                  <input  id="{{$food->id}}" class="input_cart" type="number"  v-model="qty" readonly="readonly" name="{{$food->id}}">
-                  <button class="qty qty-plus transition" value="{{$food->id}}" @@click="takeOne({{$food->id}})"><i class="fas fa-plus-circle"></i></button>
-                </div>
+                  <!-- box modifica della quantità del prodotto -->
+                  <div id='cart' class="cart__quantity">
+                    <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
+                    <input  id="{{$food->id}}" class="input_cart" type="number"  v-model="qty" readonly="readonly" name="{{$food->id}}">
+                    <button class="qty qty-plus transition" value="{{$food->id}}" @@click="takeOne({{$food->id}})"><i class="fas fa-plus-circle"></i></button>
+                  </div>
               </div>
             @endforeach
       
