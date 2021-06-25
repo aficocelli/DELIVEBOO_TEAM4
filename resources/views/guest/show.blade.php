@@ -23,7 +23,7 @@
                 @endforeach
               </div> 
           </div>
-          <div class="info-image">
+          <div class="info-image ">
             <img class="image__restaurant" src="{{$users->image_restaurant ? asset('storage/' . $users->image_restaurant) : 'http://lorempixel.com/400/300/food'}}" alt="{{$users->name_restaurant}}">
           </div>         
         </div>
@@ -53,7 +53,7 @@
                      <p class="food__ingredients">{{$food->ingredients}}</p>
                      <p class="food__description">{{$food->description}}</p>
                   </div>
-                    <div class="container-price">
+                    <div class="container-price justify-content-round">
                     <!-- box del prezze -->
                       <div  class="col__price col-numeric align-items-center">
                         <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 
