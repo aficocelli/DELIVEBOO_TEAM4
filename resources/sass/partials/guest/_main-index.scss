@@ -4,7 +4,11 @@ main {
         color: $white;
         font-size: 50px;
         font-family: 'Permanent Marker', cursive;
-        text-shadow: -2px 3px 2px rgba(0, 0, 0, 0.4)
+        text-shadow: -2px 3px 2px rgba(0, 0, 0, 0.4);
+
+        @media only screen and(max-width: 768px){
+            font-size: 38px;
+        }
     }
 
     .carousel_selezione {
@@ -57,6 +61,14 @@ main {
                 overflow: hidden;
                 box-shadow: 8px 5px 7px 5px rgba(0, 0, 0, 0.4);
 
+                @media only screen and(max-width: 1600px){
+                    width: calc(100% / 3);
+                }
+
+                @media only screen and(max-width: 1600px){
+                    width: calc(100% / 3);
+                }
+
                 a {
                     display: block;
                     color: $black;
@@ -106,6 +118,10 @@ main {
             justify-content: space-between;
             align-items: flex-start;
             margin: 20px 0;
+
+            @media only screen and(max-width: 768px){
+                justify-content: center;
+            }
             
             .card_custom {
                 width: calc(100% / 4 - 20px);
@@ -115,6 +131,23 @@ main {
                 border-radius: 50px;
                 overflow: hidden;
                 box-shadow: 8px 5px 7px 5px rgba(0, 0, 0, 0.4);
+
+
+                @media only screen and(max-width: 1600px){
+                    width: calc(100% / 3 - 20px);
+                }
+
+                @media only screen and(max-width: 992px){
+                    width: calc(100% / 2 - 20px);
+                }
+
+                @media only screen and(max-width: 768px){
+                    width: 80%;
+                }
+
+                @media only screen and(max-width: 480px){
+                    width: 100%;
+                }
 
                 .wrapper_custom_card {
                     margin: 0 10px;

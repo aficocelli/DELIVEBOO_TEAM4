@@ -51,21 +51,21 @@
   </div>
 
   <div class="wrapper_sezione" >  
-      <div class="card_custom" v-for="(element, index) in smallSelection.slice(min, max)">
-        <a class="card_link" :href="'http://127.0.0.1:8000/users/'+ element.id">
-          <div class="card_image">
-            <img :src="element.image_restaurant ? 'storage/' + element.image_restaurant : 'http://lorempixel.com/400/300/food'" :alt="element.name_restaurant">
-          </div>
-          <div class="card_text">
-            <h3>"@{{element.name_restaurant}}"</h3>
-            <p>@{{element.name}}</p>
-            <p class="card_address">@{{element.address_restaurant}}</p>
-            <p>Tel: @{{element.phone_restaurant}}</p>
-            <p>@{{element.email}}</p>
-            <p>P.Iva: @{{element.vat_number}}</p>
-          </div>
-        </a>
-      </div>
+    <div class="card_custom" v-for="(element, index) in smallSelection.slice(min, max)">
+      <a class="card_link" :href="'http://127.0.0.1:8000/users/'+ element.id">
+        <div class="card_image">
+          <img :src="element.image_restaurant ? 'storage/' + element.image_restaurant : 'http://lorempixel.com/400/300/food'" :alt="element.name_restaurant">
+        </div>
+        <div class="card_text">
+          <h3>"@{{element.name_restaurant}}"</h3>
+          <p>@{{element.name}}</p>
+          <p class="card_address">@{{element.address_restaurant}}</p>
+          <p>Tel: @{{element.phone_restaurant}}</p>
+          <p>@{{element.email}}</p>
+          <p>P.Iva: @{{element.vat_number}}</p>
+        </div>
+      </a>
+    </div>
   </div>
 
   <div class="chev chev_right" @@click="next(min, max)">
