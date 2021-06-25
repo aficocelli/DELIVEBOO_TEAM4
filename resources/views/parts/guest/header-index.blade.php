@@ -67,16 +67,13 @@
                 <button class="btn_primary" type="button" name="button" v-on:click="filterName()">Cerca</button>
             </div>  
             <div class="types types_search">
-                <div class="type_tag" v-for="type in types">    
-                    <button v-on:click="buttonTypes(type.origin)" type="text"  class="btn_types d-inline mr-2">@{{type.origin}}</button>    
-                </div>
-
+                <button v-for="type in types" v-on:click="buttonTypes(type.origin)" type="text"  class="btn_types d-inline mr-2">@{{type.origin}}</button>    
             </div>                    
             <!-- select a dispositivi piccoli -->
-            <select name="" id="" class="select_custom" v-model="selectCustom">
+            {{-- <select name="" id="" class="select_custom" v-model="selectCustom">
                 <option class="item_sel" value="">seleziona per categoria</option>
                 <option class="item_sel" :value="type.origin" v-for="type in types">@{{type.origin}}</option>
-            </select>
+            </select> --}}
         </div>
     </div>
     <!-- /hero -->
