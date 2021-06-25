@@ -9,6 +9,12 @@ header {
         z-index: 11;
 
         .navbar_index {
+            // outline button none
+            @media screen and(max-width: 766px) {
+                .navbar-toggler:focus{
+                   outline:none; 
+                }               
+            }
             // logo
             .logo-link {
                 color: $white;
@@ -17,9 +23,16 @@ header {
                 .logo {
                     width: 60px;
                     margin-right: 20px;
+                    // resize img
+                    @media screen and(max-width: 766px) {
+                            padding:5px;
+                            width:40px;
+                    }
                     
                     img {
                         width: 100%;
+                        
+                           
                     }
         
                 }
@@ -30,22 +43,35 @@ header {
                     font-size: 33px;
                     padding-bottom: 0;
                     margin-bottom: 0;
+                    // h1 none
+                    @media only screen and(max-width: 766px) {
+                        display:none;
+                    }
                 }
                 
             }
 
             //login e register
-            .login-navbar-wrapper {
+            .login-navbar-wrapper {              
                 .login-navbar {
+                    @media only screen and(max-width: 766px) {
+                        width: 100px;
+                    }
+                    
                     .nav-item {
-                        
+                        @media only screen and(max-width: 766px) {
+                            text-align:right;
+                        }
                         .nav-link {
                             padding: 10px 20px;
                             color: $white;
                             font-size: 18px;
                             font-weight: $mediumWeight;
                             transition: all .2s;
-
+                            @media only screen and(max-width: 766px) {
+                                padding: 5px;
+                                font-size:14px;
+                            }
                             &:hover {
                                color: #ccc;
                             }
