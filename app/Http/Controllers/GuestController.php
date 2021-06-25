@@ -24,7 +24,7 @@ class GuestController extends Controller
         $users = User::where('id', $id)->first();
 
         $foods = Food::where('available', 1)->where('user_id', $id)->get();
-        
+
         foreach ($foods as $food) {
             $food->price = number_format($food->price, 2);
         }

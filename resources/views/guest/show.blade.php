@@ -38,7 +38,7 @@
             </div>
                       
             
-            @foreach ($users->foods as $food)  
+            @foreach ($foods as $food)  
               <div class="row__cart pt-5">
                   
                   {{-- box immagine del prodotto --}}
