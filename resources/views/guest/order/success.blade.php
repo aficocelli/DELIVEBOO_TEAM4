@@ -14,7 +14,7 @@
     <h4 class="text-capitalize mb-3"><strong>Nome cliente:</strong> {{$order->fullname_guest}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Recapito telefonico:</strong>{{$order->phone_guest}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Indirizzo:</strong> {{$order->address_guest}}</h4>
-    <h4 class="text-capitalize mb-3"><strong>Email:</strong> {{$order->email_guest}}</h4>
+    <h4 class="mb-3"><strong>Email:</strong> {{$order->email_guest}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Data ordine:</strong> {{ $order->created_at}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
