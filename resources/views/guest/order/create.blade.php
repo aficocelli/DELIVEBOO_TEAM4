@@ -1,6 +1,8 @@
 @extends('layouts.guest-order')
 
-
+@section('pageTitle')
+    Deliveboo | Pagamento
+@endsection
 
 @section('content')
   <div class="container-sm" id="form_cust">

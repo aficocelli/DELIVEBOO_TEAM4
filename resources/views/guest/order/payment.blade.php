@@ -1,3 +1,9 @@
+@extends('layouts.guest-order')
+
+@section('pageTitle')
+    Deliveboo | Pagamento
+@endsection
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

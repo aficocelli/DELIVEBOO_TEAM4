@@ -1,6 +1,6 @@
 footer {
     background-image: url('../img-carousel/footer_bg-down.png');
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     margin-top: 50px;
     color: $white;
     text-align: center;
@@ -35,6 +35,10 @@ footer {
                 transform: translateY(-50%);
                 right: 80px;
 
+                @media only screen and(max-width: 530px) {
+                    display: none;
+                }
+
             }
 
             &::after {
@@ -46,6 +50,10 @@ footer {
                 top: 50%;
                 transform: translateY(-50%);
                 left: 80px;
+
+                @media only screen and(max-width: 530px) {
+                    display: none;
+                }
 
             }
             

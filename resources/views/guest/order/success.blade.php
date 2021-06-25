@@ -1,6 +1,8 @@
+@extends('layouts.guest-order')
 
-
-@extends('layouts.guest')
+@section('pageTitle')
+    Deliveboo | Pagamento
+@endsection
 
 <div id="root" class="container-sm" style="margin-top: 170px">
   <h1 class="mt-3">Il tuo ordine è confermato</h1>
