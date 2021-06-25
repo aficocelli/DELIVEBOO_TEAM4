@@ -24,12 +24,12 @@
 		@method('PUT')
 		<div class="form-group">
 			<label for="name_food">Food Name</label>
-			<input type="text" class="form-control" id="name_food" name="name_food" placeholder="Food Name" value="{{old('name_food') ? old('name_food') : $food->name_food}}">
+			<input type="text" class="form-control text-capitalize" id="name_food" name="name_food" placeholder="Food Name" value="{{old('name_food') ? old('name_food') : $food->name_food}}">
 		</div>
 		
 		<div class="form-group">
 			<label for="ingredients">Ingredients</label>
-			<input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Ingredients" value="{{old('ingredients') ? old('ingredients') : $food->ingredients}}">
+			<input type="text" class="form-control text-capitalize" id="ingredients" name="ingredients" placeholder="Ingredients" value="{{old('ingredients') ? old('ingredients') : $food->ingredients}}">
 			
 		</div>
         <div class="form-group">

@@ -25,10 +25,10 @@
                         @csrf
 
                         <div class="form-group">
-                            <label for="name" class="">{{ __('Name') }}</label>
+                            <label for="name" class="">{{ __('Name') }} *</label>
 
                             <div class="">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror text-capitalize" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Full Name">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="">{{ __('E-Mail Address') }} *</label>
 
                             <div class="">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password" class="">{{ __('Password') }}</label>
+                            <label for="password" class="">{{ __('Password') }} *</label>
 
                             <div class="">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="">{{ __('Confirm Password') }} *</label>
 
                             <div class="">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
@@ -77,21 +77,21 @@
                         {{-- form registrazione ristorante --}}
 
                         <div class="form-group">
-                            <label for="name_restaurant">Restaurant Name</label>
-                            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="Restaurant Name" value="{{ old('name_restaurant') }}">
+                            <label for="name_restaurant">Restaurant Name *</label>
+                            <input type="text" class="form-control text-capitalize" id="name_restaurant" name="name_restaurant" placeholder="Restaurant Name" value="{{ old('name_restaurant') }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="phone_restaurant">Phone Restaurant</label>
+                            <label for="phone_restaurant">Phone Restaurant *</label>
                             <input type="text" class="form-control" id="phone_restaurant" name="phone_restaurant" placeholder="Phone Restaurant" value="{{ old('phone_restaurant') }}">
                         </div>
 
                         <div class="form-group">
-                            <label for="address_restaurant">Address Restaurant</label>
-                            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Address Restaurant" value="{{ old('address_restaurant') }}">
+                            <label for="address_restaurant">Address Restaurant *</label>
+                            <input class="form-control text-capitalize" type="text" id="address_restaurant" name="address_restaurant" placeholder="Address Restaurant" value="{{ old('address_restaurant') }}">
                         </div>
                         <div class="form-group">
-                            <label for="vat_number">Vat Number</label>
+                            <label for="vat_number">Vat Number *</label>
                             <input type="text" class="form-control" id="vat_number" name="vat_number" placeholder="Vat Number" value="{{ old('vat_number') }}">
                         </div>
 
@@ -111,6 +111,7 @@
                                 </button>
                             </div>
                         </div>
+                        <p>(*) fields marked are required</p>
                     </form>
                 </div>
             </div>

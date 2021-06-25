@@ -27,7 +27,7 @@
 		@method('PUT')
 		<div class="form-group">
             <label for="name_restaurant">Name</label>
-            <input type="text" class="form-control" id="name_restaurant" name="name_restaurant" placeholder="Name" value="{{old('name_restaurant') ? old('name_restaurant') : $user->name_restaurant}}">
+            <input type="text" class="form-control text-capitalize" id="name_restaurant" name="name_restaurant" placeholder="Name" value="{{old('name_restaurant') ? old('name_restaurant') : $user->name_restaurant}}">
         </div>
 
         <div class="form-group">
@@ -37,7 +37,7 @@
 
         <div class="form-group">
             <label for="address_restaurant">Address</label>
-            <input class="form-control" type="text" id="address_restaurant" name="address_restaurant" placeholder="Address" value="{{old('address_restaurant') ? old('address_restaurant') : $user->address_restaurant}}">
+            <input class="form-control text-capitalize" type="text" id="address_restaurant" name="address_restaurant" placeholder="Address" value="{{old('address_restaurant') ? old('address_restaurant') : $user->address_restaurant}}">
         </div>
 
         <div class="form-group">
