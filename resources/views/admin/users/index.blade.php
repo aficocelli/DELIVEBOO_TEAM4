@@ -19,12 +19,12 @@
  
       <div class=" pl-3 col col-12">
         <div class="mt-3">
-          <h1 class="mb-5 mt-5 text-center">Welcome on board <strong class="text-capitalize">{{Auth::user()->name}}</strong></h1>
-          <h2 class="mb-3 text-capitalize">{{Auth::user()->name_restaurant}}</h2>
+          <h1 class="mb-5 mt-5 text-center text-capitalize" style="font-family: Permanent Marker, cursive;">Welcome on board {{Auth::user()->name}}</h1>
+          <h2 class="mb-3 text-capitalize" >{{Auth::user()->name_restaurant}}</h2>
         </div>
           {{-- stampo i types --}}
           @foreach ($user->types as $type)
-            <h2 class="d-inline"><span class="badge badge-pill badge-warning">{{$type->origin}}</span></h2>
+            <h2 class="d-inline"><span class="badge badge-primary" style="background-color: #ff9900;" >{{$type->origin}}</span></h2>
           @endforeach
           {{-- /stampo i types --}}
       </div>
@@ -45,12 +45,12 @@
           {{-- colonna bottoni --}}
           <div class=" pl-3 col col-lg-12 pb-5">
              <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
-              <button type="button" class="btn btn-success">Edit Info Restaurant</button>
+              <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Info Restaurant</button>
               </a>
-	            <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning">Add Foods</button></a>
+	            <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
               @if ($foods->isNotEmpty())
                 <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
-                  <button type="button" class="btn btn-primary ">Show Foods</button>
+                  <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill" ">Show Foods</button>
                 </a>
               @endif 
           </div>
@@ -59,25 +59,25 @@
   </div>
 
 
-  <div class="container-sm bg-white">
-    <h2>Riepilogo ordini</h2>
+  <div class="container-sm bg-white p-5 shadow" style=" border-radius: 50px;">
+    <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Summary Orders Received</h2>
 
-    <table class="table table-striped">
+    <table class="table table-hover container bg-white pl-3 table-warning">
     <thead>
       <tr>
-        <th scope="col">N. Ordini</th>
-        <th scope="col">Ordine Cliente N.</th>
-        <th scope="col">Totale</th>
-        <th scope="col">Data Ordine</th>
-        <th scope="col">Email Cliente</th>
-        <th scope="col">Note Cliente</th>
+        <th class="table-warning" scope="col">Id Order</th>
+        <th class="table-warning" scope="col">Id Customer Order</th>
+        <th class="table-warning" scope="col">Total</th>
+        <th class="table-warning" scope="col">Date</th>
+        <th class="table-warning" scope="col">Email</th>
+        <th class="table-warning" scope="col">Notes</th>
       </tr>
     </thead>
     <tbody>
       @foreach ($orders as $key => $order)
     
       <tr>
-        <td>{{$key + 1}}</td>
+        <td >{{$key + 1}}</td>
         <td>{{$order->order_id}}</td>
         <td>{{$order->totale}} €</td>
         <td>{{$order->created_at}}</td>
