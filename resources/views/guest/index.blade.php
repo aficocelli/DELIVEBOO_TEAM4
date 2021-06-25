@@ -26,7 +26,7 @@
             <img :src="element.image_restaurant ? 'storage/' + element.image_restaurant : 'http://lorempixel.com/400/300/food'" :alt="element.name_restaurant">
           </div>
           <div class="card_text" id="chosen_text" >
-            <h3>"@{{element.name_restaurant}}"</h3>
+            <h3 class="card_title_mq">"@{{element.name_restaurant}}"</h3>
             <p>@{{element.name}}</p>
             <p class="card_address">@{{element.address_restaurant}}</p>
             <p>Tel: @{{element.phone_restaurant}}</p>
@@ -70,6 +70,19 @@
 
   <div class="chev chev_right" @@click="next(min, max)">
     <i class="fas fa-chevron-right chev__link"></i>
+  </div>
+  <!-- chevrons a mobile -->
+  <div class="chev_min">
+    
+    <!-- left -->
+    <div class="chev chev_left" @@click="prev(min, max)">
+      <i class="fas fa-chevron-left chev__link"></i>
+    </div>
+
+    <!-- right -->
+    <div class="chev chev_right" @@click="next(min, max)">
+      <i class="fas fa-chevron-right chev__link"></i>
+    </div>
   </div>
 </div>
 

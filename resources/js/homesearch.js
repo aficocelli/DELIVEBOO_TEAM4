@@ -38,7 +38,8 @@ new Vue({
     noMatch: false,
     test2:'',
     selectCustom: "",
-    genreSelected: []
+    genreSelected: [],
+    slideNumber: 4
   },
   
   // storage vuejs
@@ -50,15 +51,35 @@ new Vue({
 
     saveValue(){
       var qtyOld = document.getElementByName('qtyOld');
-      for (let index = 0; index < qtyOld.length; index++) {
-        console.log(qtyOld[index].value);
-        
+        for (let index = 0; index < qtyOld.length; index++) {
+          console.log(qtyOld[index].value);
+          
+        }
       }
-      }
-      
     },
   
   mounted: function () {
+
+
+    // responsive carousel 
+    var x = window.matchMedia("(max-width: 1300px)");
+    if (x.matches) { // If media query matches
+      this.max = 3;
+      this.slideNumber = 3;
+    }
+
+    var x = window.matchMedia("(max-width: 1020px)");
+    if (x.matches) { // If media query matches
+      this.max = 2;
+      this.slideNumber = 2;
+    }
+
+    var x = window.matchMedia("(max-width: 768px)");
+    if (x.matches) { // If media query matches
+      this.max = 1;
+      this.slideNumber = 1;
+    }
+    
     
 
     
@@ -107,20 +128,20 @@ new Vue({
   methods: {
     //carousel index
     next: function (min, max) {
-      this.min = min + 4;
-      this.max = max + 4;
-      if (this.max == 16) {
+      this.min = min + this.slideNumber;
+      this.max = max + this.slideNumber;
+      if (this.max == this.slideNumber * 4) {
         this.min = 0;
-        this.max = 4;
+        this.max = this.slideNumber;
       }
     },
     prev: function (min, max) {
       if (this.min == 0) {
-        this.min = 8;
-        this.max = 12;
+        this.min = this.slideNumber * 2;
+        this.max = this.slideNumber * 3;
       } else {
-        this.min = min - 4;
-        this.max = max - 4;
+        this.min = min - this.slideNumber;
+        this.max = max - this.slideNumber;
       }
     },
 

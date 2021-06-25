@@ -14,19 +14,24 @@ main {
     .carousel_selezione {
         margin: 0 40px;
         display: flex;
-        align-items: center;
+        align-items: center; 
         
+        @media only screen and(max-width: 768px){
+            flex-direction: column;
+        }
 
         .chev {              
             cursor: pointer;
             transition: 0.3s ease-in-out;
 
+            @media only screen and(max-width: 768px){
+                display: none;
+            }
             
             .chev__link {
                 color: $orange;
                 margin: 20px;
-                font-size: 40px;
-                              
+                font-size: 40px;                            
             }
         }
         .chev_left {
@@ -42,6 +47,20 @@ main {
             
         }
 
+        .chev_min {
+            display: flex;
+            .chev {
+                @media only screen and(min-width: 769px){
+                    display: none;
+                }
+
+                @media only screen and(max-width: 768px){
+                    margin-top: 40px;
+                    display: block;
+                }
+            }
+        }
+
         .wrapper_sezione {
             height: 600px;
             overflow: hidden;
@@ -51,6 +70,10 @@ main {
             display: flex;
             justify-content: space-between;
             margin: 20px 0;
+
+            @media only screen and(max-width: 1300px) {
+                justify-content: center;
+            }
             
             .card_custom {
                 width: calc(100% / 4);
@@ -61,12 +84,16 @@ main {
                 overflow: hidden;
                 box-shadow: 8px 5px 7px 5px rgba(0, 0, 0, 0.4);
 
-                @media only screen and(max-width: 1600px){
+                @media only screen and(max-width: 1300px){
                     width: calc(100% / 3);
                 }
 
-                @media only screen and(max-width: 1600px){
-                    width: calc(100% / 3);
+                @media only screen and(max-width: 1020px){
+                    width: calc(100% / 2);
+                }
+
+                @media only screen and(max-width: 768px){
+                    width: 80%;
                 }
 
                 a {
@@ -163,7 +190,7 @@ main {
     
                         .card_image {
                             width: 100%;
-                            margin-bottom: 30px;
+                            // margin-bottom: 30px;
     
                             .img_card {
                                 width: 100%;
@@ -184,6 +211,12 @@ main {
 
                 .card_text {
                     text-align: center;
+
+                    .card_title_mq {
+                        @media only screen and(max-width: 1210px){
+                            font-size: 18px;
+                        }
+                    }
 
                     .card_address {
                         width: 70%;
