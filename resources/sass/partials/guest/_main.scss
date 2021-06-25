@@ -174,8 +174,10 @@ main {
 }
 
 // orders create
-#form_cust {
+#form_cust{
     margin-top: 170px;
+}
+#form_cust, .custom__form {
     padding: 20px 30px;
     border-radius: 10px;
     background-color: $orderForm;

@@ -10,7 +10,7 @@
 
 	@if ($foods->isNotEmpty())
 		<a href="{{route('admin.foods.index')}}">
-			<button type="button" class="btn btn-primary mb-3 mt-3">Back To Foods</button>
+			<button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill">Back To Foods</button>
 		</a> 
 	@endif 
 
@@ -24,7 +24,7 @@
 		</div>
 	@endif
 
-	<form action="{{route('admin.foods.store')}}" method="POST" enctype="multipart/form-data">
+	<form class="custom__form" action="{{route('admin.foods.store')}}" method="POST" enctype="multipart/form-data">
 		@csrf
 		@method('POST')
 		<div class="form-group">
@@ -62,7 +62,7 @@
 			<label class="form-check-label" for="vegan">Vegan</label>
 		</div>
 		<div class="mt-3 text-center">
-			<button type="submit" class="btn btn-success pl-5 pr-5">Create</button>
+			<button id="submit-button" type="submit" class="rounded-pill btn btn-success pl-5 pr-5">Create</button>
 		</div>
 		<p>(*) fields marked are required</p>
 	</form>

@@ -9,7 +9,7 @@
 <div class="container">
 
 	<a href="{{route('home', [ 'user' => $user->id ])}}">
-        <button type="button" class="btn btn-primary mb-3 ">Back Home</button>
+        <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill">Back Home</button>
     </a>
 
 	@if ($errors->any())
@@ -22,7 +22,7 @@
 		</div>
 	@endif
 
-	<form action="{{route('admin.users.update', ['user' => $user->id])}}" method="POST" enctype="multipart/form-data">
+	<form class="custom__form" action="{{route('admin.users.update', ['user' => $user->id])}}" method="POST" enctype="multipart/form-data">
 		@csrf
 		@method('PUT')
 		<div class="form-group">
@@ -62,7 +62,7 @@
 		@endforeach
 
 		<div class="mt-3 text-center p-3">
-			<button type="submit" class="btn btn-success pl-5 pr-5">Edit</button>
+			<button id="submit-button" type="submit" class="rounded-pill btn btn-success pl-5 pr-5">Edit</button>
 		</div>
 	</form>
 </div>

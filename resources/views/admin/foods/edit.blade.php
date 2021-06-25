@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="container">
-	<a href="{{route('home')}}"><button class="btn btn-primary mt-3 mb-3">Back Home</button></a>
+	<a href="{{route('home')}}"><button class="btn btn-primary mb-3 p-2 border border-light rounded-pill">Back Home</button></a>
 
 	@if ($errors->any())
 		<div class="alert alert-danger">
@@ -19,7 +19,7 @@
 		</div>
 	@endif
 
-	<form action="{{route('admin.foods.update', ['food'=>$food->id])}}" method="POST" enctype="multipart/form-data">
+	<form class="custom__form" action="{{route('admin.foods.update', ['food'=>$food->id])}}" method="POST" enctype="multipart/form-data">
 		@csrf
 		@method('PUT')
 		<div class="form-group">
@@ -57,7 +57,7 @@
 			<label class="form-check-label" for="vegan">Vegan</label>
 		</div>
 		<div class="mt-3 text-center">
-			<button type="submit" class="btn btn-success pl-5 pr-5">Create</button>
+			<button id="submit-button" type="submit" class="rounded-pill btn btn-success pl-5 pr-5">Create</button>
 		</div>
 	</form>
 

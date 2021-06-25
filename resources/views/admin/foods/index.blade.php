@@ -22,28 +22,29 @@
 <div class="d-flex flex-row container justify-content-sm-between mt-5">
     <div class="mb-3 mr-5 text-left d-inline">
         <a href="{{route('home')}}">
-                <button type="button" class="btn btn-primary ">Back Home</button>
+                <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill">Back Home</button>
         </a>
     </div>
     <div class="mb-3 d-inline">
         <a href="{{route('admin.foods.create')}}">
-            <button type="button" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Add Foods</button>
+            <button type="button" class="btn btn-success p-2 border-light rounded-pill"><i class="fas fa-plus"></i> Add Foods</button>
         </a>
     </div>
 </div> 
 
-    <div class="table-responsive pl-3 ">
-        <table class="table table-hover container bg-white pl-3">
-            <thead class="thead-light">
-                    <tr>
-                        <th>Image</th>
-                        <th scope="col">Food's name</th>
-                        <th scope="col">Food's description</th>
-                        <th scope="col">Food's ingredients</th>
-                        <th scope="col">Food's price</th>
-                        <th scope="col">Vegan</th>
-                        <th scope="col">Available</th>
-                        <th scope="col"></th>
+    <div class="container-sm bg-white p-5 shadow" style=" border-radius: 50px;"">
+        <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Summary Foods</h2>
+        <table class="table table-hover container bg-white pl-3 table-warning">
+            <thead class="table table-striped">
+                    <tr class="table-warning">
+                        <th class="table-warning">Image</th>
+                        <th class="table-warning" scope="col">Name</th>
+                        <th class="table-warning" scope="col">Description</th>
+                        <th class="table-warning" scope="col">Ingredients</th>
+                        <th class="table-warning" scope="col">Price</th>
+                        <th class="table-warning" scope="col">Vegan</th>
+                        <th class="table-warning" scope="col">Available</th>
+                        <th class="table-warning" scope="col"></th>
                     </tr>
             </thead>
             <tbody>
