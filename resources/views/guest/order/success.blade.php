@@ -5,7 +5,7 @@
 @endsection
 
 <div id="root" class="container-sm info_success">
-  <h1 class="mt-3">Il tuo ordine è confermato <span class="text-success"><i class="fas fa-check-circle"></i></span></h1>
+  <h1 class="mt-3">Il tuo ordine è confermato <span class="text-success wink_custom"><i class="fas fa-check-circle"></i></span></h1>
 
   <h3 class="mt-5">Dettaglio Ordine: </h3>
   <div class="container-sm mt-3 mb-5">     
