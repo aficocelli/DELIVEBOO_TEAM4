@@ -141,8 +141,15 @@ main {
             object-fit: cover
         }
     }
-// show
-
+// form payment
+    #submit-button{
+        background-color: #ff9900;
+        padding: 7px;
+        color: $light;
+        font-weight: 500;
+        border: 1px solid #fff;
+        border-radius: 10px;
+    }
 }
 
 // orders create

@@ -17,7 +17,7 @@
 <body>
  <div class="container">
     <div id="dropin-container"></div>
-  <button id="submit-button">Request payment method</button>
+  <button id="submit-button">Procedi al Pagamento</button>
  </div>
   
 <script src="{{asset('js/payment.js')}}"></script>

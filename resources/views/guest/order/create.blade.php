@@ -74,9 +74,9 @@
             </div>
             {{-- <button type ="submit" class="btn btn-primary">Dettaglio Ordine e Pagamento</button> --}}
 
-            <div class="container pl-0 pr-0">
+            <div class="container pl-0 pr-0 text-center">
             <div id="dropin-container"></div>
-                <button id="submit-button">Request payment method</button>
+                <button class="mt-3" id="submit-button">Procedi al Pagamento</button>
                 <input type="hidden" id="nonce" name="payment_method_nonce"/>
                 
             </div>
