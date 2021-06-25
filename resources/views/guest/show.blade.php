@@ -53,7 +53,7 @@
                      <p class="food__ingredients">{{$food->ingredients}}</p>
                      <p class="food__description">{{$food->description}}</p>
                   </div>
-                    <div class="container-price justify-content-round">
+                    <div class="container-price justify-content-between">
                     <!-- box del prezze -->
                       <div  class="col__price col-numeric align-items-center">
                         <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 
