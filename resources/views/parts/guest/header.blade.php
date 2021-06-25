@@ -30,7 +30,7 @@
                         @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-capitalize" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -44,7 +44,7 @@
                                         @csrf
                                     </form>
 
-                                    <a class="dropdown-item" href="{{ route('home') }}">{{Auth::user()->name_restaurant}}</a>
+                                    <a class="dropdown-item text-capitalize" href="{{ route('home') }}">{{Auth::user()->name_restaurant}}</a>
                                 </div>
                             </li>
                         @endguest
