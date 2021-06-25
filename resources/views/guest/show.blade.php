@@ -18,9 +18,9 @@
               <p class="info__par"><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->address_restaurant}}</p>
               <p class="info__par"><span><i class="fas fa-phone"></i> </span>{{$users->phone_restaurant}}</p>
               <div class="container__types">
-          @foreach ($users->types as $type)
-              <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
-          @endforeach
+                @foreach ($users->types as $type)
+                    <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
+                @endforeach
               </div> 
           </div>
           <div class="info-image">
