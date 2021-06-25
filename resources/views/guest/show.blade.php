@@ -39,32 +39,35 @@
                       
             
             @foreach ($foods as $food)  
-              <div class="row__cart pt-5">
                   
+              <div class="row__cart pt-5">
                   {{-- box immagine del prodotto --}}
                   <div class="product__image">
                     <img class="product__image"  src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}"   alt="">
                   </div>
                   
+                <div class="container-infos">
                   {{-- box informazioni prodotto --}}
                   <div class="product__info">
                      <h4 class="food__name">{{$food->name_food}}</h4>
                      <p class="food__ingredients">{{$food->ingredients}}</p>
                      <p class="food__description">{{$food->description}}</p>
                   </div>
-                
-                  <!-- box del prezze -->
-                  <div  class="col__price col-numeric align-items-center">
-                    <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 
-                    <span class="euro">&euro;</span>
-                  </div>
-                
-                  <!-- box modifica della quantità del prodotto -->
-                  <div id='cart' class="cart__quantity">
-                    <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
-                    <input  id="{{$food->id}}" class="input_cart" type="number"  v-model="qty" readonly="readonly" name="{{$food->id}}">
-                    <button class="qty qty-plus transition" value="{{$food->id}}" @@click="takeOne({{$food->id}})"><i class="fas fa-plus-circle"></i></button>
-                  </div>
+                    <div class="container-price">
+                    <!-- box del prezze -->
+                      <div  class="col__price col-numeric align-items-center">
+                        <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 
+                        <span class="euro">&euro;</span>
+                      </div>
+                    
+                      <!-- box modifica della quantità del prodotto -->
+                      <div id='cart' class="cart__quantity">
+                        <button class="qty qty-minus transition" value="{{$food->id}}" @@click="lessOne({{$food->id}})"><i class="fas fa-minus-circle"></i></button>
+                        <input  id="{{$food->id}}" class="input_cart" type="number"  v-model="qty" readonly="readonly" name="{{$food->id}}">
+                        <button class="qty qty-plus transition" value="{{$food->id}}" @@click="takeOne({{$food->id}})"><i class="fas fa-plus-circle"></i></button>
+                      </div>
+                    </div>
+                </div>
               </div>
             @endforeach
       
