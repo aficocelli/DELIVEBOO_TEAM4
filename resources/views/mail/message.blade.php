@@ -20,9 +20,9 @@
   <div class="container-sm mt-5 mb-5">     
       
       <h4><strong>Numero ordine:</strong> N. {{$order->id}}</h4>
-      <h4><strong>Nome cliente:</strong> </strong><span style="text-transform: uppercase;">{{$order->fullname_guest}}</span></h4>
+      <h4><strong>Nome cliente:</strong> </strong><span style="text-transform:capitalize;">{{$order->fullname_guest}}</span></h4>
       <h4><strong>Recapito telefonico:</strong> </strong>{{$order->phone_guest}}</h4>
-      <h4><strong>Indirizzo:</strong><span style="text-transform: uppercase;">{{$order->address_guest}}</span></h4>
+      <h4><strong>Indirizzo:</strong><span style="text-transform:capitalize;">{{$order->address_guest}}</span></h4>
       <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
       <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
       <h4><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
