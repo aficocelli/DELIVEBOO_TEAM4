@@ -32,8 +32,8 @@
     </div>
 </div> 
 
-    <div class="container-sm bg-white p-5 shadow" style=" border-radius: 50px;"">
-        <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Summary Foods</h2>
+    <div class="container-sm bg-white p-5 shadow table-responsive-sm" style=" border-radius: 50px;"">
+        <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Foods</h2>
         <table class="table table-hover container bg-white pl-3 table-warning">
             <thead class="table table-striped">
                     <tr class="table-warning">
@@ -61,7 +61,7 @@
                 
                 <td class="text-capitalize">{{$food->ingredients}}</td>
 
-                <td>{{$food->price}} €</td>
+                <td>{{$food->price}}€</td>
 
                 <td>{!! $food->vegan ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times-circle"></i>'!!}</td>
                 
