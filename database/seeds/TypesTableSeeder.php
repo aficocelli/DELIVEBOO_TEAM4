@@ -14,15 +14,15 @@ class TypesTableSeeder extends Seeder
     {
         $types = [
             'Italiano',
-            'Pizzeria',
             'Sushi',
-            'Hamburger',
+            'Pizzeria',
             'Dolce',
+            'Hamburger',
             'Cinese',
             'Messicano',
             'Thai',
-            'Fusion',
-            'Giapponese'
+            'Giapponese',
+            'Fusion'
         ];
 
         foreach($types as $type){
