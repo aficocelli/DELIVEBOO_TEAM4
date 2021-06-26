@@ -26,9 +26,9 @@
             <img :src="element.image_restaurant ? 'storage/' + element.image_restaurant : 'http://lorempixel.com/400/300/food'" :alt="element.name_restaurant">
           </div>
           <div class="card_text" id="chosen_text" >
-            <h3 class="card_title_mq">"@{{element.name_restaurant}}"</h3>
-            <p>@{{element.name}}</p>
-            <p class="card_address">@{{element.address_restaurant}}</p>
+            <h3 class="card_title_mq text-capitalize">"@{{element.name_restaurant}}"</h3>
+            <p class="text-capitalize">@{{element.name}}</p>
+            <p class="card_address text-capitalize">@{{element.address_restaurant}}</p>
             <p>Tel: @{{element.phone_restaurant}}</p>
             <p>@{{element.email}}</p>
             <p>P.Iva: @{{element.vat_number}}</p>

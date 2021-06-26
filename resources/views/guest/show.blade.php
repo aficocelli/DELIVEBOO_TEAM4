@@ -13,13 +13,13 @@
       <div class="container">
         <!-- info restaurant -->
         <div class="info-restaurant">
-          <div class="info-text">
-              <h3 class="info__title">{{$users->name_restaurant}}</h3>
-              <p class="info__par"><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->address_restaurant}}</p>
+          <div class="info-text ">
+              <h3 class="info__title text-capitalize">{{$users->name_restaurant}}</h3>
+              <p class="info__par text-capitalize"><span><i class="fas fa-map-marker-alt"></i> </span>{{$users->address_restaurant}}</p>
               <p class="info__par"><span><i class="fas fa-phone"></i> </span>{{$users->phone_restaurant}}</p>
               <div class="container__types">
                 @foreach ($users->types as $type)
-                    <span id="restaurant-types" class="badge badge-primary">{{$type->origin}}</span>
+                    <span id="restaurant-types" class="badge badge-primary mb-3">{{$type->origin}}</span>
                 @endforeach
               </div> 
           </div>
@@ -31,16 +31,16 @@
     </div>
   
         <!-- /carrello -->
-        <div class="container-cart">
-            <div class="cart-title">
+        <div class="container-cart mb-3">
+            <div class="cart-title mb-5">
               <h2 class="menu_title"> MENU </h2>
-              <h5 class="text-secondary"><strong>ordina qui</strong></h5>
+              <h5 class="text-secondary pb-5"><strong>ordina qui</strong></h5>
             </div>
                       
             
             @foreach ($foods as $food)  
                   
-              <div class="row__cart pt-5">
+              <div class="row__cart mt-5 pt-5">
                   {{-- box immagine del prodotto --}}
                   <div class="product__image">
                     <img class="product__image"  src="{{$food->food_image ? asset('storage/' . $food->food_image) : 'http://lorempixel.com/400/200/food'}}"   alt="">
@@ -48,12 +48,13 @@
                   
                 <div class="container-infos">
                   {{-- box informazioni prodotto --}}
-                  <div class="product__info">
-                     <h4 class="food__name">{{$food->name_food}}</h4>
+                  <div class="product__info ml-3">
+                     <h4 class="food__name text-uppercase">{{$food->name_food}}</h4>
                      <p class="food__ingredients">{{$food->ingredients}}</p>
+                     <p>Vegan: {!! $food->vegan ? '<i class="fas fa-check"></i>' : '<i class="fas fa-times-circle"></i>'!!}</p>
                      <p class="food__description">{{$food->description}}</p>
                   </div>
-                    <div class="container-price justify-content-between">
+                    <div class="container-price justify-content-between mt-1">
                     <!-- box del prezze -->
                       <div  class="col__price col-numeric align-items-center">
                         <p id="prezzo_{{$food->id}}" class="mb-0">{{$food->price = number_format($food->price, 2)}}</p> 

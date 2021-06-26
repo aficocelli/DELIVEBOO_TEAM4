@@ -6,12 +6,13 @@ main {
    }
 
    .container-info {
-     width: 70%;
+     width: 80%;
      margin: 0 auto;
    }
 
     .wrapper-restaurant {
         padding-top: 180px;
+       
     
       @media only screen and (max-width: 768px) {
         padding-top: 130px;
@@ -23,11 +24,11 @@ main {
             padding-bottom: 10px;
 
             @media only screen and (max-width:768px)  {
-                flex-wrap: wrap-reverse;
+                
             }
 
              @media only screen and (max-width:680px)  {
-                flex-wrap: wrap-reverse;
+                flex-wrap: wrap;
                 text-align: center;
 
             }
@@ -53,6 +54,7 @@ main {
                             margin-right: 5px; 
                             @media screen and (max-width:768px) {
                             font-size: 11px;
+                            justify-content: center;
                         }
 
                         }
@@ -114,11 +116,13 @@ main {
                         height: 100%;
                         object-fit: cover;
                         border-radius: 20px;
-                    }
+                        
+                    
                 @media only screen and (max-width:768px) {
-                    width: 60%;
-                    height: auto; 
+                    
+                    flex-wrap: wrap;
                     margin-bottom: 10px;             
+                }
                 }
                 
                 @media only screen and (max-width:680px) {
