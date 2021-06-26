@@ -19,15 +19,20 @@ header {
             .logo-link {
                 color: $white;
                 text-decoration: none;
+
+                @media screen and(max-width: 576px) {
+                    margin-left: 20px;
+                }
         
                 .logo {
                     width: 60px;
                     margin-right: 20px;
                     // resize img
                     @media screen and(max-width: 766px) {
-                            padding:5px;
-                            width:40px;
+                        padding:5px;
+                        width:40px;
                     }
+
                     
                     img {
                         width: 100%;
