@@ -1,6 +1,6 @@
 <footer>
     <div class="footer_wrapper"> 
-        <a id="sel_link" href="{{route('guest.index')}}">
+        <a id="sel_link" href="{{route('guest.index')}}" class="text-decoration-none">
             <div class="footer_logo">
                 <img class="img-logo-footer" src="{{asset('img-carousel/dropfood-logo-white.svg')}}" alt="dropfood logo">
                 <h6 class="text_logo_footer">dropfood</h6>
