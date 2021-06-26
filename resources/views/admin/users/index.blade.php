@@ -17,50 +17,50 @@
       </div>
     @endif
  
-      <div class=" pl-3 col col-12">
-        <div class="mt-3">
-          <h1 class="mb-5 mt-5 text-center text-capitalize" style="font-family: Permanent Marker, cursive;">Welcome on board {{Auth::user()->name}}</h1>
-          <h2 class="mb-3 text-capitalize" >{{Auth::user()->name_restaurant}}</h2>
+      <div class=" pl-3 col col-12 text-center mb-5">
+        <div class="mt-3 text-center">
+          <h2 class="mb-5 mt-5 text-center text-capitalize" >Welcome on board {{Auth::user()->name}}</h2>
+          <h1 class="mb-1 text-capitalize" style="font-family: Permanent Marker, cursive; font-size: 40px;" >{{Auth::user()->name_restaurant}}</h1>
+          @foreach ($user->types as $type)
+            <h2 class="d-inline "><span class="badge badge-primary" style="background-color: #ff9900; font-size: 16px;" >{{$type->origin}}</span></h2>
+          @endforeach
         </div>
           {{-- stampo i types --}}
-          @foreach ($user->types as $type)
-            <h2 class="d-inline"><span class="badge badge-primary" style="background-color: #ff9900;" >{{$type->origin}}</span></h2>
-          @endforeach
           {{-- /stampo i types --}}
       </div>
-      <div class=" pt-5 pb-5 row pl-3">
+      <div class=" d-flex justify-content-around flex-wrap">
           {{-- colonna immagine --}}
-          <div class="col pb-3 col-12 col-lg-4">
-            <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 300px">
+          <div class="mt-3">
+            <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 350px; border-radius: 20px;">
           </div>
           
           {{-- colonna text --}}
-          <div class=" pb-3 col col-12 col-lg-8">
+          <div class=" pb-5  text-right mt-3">
             <h4 class="mb-3">Phone: <strong>{{Auth::user()->phone_restaurant}}</strong></h4>
             <h4 class="mb-3">Address: <strong class="text-capitalize">{{Auth::user()->address_restaurant}}</strong></h4>
             <h4 class="mb-3">Email: <strong>{{Auth::user()->email}}</strong></h4>
             <h4 class="mb-3">Vat Number: <strong>{{Auth::user()->vat_number}}</strong></h4> 
-      </div>
-      </div>
-          {{-- colonna bottoni --}}
-          <div class=" pl-3 col col-lg-12 pb-5">
-             <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
-              <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Info Restaurant</button>
-              </a>
-	            <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
-              @if ($foods->isNotEmpty())
-                <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
-                  <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill" ">Show Foods</button>
-                </a>
-              @endif 
           </div>
+        </div>
+        <div class="pb-5 text-center">
+          <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
+            <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Restaurant</button>
+          </a>
+          <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
+          @if ($foods->isNotEmpty())
+          <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
+            <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill" ">Show Foods</button>
+          </a>
+          @endif 
+        </div>
+          {{-- colonna bottoni --}}
         </div>
       </div>
   </div>
 
 
-  <div class="container-sm bg-white p-5 shadow" style=" border-radius: 50px;">
-    <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Summary Orders Received</h2>
+  <div class="container-sm bg-white table-responsive-sm p-5 shadow" style=" border-radius: 50px;">
+    <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Orders Received</h2>
 
     <table class="table table-hover container bg-white pl-3 table-warning">
     <thead>
