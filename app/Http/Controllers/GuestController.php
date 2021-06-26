@@ -21,14 +21,23 @@ class GuestController extends Controller
     {
         $types = Type::all();
 
+        $allUsers = User::all();
+
         $users = User::where('id', $id)->first();
 
         $foods = Food::where('available', 1)->where('user_id', $id)->get();
 
         foreach ($foods as $food) {
             $food->price = number_format($food->price, 2);
+        } 
+
+        foreach ($allUsers as $key => $userId) {
+            $data = $userId['id'];
         }
-        
+
+        if ($id > $data) {
+            abort(404);
+        };
 
         return view('guest.show', compact('users', 'foods', 'types'));
     }
