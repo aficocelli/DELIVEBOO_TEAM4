@@ -45,7 +45,6 @@ class OrderController extends Controller
             'phone_guest' => 'required|numeric',
             'address_guest' => 'required|string',
             'email_guest' => 'required|string|email|max:50',
-            'notes' => 'required',
             'total' => 'required'
         ]);
 
