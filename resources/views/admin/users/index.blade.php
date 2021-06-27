@@ -28,14 +28,14 @@
           {{-- stampo i types --}}
           {{-- /stampo i types --}}
       </div>
-      <div class=" d-flex justify-content-around flex-wrap">
+      <div class=" d-flex justify-content-around flex-wrap pb-5">
           {{-- colonna immagine --}}
           <div class="mt-3">
-            <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 350px; border-radius: 20px;">
+            <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 400px; border-radius: 20px;">
           </div>
           
           {{-- colonna text --}}
-          <div class=" pb-5  text-right mt-3">
+          <div class="  text-right mt-3">
             <h4 class="mb-3">Phone: <strong>{{Auth::user()->phone_restaurant}}</strong></h4>
             <h4 class="mb-3">Address: <strong class="text-capitalize">{{Auth::user()->address_restaurant}}</strong></h4>
             <h4 class="mb-3">Email: <strong>{{Auth::user()->email}}</strong></h4>
