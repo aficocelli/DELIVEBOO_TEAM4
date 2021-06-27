@@ -35,7 +35,7 @@
           </div>
           
           {{-- colonna text --}}
-          <div class="  text-right mt-3">
+          <div class="text-right mt-5 pt-3">
             <h4 class="mb-3">Phone: <strong>{{Auth::user()->phone_restaurant}}</strong></h4>
             <h4 class="mb-3">Address: <strong class="text-capitalize">{{Auth::user()->address_restaurant}}</strong></h4>
             <h4 class="mb-3">Email: <strong>{{Auth::user()->email}}</strong></h4>

@@ -57,7 +57,7 @@
 			<label class="form-check-label" for="vegan">Vegan</label>
 		</div>
 		<div class="mt-3 text-center">
-			<button id="submit-button" type="submit" class="rounded-pill btn btn-success pl-5 pr-5">Create</button>
+			<button id="submit-button" type="submit" class="rounded-pill btn btn-success pl-5 pr-5">Edit</button>
 		</div>
 	</form>
 

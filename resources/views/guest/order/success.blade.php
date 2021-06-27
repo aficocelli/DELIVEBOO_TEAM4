@@ -12,7 +12,7 @@
     
     <h4 class="text-capitalize mb-3"><strong>Numero ordine:</strong> N. {{$order->id}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Nome cliente:</strong> {{$order->fullname_guest}}</h4>
-    <h4 class="text-capitalize mb-3"><strong>Recapito telefonico:</strong>{{$order->phone_guest}}</h4>
+    <h4 class="text-capitalize mb-3"><strong>Recapito telefonico: </strong>{{$order->phone_guest}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Indirizzo:</strong> {{$order->address_guest}}</h4>
     <h4 class="mb-3"><strong>Email:</strong> {{$order->email_guest}}</h4>
     <h4 class="text-capitalize mb-3"><strong>Data ordine:</strong> {{ $order->created_at}}</h4>
