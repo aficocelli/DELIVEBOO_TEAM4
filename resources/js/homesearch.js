@@ -5,7 +5,7 @@ new Vue({
   el: '#root',
   data: {
     mainSelect: '',
-    ordine: 0,
+    // ordine: 0,
     types:[],
     users: [],
     selectType:[],
@@ -23,7 +23,7 @@ new Vue({
     onlyFoods:[],
     lastScrollPosition: 0,
     scrollValue: 0,
-    ciao: '',
+    allTotal: '',
     typesIndex: [],
     test: false,
     addProduct: false,
@@ -80,7 +80,7 @@ new Vue({
     // // ripreso dato in storage
     
 
-    this.ciao = localStorage.getItem("bigTotal");
+    this.allTotal = localStorage.getItem("bigTotal");
     // event listener sulla scroll
     // document.addEventListener('scroll', this.scrollHandler);
     window.addEventListener('scroll', this.scrollHandler);
