@@ -28,7 +28,7 @@
           {{-- stampo i types --}}
           {{-- /stampo i types --}}
       </div>
-      <div class=" d-flex justify-content-around flex-wrap pb-5">
+      <div class=" d-flex justify-content-around flex-wrap pb-5 bg-white shadow" style="border-radius: 50px;">
           {{-- colonna immagine --}}
         <div class="mt-3">
           <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 400px; border-radius: 20px;">
@@ -42,7 +42,7 @@
           <h4 class="mb-3">Vat Number: <strong>{{Auth::user()->vat_number}}</strong></h4> 
         </div>
       </div>
-      <div class="pb-5 text-center">
+      <div class="pb-3 text-center mt-5">
         <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
           <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Restaurant</button>
         </a>
