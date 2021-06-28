@@ -43,12 +43,12 @@
         </div>
       </div>
       <div class="pb-3 text-center mt-5">
-        <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
+        <a class="text-decoration-none" href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
           <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Restaurant</button>
         </a>
-        <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
+        <a  href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
           @if ($foods->isNotEmpty())
-          <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
+          <a class="text-decoration-none" href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
             <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill" ">Show Foods</button>
           </a>
           @endif 
