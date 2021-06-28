@@ -12,8 +12,6 @@ class GuestController extends Controller
     {
         $users = User::all();
 
-        
-
         return view('guest.index', compact('users'));
     }
 

@@ -100,8 +100,6 @@ class RegisterController extends Controller
             $newUser->types()->attach($data['type']);
 
         }
-        
-
 
         return $newUser;
     }

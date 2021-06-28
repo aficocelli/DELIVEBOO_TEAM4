@@ -19,7 +19,6 @@ class OrderController extends Controller
 
         // $foods = Food::where('id', $food)->get();
 
-
         $order = Order::all();
 
         $gateway = new Braintree\Gateway([
@@ -28,7 +27,6 @@ class OrderController extends Controller
             'publicKey' => 'xkyy5gnc8czp7f9z',
             'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
         ]);
-
 
         $clientToken = $gateway->clientToken()->generate();
 
@@ -48,8 +46,6 @@ class OrderController extends Controller
             'total' => 'required'
         ]);
 
-
-
         // $data['total'] = 20;
 
         // $data['food_id'] = [1];
@@ -66,7 +62,6 @@ class OrderController extends Controller
        
         $user_id = User::where('id', $foods)->get()->toArray();
        // $arrayFodds = $data['index'];
-        
         
         $food_id = Food::where('user_id', $user_id)->get();
         $newOrder = new Order();
@@ -100,8 +95,6 @@ class OrderController extends Controller
             'privateKey' => 'bf10ce31d57cec4edd1505e025f84a77'
         ]);
 
-
-
         $result = $gateway->transaction()->sale([
             'amount' => $data['total'],
             'paymentMethodNonce' => $data['payment_method_nonce'],
@@ -109,11 +102,6 @@ class OrderController extends Controller
                 'submitForSettlement' => True
             ]
         ]);
-
-
-
-
-
 
         Mail::to($newOrder->email_guest)->send(new OrderMail($newOrder));
 

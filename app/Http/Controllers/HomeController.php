@@ -34,21 +34,14 @@ class HomeController extends Controller
         
         $user = Auth::user();
 
-        
-
         $user_id = Auth::id();
-
-        
        
         $foods = Food::where('user_id', $user_id)->get();
-
 
         // $orders = DB::table('users')
         // ->join('foods', 'users.id', '=', 'foods.user_id')
         // ->join('orders', 'users.id', '=', 'orders.id')
         // ->get();
-
-
 
         $orders = DB::table('orders')->select('orders.id AS order_id',  DB::raw("CONVERT(orders.total, CHAR) AS totale"), 'orders.created_at as created_at', 'orders.email_guest as email_guest', 'orders.notes as notes')
         ->join('food_order', 'food_order.order_id', '=', 'orders.id')

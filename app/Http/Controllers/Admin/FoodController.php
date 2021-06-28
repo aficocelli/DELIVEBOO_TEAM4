@@ -50,8 +50,6 @@ class FoodController extends Controller
     {
         $user_id = Auth::id();
 
-        
-
         $foods = Food::where('user_id', $user_id)->get();
 
         foreach ($foods as $food){
@@ -134,7 +132,6 @@ class FoodController extends Controller
         if (isset($data['food_image'])) {
             $data['food_image'] = Storage::disk('public')->put('images', $data['food_image']);
         }
-      
       
         $food->update($data);
         

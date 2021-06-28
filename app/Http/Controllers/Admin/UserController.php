@@ -107,13 +107,9 @@ class UserController extends Controller
             $data['image_restaurant'] = Storage::disk('public')->put('images', $data['image_restaurant']);
 
         }
-
-        
         
         //salvo le modifiche
         $user->update($data);
-
-      ;
 
         // controllo types
 
