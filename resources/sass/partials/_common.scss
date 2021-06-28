@@ -11,7 +11,9 @@ html {
 body {
     font-family: 'Montserrat', sans-serif;
 }
-
+button:focus {
+  outline: none;
+}
 //contenitore
 .contenitore_custom {
     margin: 0 auto;

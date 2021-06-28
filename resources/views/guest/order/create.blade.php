@@ -50,7 +50,7 @@
         </div>
         
         <div class="form-group">
-            <label for="notes">Note per il Ristorante *</label>
+            <label for="notes">Note per il Ristorante</label>
             <textarea class="form-control" id="notes" name="notes" rows ="3" placeholder="Note">{{ old('notes') }}</textarea>
         </div>
             {{-- <label for="total">Note per il Ristorante</label>address_guest
