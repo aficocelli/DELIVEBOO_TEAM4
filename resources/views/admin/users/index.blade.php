@@ -83,7 +83,7 @@
         </tr>
         @endforeach
         <tr>
-          <td> <strong>Total:</strong></td>
+          <td> <strong>Overall:</strong></td>
           <td></td>
           <td> <strong>{{$total}} €</strong></td>
           <td></td>
