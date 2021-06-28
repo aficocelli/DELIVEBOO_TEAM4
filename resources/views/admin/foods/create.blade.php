@@ -67,8 +67,6 @@
 		<p>(*) fields marked are required</p>
 	</form>
 			  
-		
-	
 </div>
 
 	

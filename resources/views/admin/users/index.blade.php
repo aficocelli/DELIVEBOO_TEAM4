@@ -30,62 +30,59 @@
       </div>
       <div class=" d-flex justify-content-around flex-wrap pb-5">
           {{-- colonna immagine --}}
-          <div class="mt-3">
-            <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 400px; border-radius: 20px;">
-          </div>
+        <div class="mt-3">
+          <img src="{{Auth::user()->image_restaurant ? asset('storage/' . Auth::user()->image_restaurant) : 'http://lorempixel.com/400/200/food'}}" alt="{{Auth::user()->name_restaurant}}" style="width: 400px; border-radius: 20px;">
+        </div>
           
           {{-- colonna text --}}
-          <div class="text-right mt-5 pt-3">
-            <h4 class="mb-3">Phone: <strong>{{Auth::user()->phone_restaurant}}</strong></h4>
-            <h4 class="mb-3">Address: <strong class="text-capitalize">{{Auth::user()->address_restaurant}}</strong></h4>
-            <h4 class="mb-3">Email: <strong>{{Auth::user()->email}}</strong></h4>
-            <h4 class="mb-3">Vat Number: <strong>{{Auth::user()->vat_number}}</strong></h4> 
-          </div>
+        <div class="text-right mt-5 pt-3">
+          <h4 class="mb-3">Phone: <strong>{{Auth::user()->phone_restaurant}}</strong></h4>
+          <h4 class="mb-3">Address: <strong class="text-capitalize">{{Auth::user()->address_restaurant}}</strong></h4>
+          <h4 class="mb-3">Email: <strong>{{Auth::user()->email}}</strong></h4>
+          <h4 class="mb-3">Vat Number: <strong>{{Auth::user()->vat_number}}</strong></h4> 
         </div>
-        <div class="pb-5 text-center">
-          <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
-            <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Restaurant</button>
-          </a>
-          <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
+      </div>
+      <div class="pb-5 text-center">
+        <a href="{{route('admin.users.edit', [ 'user' => $user->id ])}}">
+          <button type="button" class="btn btn-success mb-3 p-2 border border-light rounded-pill"">Edit Restaurant</button>
+        </a>
+        <a href="{{route('admin.foods.create')}}"><button type="button" class="btn btn-warning mb-3 p-2 border border-light rounded-pill"">Add Foods</button></a>
           @if ($foods->isNotEmpty())
           <a href="{{route('admin.foods.index', [ 'user' => $user->id ])}}">
             <button type="button" class="btn btn-primary mb-3 p-2 border border-light rounded-pill" ">Show Foods</button>
           </a>
           @endif 
-        </div>
-          {{-- colonna bottoni --}}
-        </div>
       </div>
-  </div>
+          {{-- colonna bottoni --}}
+    </div>
 
 
   <div class="container-sm bg-white table-responsive-sm p-5 shadow" style=" border-radius: 50px;">
     <h2 class="text-center mb-5" style="font-family: Permanent Marker, cursive;">Orders Received</h2>
 
     <table class="table table-hover container bg-white pl-3 table-warning">
-    <thead>
-      <tr>
-        <th class="table-warning" scope="col">Id Order</th>
-        <th class="table-warning" scope="col">Id Customer Order</th>
-        <th class="table-warning" scope="col">Total</th>
-        <th class="table-warning" scope="col">Date</th>
-        <th class="table-warning" scope="col">Email</th>
-        <th class="table-warning" scope="col">Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($orders as $key => $order)
-    
-      <tr>
-        <td >{{$key + 1}}</td>
-        <td>{{$order->order_id}}</td>
-        <td>{{$order->totale}} €</td>
-        <td>{{$order->created_at}}</td>
-        <td>{{$order->email_guest}}</td>
-        <td>{{$order->notes}}</td>
-      </tr>
-      @endforeach
-    </tbody>
-  </table>
-</div>
+      <thead>
+        <tr>
+          <th class="table-warning" scope="col">Id Order</th>
+          <th class="table-warning" scope="col">Id Customer Order</th>
+          <th class="table-warning" scope="col">Total</th>
+          <th class="table-warning" scope="col">Date</th>
+          <th class="table-warning" scope="col">Email</th>
+          <th class="table-warning" scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($orders as $key => $order)
+        <tr>
+          <td >{{$key + 1}}</td>
+          <td>{{$order->order_id}}</td>
+          <td>{{$order->totale}} €</td>
+          <td>{{$order->created_at}}</td>
+          <td>{{$order->email_guest}}</td>
+          <td>{{$order->notes}}</td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
 @endsection

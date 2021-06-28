@@ -39,8 +39,6 @@
   </div>
 </div>
 
-
-
 <!-- small selection dei ristoranti stampando i primi 8-->
 <div class="text-center">
   <h2 class="scelti">- Scelti per voi -</h2>

@@ -30,15 +30,15 @@
             
             <div class="d-flex justify-content-start container-sm mt-5 mb-5" style="background-color: #FF9900; text-align:center; padding:30px 0; border-radius:20px">     
             
-               <h4><strong>Numero ordine:</strong> N. {{$order->id}}</h4>
-              <h4><strong>Nome cliente:</strong> </strong><span style="text-transform:capitalize;">{{$order->fullname_guest}}</span></h4>
-              <h4><strong>Recapito telefonico:</strong> </strong>{{$order->phone_guest}}</h4>
-              <h4><strong>Indirizzo:</strong><span style="text-transform:capitalize;">{{$order->address_guest}}</span></h4>
-              <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
-              <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
-              <h4><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
-              <h4><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
-              <h4><strong>Totale ordine:</strong> {{$order->total}} € </h4>
+                <h4><strong>Numero ordine:</strong> N. {{$order->id}}</h4>
+                <h4><strong>Nome cliente:</strong> </strong><span style="text-transform:capitalize;">{{$order->fullname_guest}}</span></h4>
+                <h4><strong>Recapito telefonico:</strong> </strong>{{$order->phone_guest}}</h4>
+                <h4><strong>Indirizzo:</strong><span style="text-transform:capitalize;">{{$order->address_guest}}</span></h4>
+                <h4><strong>Email:</strong> {{$order->email_guest}}</h4>
+                <h4><strong>Data ordine:</strong> {{date("H:i d-m-Y")}}</h4>
+                <h4><strong>Tipo di consegna:</strong> {{$order->delivery_type}}</h4>
+                <h4><strong>Orario di consegna:</strong> {{date("H", strtotime('+4 hours'))}}:30</h4>
+                <h4><strong>Totale ordine:</strong> {{$order->total}} € </h4>
             </div>
         </div>
     </body>

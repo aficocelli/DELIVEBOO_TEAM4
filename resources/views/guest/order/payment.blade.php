@@ -15,6 +15,7 @@
   <title>Document</title>
 </head>
 <body>
+  
  <div class="container">
     <div id="dropin-container"></div>
   <button id="submit-button">Procedi al Pagamento</button>

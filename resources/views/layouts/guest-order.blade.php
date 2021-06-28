@@ -38,7 +38,6 @@
     </head>
     <body class="wrap_all_order">
        
-        
 
             <!-- header -->
                 @include('parts.guest.header')
