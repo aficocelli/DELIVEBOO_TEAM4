@@ -19,9 +19,12 @@ body {
 }
 // backgrounds 
 .admin_bg {
-  background-image: url('../img-carousel/admin-bg.png');
-  background-repeat: repeat;
-  background-size: 300px;   
+  background-image: url('../img-carousel/admin-bg.jpeg');
+  // background-repeat: repeat-y;
+  background-size: contain;
+  // background-position: center 500px;
+  // background-size: cover;
+  // background-position: center;   
 }
 
 .index_body {
