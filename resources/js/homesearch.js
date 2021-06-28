@@ -44,15 +44,12 @@ new Vue({
   
   // storage vuejs
   
-  
-  
   watch: {
     
-
     saveValue(){
       var qtyOld = document.getElementByName('qtyOld');
         for (let index = 0; index < qtyOld.length; index++) {
-          console.log(qtyOld[index].value);
+          // console.log(qtyOld[index].value);
           
         }
       }
@@ -79,7 +76,6 @@ new Vue({
       this.slideNumber = 1;
     }
 
-    
     //window.localStorage.clear();
     // // ripreso dato in storage
     
@@ -93,7 +89,7 @@ new Vue({
     axios.get('http://localhost:8000/api/search/types')
       .then((result) => {
         this.types = result.data;
-        console.log('types:' + result.data);
+        // console.log('types:' + result.data);
       });
     
     // api users
@@ -119,7 +115,6 @@ new Vue({
         this.smallSelection = result.data;
       });
 
-    
 
   },
   methods: {
@@ -203,44 +198,27 @@ new Vue({
 
     takeOne: function (index) {
       var cart =  [];
-        // document.getElementById("button-check").disabled = false;
-        
-        var actualValueMore = document.getElementById(index).value;
-        document.getElementById(index).value = parseInt(actualValueMore) + 1;
-      
-        var productPrice = document.getElementById("prezzo_" + index).innerHTML;
-       var total = document.getElementById('totale_price').innerHTML;
+      // document.getElementById("button-check").disabled = false;
+
+      var actualValueMore = document.getElementById(index).value;
+      document.getElementById(index).value = parseInt(actualValueMore) + 1;
+
+      var productPrice = document.getElementById("prezzo_" + index).innerHTML;
+      var total = document.getElementById('totale_price').innerHTML;
       if (total=="0")
       { window.localStorage.clear();}
-        var bigTotal = parseFloat(total) + parseFloat(productPrice);
-        document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);
-        
+      var bigTotal = parseFloat(total) + parseFloat(productPrice);
+      document.getElementById('totale_price').innerHTML = bigTotal.toFixed(2);  
 
-      this.test2 = bigTotal;
-          
+      this.test2 = bigTotal;  
         
       document.getElementById("button-check").disabled = false;
       
         // window.localStorage.clear();
-        window.localStorage.setItem('bigTotal', bigTotal);
+      window.localStorage.setItem('bigTotal', bigTotal);
         
         
-        // if (document.getElementById(index).value > 0){
-          
-          
-        //   this.checkButton = true;
-          
-          
-          
-        // }
-      //   window.localStorage.setItem('index', index);
-      // window.localStorage.setItem('quantity', document.getElementById(index).value )
-    
-   //   var indexQty = {
-    //    'qty': document.getElementById(index).value
-    //  };
       localStorage.setItem('food_Id_' + index, document.getElementById(index).value);
-      
       
       
     },
@@ -270,10 +248,7 @@ new Vue({
             document.getElementById("button-check").disabled = true;
           }
         } 
-
-        
     },
-
   
     // funzioni allo scroll per headers
     scrollHandler: function () {
@@ -281,7 +256,7 @@ new Vue({
         this.headerTopSticky = false;
         //chevron
         this.chevronBackToTop = true;
-        console.log(this.headerTopSticky);
+        // console.log(this.headerTopSticky);
       } else {
         this.headerTopSticky = true;
         //chevron

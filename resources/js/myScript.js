@@ -18,11 +18,8 @@ var app = new Vue(
                 this.total = this.qty * this.basePrice;
                 
             }
-      
-          
 
-        }
-        
+        } 
     }
     );
   
