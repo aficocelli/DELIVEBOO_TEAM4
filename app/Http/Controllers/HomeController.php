@@ -48,11 +48,17 @@ class HomeController extends Controller
         ->join('foods', 'foods.id', '=', 'food_order.food_id')
         ->where('user_id', $user_id )
         ->groupBy('orders.id',  'orders.total', 'orders.created_at', 'orders.email_guest', 'orders.notes')->get();        // dd($orders);
-    
+        
+        $total = 0;
+       foreach($orders as $order){
+            
+            $total += $order->totale;
+       }
+       $total = number_format($total, 2);
  //dd($orders);
 
         $data = User::all()->where('id');
         
-        return view('admin.users.index', compact('data', 'user', 'foods', 'orders'));
+        return view('admin.users.index', compact('data', 'user', 'foods', 'orders', 'total'));
     }
 }

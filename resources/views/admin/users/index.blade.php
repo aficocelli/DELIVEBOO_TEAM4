@@ -82,6 +82,13 @@
           <td>{{$order->notes}}</td>
         </tr>
         @endforeach
+        <tr>
+          <td> <strong>Total:</strong></td>
+          <td></td>
+          <td> <strong>{{$total}} €</strong></td>
+          <td></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
   </div>
