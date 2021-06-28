@@ -46,10 +46,11 @@
                 <div class="errors_img">
                     <img src="{{asset('/img-carousel/dropfood-logo-orange.svg')}}" alt="logo dropfood" style="width: 100%;">
                 </div>
+                 <h3 class="logo_error">dropfood</h3>
                 <div style="width:50vh; height:50vh; ">
                     <img src= "{{asset('/img-carousel/img_404/404page.jpg')}}" alt="hunger" style="width: 100%; height:100%; object-fit:contain;">
                 </div>
-                <h3 class="logo_error">deliveboo</h3>
+               
                 <h3 class="mt-4">404 | not found</h3>
                 <button class="btn btn-outline-secondary mt-4 home_cta"><a class="text-decoration-none" href="{{ url('/') }}">back home</a></button>
             </div>
