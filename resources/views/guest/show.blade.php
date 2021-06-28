@@ -34,7 +34,6 @@
       <div class="container-cart mb-3 pb-5">
         <div class="cart-title mb-5">
           <h2 class="menu_title"> MENU </h2>
-          <h5 class="text-secondary pb-5"><strong>ordina qui</strong></h5>
         </div>
                         
               
